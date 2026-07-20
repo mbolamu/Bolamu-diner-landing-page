@@ -77,7 +77,7 @@
                <div class="bolamu-flavour-overlay-content">
                  <h3>Mbika-scoff</h3>
                  <p>
-                   You've heard of Biscoff. Now meet Mbika-scoff. A rich cookie butter inspired by Central African flavours, blending roasted egusi, warm spices and caramelised biscuit notes into something comfortingly familiar and completely new.
+                   You've heard of Biscoff. Now meet Mbika-Scoff. A rich cookie butter packed with Congolese flavours, blending mbika, a traditional delicacy made from roasted egusi melon seeds, with a quintessential West African spice blend and caramelised biscuit notes into something comfortingly familiar and completely new.
                  </p>
                  <button
                    class="bolamu-flavour-overlay-close"
@@ -118,7 +118,7 @@
                <div class="bolamu-flavour-overlay-content">
                  <h3>Pili Pili Coco Noir</h3>
                  <p>
-                   Deep dark chocolate meets smoky sea salt, roasted hazelnut and a gentle spark of Scotch bonnet. Rich, bold and just dangerous enough to keep you coming back for another bite.
+                   Meet Nutella's Congolese cousin. Roasted hazelnut butter meets deep dark chocolate, wood-smoked sea salt and a gentle spark of Scotch bonnet. Rich, bold and just dangerous enough to keep you coming back for another bite.
                  </p>
                  <button
                    class="bolamu-flavour-overlay-close"
@@ -159,7 +159,7 @@
                <div class="bolamu-flavour-overlay-content">
                  <h3>Hypermalt Crème Molasses</h3>
                  <p>
-                   Inspired by the malty drinks found across African households, this flavour blends roasted malt, stout notes and buttery caramel into a rich, velvety dessert experience.
+                   Whether it's Guinness or Supermalt, no Congolese meal feels quite complete without a crisp fizzy malt drink. This flavour blends roasted malt, stout notes and buttery molasses into a rich, creamy caramel layered with hints of toffee.
                  </p>
                  <button
                    class="bolamu-flavour-overlay-close"
@@ -200,7 +200,7 @@
                <div class="bolamu-flavour-overlay-content">
                  <h3>Safu Coco Blanc</h3>
                  <p>
-                   Creamy white chocolate meets safu, Africa's beloved butter pear. Fruity, silky and surprisingly luxurious, it's a flavour unlike anything you've tasted before.
+                   A decadent homage to safu, Africa's beloved butter pear. This rare delicacy has a uniquely distinctive flavour that combines the silky richness of avocado with the bright tang of a citrus fruit, creating a taste unlike anything you've experienced before. Blended with creamy white chocolate, the result is fruity, silky and surprisingly luxurious.
                  </p>
                  <button
                    class="bolamu-flavour-overlay-close"
@@ -241,7 +241,7 @@
                <div class="bolamu-flavour-overlay-content">
                  <h3>Mbila Doré</h3>
                  <p>
-                   Golden honey, palm fruit and Scotch bonnet combine in a sweet heat sensation that starts smooth, finishes warm and leaves you reaching for one more spoonful.
+                   What if hot honey was made in Congo? Mbila, better known as palm nut, is the fruit responsible for the distinctive tang found in the red palm oil used in almost every Congolese dish. This flavour blends palm fruit pulp, golden honey and Scotch bonnet into a sweet heat sensation that starts smooth, finishes warm and leaves you reaching for one more spoonful.
                  </p>
                  <button
                    class="bolamu-flavour-overlay-close"
@@ -617,7 +617,7 @@
 
  display: grid;
  place-items: center;
- overflow-y: auto;
+ overflow: hidden;
  padding: clamp(10px, 1.4vw, 16px);
 
  color: #fff;
@@ -631,19 +631,24 @@
 }
 
 .bolamu-flavour-overlay-content {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
  width: 100%;
+ min-height: 100%;
  text-align: center;
 }
 
 .bolamu-flavour-overlay h3 {
- margin: 0 0 10px;
+ margin: 0 0 16px;
 
  color: #fff;
  text-transform: uppercase;
  letter-spacing: 0.03em;
  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 
- font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+ font-size: clamp(1.2rem, 1.72vw, 1.42rem);
  font-weight: 900;
 }
 
@@ -651,16 +656,28 @@
  margin: 0;
 
  color: #fff;
- line-height: 1.38;
+ line-height: 1.3;
  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.82);
 
- font-size: clamp(0.76rem, 1.05vw, 0.92rem);
+ font-size: clamp(0.68rem, 0.95vw, 0.94rem);
  font-weight: 600;
+}
+
+#bolamu-story-mbika-scoff p,
+#bolamu-story-hypermalt p {
+ font-size: clamp(0.6rem, 0.84vw, 0.86rem);
+ line-height: 1.24;
+}
+
+#bolamu-story-safu p,
+#bolamu-story-mbila p {
+ font-size: clamp(0.54rem, 0.78vw, 0.8rem);
+ line-height: 1.18;
 }
 
 .bolamu-flavour-overlay-close {
  min-height: 38px;
- margin-top: 14px;
+ margin-top: auto;
  padding: 7px 16px;
 
  border: 2px solid #fff;
@@ -866,16 +883,51 @@
  }
 
  .bolamu-flavour-overlay h3 {
-   font-size: 1.08rem;
+   margin-bottom: 14px;
+   font-size: 1.2rem;
  }
 
  .bolamu-flavour-overlay p {
-   font-size: 0.8rem;
-   line-height: 1.38;
+   font-size: 0.68rem;
+   line-height: 1.26;
+ }
+
+ #bolamu-story-mbika-scoff p,
+ #bolamu-story-hypermalt p {
+   font-size: 0.62rem;
+ }
+
+ #bolamu-story-safu p,
+ #bolamu-story-mbila p {
+   font-size: 0.56rem;
  }
 }
 
 @media (max-width: 390px) {
+ .bolamu-flavour-overlay {
+   padding: 8px 6px;
+ }
+
+ .bolamu-flavour-overlay h3 {
+   margin-bottom: 10px;
+   font-size: 1.12rem;
+ }
+
+ .bolamu-flavour-overlay p {
+   font-size: 0.64rem;
+   line-height: 1.22;
+ }
+
+ #bolamu-story-mbika-scoff p,
+ #bolamu-story-hypermalt p {
+   font-size: 0.58rem;
+ }
+
+ #bolamu-story-safu p,
+ #bolamu-story-mbila p {
+   font-size: 0.52rem;
+ }
+
  .bolamu-menu {
    --bolamu-card-width: 48vw;
  }
