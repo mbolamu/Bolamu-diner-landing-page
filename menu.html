@@ -334,9 +334,66 @@
      id="bolamu-menu-drinks-panel"
      hidden
    >
-     <div class="bolamu-menu-placeholder">
-       <h3>Drinks are coming next</h3>
-       <p>Milkshakes, frappés and lattes will live here.</p>
+     <div
+       class="bolamu-drink-subcategory-list"
+       role="list"
+       aria-label="Drink categories"
+     >
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="milkshakes"
+       >
+         <div class="bolamu-drink-subcategory-banner">
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/BA32ADFF-BEAA-4186-A0FD-BA53A722E92D.png"
+             alt="Milkshakes menu category"
+             loading="lazy"
+           >
+         </div>
+       </article>
+
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="frappuccinos"
+       >
+         <div class="bolamu-drink-subcategory-banner">
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/D4C29DDE-1D55-49AC-A94C-DFC0FC5F7852.jpeg"
+             alt="Frappuccinos menu category"
+             loading="lazy"
+           >
+         </div>
+       </article>
+
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="lattes"
+       >
+         <div class="bolamu-drink-subcategory-banner">
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/C8BF27D2-5858-44AD-91D5-C2B08E1FDB09.png"
+             alt="Lattes menu category"
+             loading="lazy"
+           >
+         </div>
+       </article>
+
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="slushies"
+       >
+         <div class="bolamu-drink-subcategory-banner">
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/8E6DAB41-FFBD-451A-9825-2FABD307E85B.jpeg"
+             alt="Slushies menu category"
+             loading="lazy"
+           >
+         </div>
+       </article>
      </div>
    </div>
  </div>
@@ -793,6 +850,42 @@
  font-size: 1.2rem;
 }
 
+.bolamu-drink-subcategory-list {
+ display: grid;
+ gap: 16px;
+
+ width: 100%;
+ margin: 0;
+}
+
+.bolamu-drink-subcategory {
+ width: 100%;
+ margin: 0;
+}
+
+.bolamu-drink-subcategory-banner {
+ width: 100%;
+ overflow: hidden;
+ aspect-ratio: 16 / 5;
+
+ border: 2px solid var(--bolamu-sky-dark);
+ border-radius: 16px;
+
+ background: var(--bolamu-cream);
+ box-shadow:
+   0 0 0 2px rgba(246, 201, 69, 0.5),
+   0 8px 18px rgba(23, 53, 82, 0.16);
+}
+
+.bolamu-drink-subcategory-banner img {
+ display: block;
+ width: 100%;
+ height: 100%;
+
+ object-fit: cover;
+ object-position: center;
+}
+
 .bolamu-menu-placeholder {
  padding: 16px;
  text-align: center;
@@ -903,6 +996,14 @@
  }
 
  .bolamu-flavour-card {
+   border-radius: 12px;
+ }
+
+ .bolamu-drink-subcategory-list {
+   gap: 14px;
+ }
+
+ .bolamu-drink-subcategory-banner {
    border-radius: 12px;
  }
 
