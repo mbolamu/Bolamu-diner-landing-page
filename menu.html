@@ -21,7 +21,12 @@
      aria-controls="bolamu-menu-flavours-panel"
      data-target="bolamu-menu-flavours-panel"
    >
-     <span class="bolamu-menu-category-icon" aria-hidden="true">✦</span>
+     <span class="bolamu-menu-category-icon" aria-hidden="true">
+       <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M12 2l1.5 6.5L20 10l-6.5 1.5L12 18l-1.5-6.5L4 10l6.5-1.5L12 2Z"></path>
+         <path d="M19 16v5M16.5 18.5h5"></path>
+       </svg>
+     </span>
      <span>Meet the Flavours</span>
      <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
    </button>
@@ -275,36 +280,20 @@
    </div>
 
    <button
-     class="bolamu-menu-category bolamu-menu-category-drinks"
-     type="button"
-     aria-expanded="false"
-     aria-controls="bolamu-menu-drinks-panel"
-     data-target="bolamu-menu-drinks-panel"
-   >
-     <span class="bolamu-menu-category-icon" aria-hidden="true">◉</span>
-     <span>Drinks</span>
-     <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
-   </button>
-
-   <div
-     class="bolamu-menu-content"
-     id="bolamu-menu-drinks-panel"
-     hidden
-   >
-     <div class="bolamu-menu-placeholder">
-       <h3>Drinks are coming next</h3>
-       <p>Milkshakes, frappés and lattes will live here.</p>
-     </div>
-   </div>
-
-   <button
      class="bolamu-menu-category bolamu-menu-category-desserts"
      type="button"
      aria-expanded="false"
      aria-controls="bolamu-menu-desserts-panel"
      data-target="bolamu-menu-desserts-panel"
    >
-     <span class="bolamu-menu-category-icon" aria-hidden="true">★</span>
+     <span class="bolamu-menu-category-icon" aria-hidden="true">
+       <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M6 11h12l-1 9H7l-1-9Z"></path>
+         <path d="M8 11a4 4 0 0 1 8 0"></path>
+         <path d="M9 7.5C9.5 5.5 11 4 12 3c1 1 2.5 2.5 3 4.5"></path>
+         <path d="M9 15h6"></path>
+       </svg>
+     </span>
      <span>Desserts</span>
      <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
    </button>
@@ -320,6 +309,36 @@
      </div>
    </div>
 
+   <button
+     class="bolamu-menu-category bolamu-menu-category-drinks"
+     type="button"
+     aria-expanded="false"
+     aria-controls="bolamu-menu-drinks-panel"
+     data-target="bolamu-menu-drinks-panel"
+   >
+     <span class="bolamu-menu-category-icon" aria-hidden="true">
+       <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M8 8h8l-1 11H9L8 8Z"></path>
+         <path d="M7 8h10"></path>
+         <path d="M10 5c.6-1.3 1.7-2 3-2s2.4.7 3 2"></path>
+         <path d="M14 8l4-6"></path>
+         <path d="M10.5 12.5h3"></path>
+       </svg>
+     </span>
+     <span>Drinks</span>
+     <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
+   </button>
+
+   <div
+     class="bolamu-menu-content"
+     id="bolamu-menu-drinks-panel"
+     hidden
+   >
+     <div class="bolamu-menu-placeholder">
+       <h3>Drinks are coming next</h3>
+       <p>Milkshakes, frappés and lattes will live here.</p>
+     </div>
+   </div>
  </div>
 </section>
 
@@ -448,12 +467,12 @@
  background: linear-gradient(135deg, #118fc8, var(--bolamu-sky));
 }
 
-.bolamu-menu-category-drinks {
+.bolamu-menu-category-desserts {
  background: linear-gradient(135deg, #e7b927, var(--bolamu-yellow));
  color: var(--bolamu-red);
 }
 
-.bolamu-menu-category-desserts {
+.bolamu-menu-category-drinks {
  background: linear-gradient(135deg, #bb211d, var(--bolamu-red));
 }
 
@@ -470,6 +489,12 @@
  background: rgba(255, 255, 255, 0.12);
  font-size: 1.7rem;
  line-height: 1;
+}
+
+.bolamu-menu-category-icon svg {
+ display: block;
+ width: 30px;
+ height: 30px;
 }
 
 .bolamu-menu-category-toggle {
@@ -815,12 +840,12 @@
    grid-row: 1;
  }
 
- .bolamu-menu-category-drinks {
+ .bolamu-menu-category-desserts {
    grid-column: 2;
    grid-row: 1;
  }
 
- .bolamu-menu-category-desserts {
+ .bolamu-menu-category-drinks {
    grid-column: 3;
    grid-row: 1;
  }
