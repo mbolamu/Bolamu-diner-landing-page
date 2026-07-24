@@ -303,9 +303,208 @@
      id="bolamu-menu-desserts-panel"
      hidden
    >
-     <div class="bolamu-menu-placeholder">
-       <h3>Desserts are coming next</h3>
-       <p>The dessert carousel will be added here.</p>
+     <div class="bolamu-dessert-gallery-shell">
+       <button
+         class="bolamu-dessert-gallery-arrow bolamu-dessert-gallery-arrow-left"
+         type="button"
+         aria-label="Scroll dessert categories left"
+         hidden
+       >
+         ‹
+       </button>
+
+       <div
+         class="bolamu-dessert-gallery"
+         role="region"
+         aria-label="Dessert categories"
+         tabindex="0"
+       >
+         <article
+           class="bolamu-dessert-card"
+           data-dessert-category="ice-cream"
+         >
+           <div class="bolamu-dessert-card-inner">
+             <button
+               class="bolamu-dessert-card-front"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-dessert-ice-cream-back"
+               aria-label="Show Ice Cream and Frozen Desserts menu"
+             >
+               <img
+                 src="https://ik.imagekit.io/vxel66ikf/94A9A03F-A931-460C-BC95-9BE36B968DFB.png"
+                 alt="Ice Cream and Frozen Desserts"
+                 loading="lazy"
+                 draggable="false"
+               >
+             </button>
+
+             <button
+               class="bolamu-dessert-card-back bolamu-dessert-placeholder-back"
+               id="bolamu-dessert-ice-cream-back"
+               type="button"
+               aria-label="Return to Ice Cream and Frozen Desserts category"
+               aria-hidden="true"
+               tabindex="-1"
+             >
+               <span class="bolamu-dessert-placeholder-title">Ice Cream &amp; Frozen Desserts</span>
+               <span class="bolamu-dessert-placeholder-copy">Menu coming soon</span>
+               <span class="bolamu-dessert-placeholder-return">Tap to return</span>
+             </button>
+           </div>
+         </article>
+
+         <article
+           class="bolamu-dessert-card"
+           data-dessert-category="baked-desserts"
+         >
+           <div class="bolamu-dessert-card-inner">
+             <button
+               class="bolamu-dessert-card-front"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-dessert-baked-back"
+               aria-label="Show Baked Desserts menu"
+             >
+               <img
+                 src="https://ik.imagekit.io/vxel66ikf/BEB165E6-FAA6-4CF4-A05F-07412F8D621E.png"
+                 alt="Baked Desserts"
+                 loading="lazy"
+                 draggable="false"
+               >
+             </button>
+
+             <button
+               class="bolamu-dessert-card-back bolamu-dessert-placeholder-back"
+               id="bolamu-dessert-baked-back"
+               type="button"
+               aria-label="Return to Baked Desserts category"
+               aria-hidden="true"
+               tabindex="-1"
+             >
+               <span class="bolamu-dessert-placeholder-title">Baked Desserts</span>
+               <span class="bolamu-dessert-placeholder-copy">Menu coming soon</span>
+               <span class="bolamu-dessert-placeholder-return">Tap to return</span>
+             </button>
+           </div>
+         </article>
+
+         <article
+           class="bolamu-dessert-card"
+           data-dessert-category="chocolate-desserts"
+         >
+           <div class="bolamu-dessert-card-inner">
+             <button
+               class="bolamu-dessert-card-front"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-dessert-chocolate-back"
+               aria-label="Show Chocolate Desserts menu"
+             >
+               <img
+                 src="https://ik.imagekit.io/vxel66ikf/E2845339-F8DE-431F-9B92-AC2749028676.png"
+                 alt="Chocolate Desserts"
+                 loading="lazy"
+                 draggable="false"
+               >
+             </button>
+
+             <button
+               class="bolamu-dessert-card-back bolamu-dessert-placeholder-back"
+               id="bolamu-dessert-chocolate-back"
+               type="button"
+               aria-label="Return to Chocolate Desserts category"
+               aria-hidden="true"
+               tabindex="-1"
+             >
+               <span class="bolamu-dessert-placeholder-title">Chocolate Desserts</span>
+               <span class="bolamu-dessert-placeholder-copy">Menu coming soon</span>
+               <span class="bolamu-dessert-placeholder-return">Tap to return</span>
+             </button>
+           </div>
+         </article>
+
+         <article
+           class="bolamu-dessert-card bolamu-dessert-card-mikate"
+           data-dessert-category="mikate-bar"
+         >
+           <div class="bolamu-dessert-card-inner">
+             <button
+               class="bolamu-dessert-card-front"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-dessert-mikate-back"
+               aria-label="Show Mikate Bar menu"
+             >
+               <img
+                 src="https://ik.imagekit.io/vxel66ikf/6412C046-8359-4D6C-A841-FFAAA154AAC1.png"
+                 alt="Mikate Bar"
+                 loading="lazy"
+                 draggable="false"
+               >
+             </button>
+
+             <div
+               class="bolamu-dessert-card-back bolamu-mikate-card-back"
+               id="bolamu-dessert-mikate-back"
+               aria-hidden="true"
+             >
+               <button
+                 class="bolamu-dessert-card-return"
+                 type="button"
+                 aria-label="Return to Mikate Bar category"
+                 tabindex="-1"
+               >
+                 ↺
+               </button>
+
+               <div class="bolamu-mikate-header-module">
+                 <img
+                   class="bolamu-mikate-flavour-dial"
+                   id="bolamu-mikate-flavour-dial"
+                   src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20flavour%20dial"
+                   alt="Mikate Bar flavour dial"
+                   loading="lazy"
+                   aria-hidden="true"
+                 >
+
+                 <button
+                   class="bolamu-mikate-header-toggle"
+                   type="button"
+                   aria-expanded="false"
+                   aria-controls="bolamu-mikate-flavour-dial"
+                   aria-label="Show Mikate Bar flavour dial"
+                   tabindex="-1"
+                 >
+                   <img
+                     class="bolamu-mikate-header-sticker"
+                     src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header"
+                     alt="Mikate Bar menu header, description and Flavours tab"
+                     loading="lazy"
+                   >
+                 </button>
+               </div>
+
+               <div
+                 class="bolamu-mikate-menu-area"
+                 role="region"
+                 aria-label="Mikate Bar creations"
+                 tabindex="-1"
+               >
+                 <p>Mikate creations coming next</p>
+               </div>
+             </div>
+           </div>
+         </article>
+       </div>
+
+       <button
+         class="bolamu-dessert-gallery-arrow bolamu-dessert-gallery-arrow-right"
+         type="button"
+         aria-label="Scroll dessert categories right"
+       >
+         ›
+       </button>
      </div>
    </div>
 
@@ -1046,6 +1245,350 @@
  font-size: 1.2rem;
 }
 
+.bolamu-dessert-gallery-shell {
+ position: relative;
+ width: 100%;
+}
+
+.bolamu-dessert-gallery {
+ --bolamu-dessert-card-width: clamp(220px, 72vw, 360px);
+
+ display: flex;
+ gap: 16px;
+
+ width: 100%;
+ padding: 14px 18px 24px;
+ overflow-x: auto;
+ overflow-y: hidden;
+
+ scroll-snap-type: x mandatory;
+ scroll-padding-inline: 18px;
+ scroll-behavior: smooth;
+ overscroll-behavior-inline: contain;
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+ cursor: grab;
+}
+
+.bolamu-dessert-gallery:active {
+ cursor: grabbing;
+}
+
+.bolamu-dessert-gallery::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-dessert-gallery:focus-visible {
+ outline: 3px solid var(--bolamu-sky-dark);
+ outline-offset: -3px;
+}
+
+.bolamu-dessert-card {
+ flex: 0 0 var(--bolamu-dessert-card-width);
+ width: var(--bolamu-dessert-card-width);
+ aspect-ratio: 9 / 16;
+
+ scroll-snap-align: center;
+ scroll-snap-stop: always;
+ perspective: 1400px;
+}
+
+.bolamu-dessert-card-inner {
+ position: relative;
+
+ width: 100%;
+ height: 100%;
+
+ transform-style: preserve-3d;
+ transition: transform 620ms cubic-bezier(0.22, 0.78, 0.24, 1);
+}
+
+.bolamu-dessert-card.is-flipped .bolamu-dessert-card-inner {
+ transform: rotateY(180deg);
+}
+
+.bolamu-dessert-card-front,
+.bolamu-dessert-card-back {
+ position: absolute;
+ inset: 0;
+
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+
+ border: 4px solid var(--bolamu-cream);
+ border-radius: 18px;
+
+ background: var(--bolamu-cream);
+ box-shadow:
+   0 0 0 3px var(--bolamu-sky-dark),
+   0 12px 24px rgba(23, 53, 82, 0.22);
+
+ backface-visibility: hidden;
+ -webkit-backface-visibility: hidden;
+}
+
+.bolamu-dessert-card-front {
+ padding: 0;
+
+ font: inherit;
+ touch-action: manipulation;
+ cursor: pointer;
+}
+
+.bolamu-dessert-card-front img {
+ display: block;
+ width: 100%;
+ height: 100%;
+
+ object-fit: contain;
+ object-position: center;
+ user-select: none;
+ -webkit-user-drag: none;
+}
+
+.bolamu-dessert-card-front:hover,
+.bolamu-dessert-card-front:focus-visible,
+.bolamu-dessert-card-back:focus-visible {
+ outline: 4px solid var(--bolamu-yellow);
+ outline-offset: -6px;
+}
+
+.bolamu-dessert-card-back {
+ transform: rotateY(180deg);
+}
+
+.bolamu-dessert-placeholder-back {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 18px;
+
+ padding: 28px;
+
+ color: var(--bolamu-ink);
+ background:
+   radial-gradient(circle at 20% 18%, rgba(66, 189, 234, 0.22), transparent 34%),
+   var(--bolamu-pastel-yellow);
+
+ text-align: center;
+ font: inherit;
+ cursor: pointer;
+}
+
+.bolamu-dessert-placeholder-title {
+ color: var(--bolamu-red);
+ text-transform: uppercase;
+ letter-spacing: 0.04em;
+
+ font-size: clamp(1.35rem, 3vw, 2rem);
+ font-weight: 900;
+}
+
+.bolamu-dessert-placeholder-copy {
+ padding: 10px 18px;
+
+ border: 3px solid var(--bolamu-red);
+ border-radius: 999px;
+
+ background: rgba(255, 255, 255, 0.72);
+ font-size: clamp(1rem, 2vw, 1.25rem);
+ font-weight: 800;
+}
+
+.bolamu-dessert-placeholder-return {
+ color: var(--bolamu-sky-dark);
+ text-transform: uppercase;
+ letter-spacing: 0.14em;
+
+ font-size: 0.72rem;
+ font-weight: 900;
+}
+
+.bolamu-mikate-card-back {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+
+ padding: 12px;
+
+ background:
+   linear-gradient(rgba(255, 245, 223, 0.92), rgba(255, 240, 173, 0.96));
+}
+
+.bolamu-dessert-card-return {
+ position: absolute;
+ top: 9px;
+ right: 9px;
+ z-index: 5;
+
+ display: grid;
+ place-items: center;
+
+ width: 34px;
+ height: 34px;
+ padding: 0;
+
+ border: 2px solid #fff;
+ border-radius: 50%;
+
+ color: #fff;
+ background: rgba(217, 45, 37, 0.88);
+ box-shadow: 0 4px 10px rgba(23, 53, 82, 0.2);
+
+ font: inherit;
+ font-size: 1.05rem;
+ font-weight: 900;
+ cursor: pointer;
+}
+
+.bolamu-dessert-card-return:hover,
+.bolamu-dessert-card-return:focus-visible {
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
+}
+
+.bolamu-mikate-header-module {
+ position: relative;
+ z-index: 2;
+
+ flex: 0 0 38%;
+ width: 100%;
+ min-height: 0;
+
+ transition: flex-basis 520ms cubic-bezier(0.22, 0.78, 0.24, 1);
+}
+
+.bolamu-mikate-header-module.is-dial-open {
+ flex-basis: 61%;
+}
+
+.bolamu-mikate-flavour-dial {
+ position: absolute;
+ top: 20%;
+ left: 50%;
+ z-index: 1;
+
+ width: 78%;
+ height: auto;
+
+ opacity: 0;
+ transform: translate(-50%, -48%) scale(0.9);
+ transform-origin: center top;
+ pointer-events: none;
+
+ transition:
+   transform 520ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   opacity 220ms ease;
+}
+
+.bolamu-mikate-header-module.is-dial-open .bolamu-mikate-flavour-dial {
+ opacity: 1;
+ transform: translate(-50%, 52%) scale(1);
+ pointer-events: auto;
+}
+
+.bolamu-mikate-header-toggle {
+ position: relative;
+ z-index: 2;
+
+ display: block;
+ width: 100%;
+ padding: 0;
+
+ border: 0;
+ background: transparent;
+
+ cursor: pointer;
+}
+
+.bolamu-mikate-header-toggle:focus-visible {
+ outline: 4px solid var(--bolamu-yellow);
+ outline-offset: 3px;
+ border-radius: 12px;
+}
+
+.bolamu-mikate-header-sticker {
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+.bolamu-mikate-menu-area {
+ flex: 1 1 auto;
+ min-height: 78px;
+ max-height: 190px;
+ overflow-y: auto;
+ padding: 14px;
+
+ border: 3px solid var(--bolamu-red);
+ border-radius: 14px;
+
+ color: var(--bolamu-ink);
+ background: rgba(255, 255, 255, 0.76);
+ box-shadow: inset 0 0 0 3px rgba(66, 189, 234, 0.34);
+
+ text-align: center;
+ scrollbar-width: thin;
+}
+
+.bolamu-mikate-menu-area p {
+ margin: 0;
+ line-height: 1.5;
+
+ font-size: 0.92rem;
+ font-weight: 800;
+}
+
+.bolamu-dessert-gallery-arrow {
+ position: absolute;
+ top: 50%;
+ z-index: 6;
+
+ display: grid;
+ place-items: center;
+
+ width: 42px;
+ height: 64px;
+ padding: 0;
+
+ border: 2px solid rgba(255, 255, 255, 0.86);
+ border-radius: 999px;
+
+ color: #fff;
+ background: rgba(23, 53, 82, 0.54);
+ box-shadow:
+   0 5px 14px rgba(23, 53, 82, 0.24),
+   0 0 10px rgba(66, 189, 234, 0.34);
+
+ font: inherit;
+ font-size: 2rem;
+ line-height: 1;
+
+ transform: translateY(-50%);
+ cursor: pointer;
+}
+
+.bolamu-dessert-gallery-arrow:hover,
+.bolamu-dessert-gallery-arrow:focus-visible {
+ background: rgba(23, 53, 82, 0.82);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
+}
+
+.bolamu-dessert-gallery-arrow[hidden] {
+ display: none;
+}
+
+.bolamu-dessert-gallery-arrow-left {
+ left: 7px;
+}
+
+.bolamu-dessert-gallery-arrow-right {
+ right: 7px;
+}
+
 .bolamu-drink-subcategory-list {
  display: grid;
  gap: 16px;
@@ -1382,6 +1925,20 @@
    border-radius: 12px;
  }
 
+ .bolamu-dessert-gallery {
+   --bolamu-dessert-card-width: min(82vw, 340px);
+
+   gap: 14px;
+   padding-inline: 14px;
+   scroll-padding-inline: 14px;
+ }
+
+ .bolamu-dessert-gallery-arrow {
+   width: 36px;
+   height: 54px;
+   font-size: 1.7rem;
+ }
+
  .bolamu-drink-subcategory-list {
    gap: 14px;
  }
@@ -1445,8 +2002,15 @@
    transition: none;
  }
 
+ .bolamu-dessert-card-inner,
+ .bolamu-mikate-header-module,
+ .bolamu-mikate-flavour-dial {
+   transition: none;
+ }
+
  .bolamu-flavour-carousel,
- .bolamu-drink-products-scroller {
+ .bolamu-drink-products-scroller,
+ .bolamu-dessert-gallery {
    scroll-behavior: auto;
  }
 }
@@ -1470,6 +2034,7 @@
    button.addEventListener("click", function () {
      closeAllFlavourOverlays();
      closeAllDrinkPanels();
+     resetDessertInteractions();
 
      const targetId = button.dataset.target;
      const targetPanel = menu.querySelector("#" + targetId);
@@ -1568,6 +2133,302 @@
      });
    }
  });
+
+ const dessertGallery = menu.querySelector(".bolamu-dessert-gallery");
+ const dessertCards = Array.from(
+   menu.querySelectorAll(".bolamu-dessert-card")
+ );
+ const dessertLeftArrow = menu.querySelector(
+   ".bolamu-dessert-gallery-arrow-left"
+ );
+ const dessertRightArrow = menu.querySelector(
+   ".bolamu-dessert-gallery-arrow-right"
+ );
+ const mikateHeaderToggle = menu.querySelector(
+   ".bolamu-mikate-header-toggle"
+ );
+ const mikateHeaderModule = menu.querySelector(
+   ".bolamu-mikate-header-module"
+ );
+ const mikateFlavourDial = menu.querySelector(
+   ".bolamu-mikate-flavour-dial"
+ );
+ const dessertPointerState = new WeakMap();
+ let dessertGalleryDragged = false;
+
+ function getDessertScrollBehavior() {
+   return window.matchMedia("(prefers-reduced-motion: reduce)").matches
+     ? "auto"
+     : "smooth";
+ }
+
+ function updateDessertGalleryArrows() {
+   if (!dessertGallery || !dessertLeftArrow || !dessertRightArrow) {
+     return;
+   }
+
+   const maxScroll = Math.max(
+     0,
+     dessertGallery.scrollWidth - dessertGallery.clientWidth
+   );
+   const tolerance = 4;
+
+   dessertLeftArrow.hidden = dessertGallery.scrollLeft <= tolerance;
+   dessertRightArrow.hidden =
+     maxScroll <= tolerance ||
+     dessertGallery.scrollLeft >= maxScroll - tolerance;
+ }
+
+ function setMikateDialOpen(isOpen) {
+   if (!mikateHeaderToggle || !mikateHeaderModule || !mikateFlavourDial) {
+     return;
+   }
+
+   mikateHeaderToggle.setAttribute(
+     "aria-expanded",
+     isOpen ? "true" : "false"
+   );
+   mikateHeaderToggle.setAttribute(
+     "aria-label",
+     isOpen
+       ? "Hide Mikate Bar flavour dial"
+       : "Show Mikate Bar flavour dial"
+   );
+   mikateHeaderModule.classList.toggle("is-dial-open", isOpen);
+   mikateFlavourDial.setAttribute(
+     "aria-hidden",
+     isOpen ? "false" : "true"
+   );
+ }
+
+ function resetMikateDial() {
+   setMikateDialOpen(false);
+ }
+
+ function setDessertCardFlipped(card, isFlipped, restoreFrontFocus) {
+   const front = card.querySelector(".bolamu-dessert-card-front");
+   const back = card.querySelector(".bolamu-dessert-card-back");
+   const backControls = Array.from(
+     card.querySelectorAll(
+       ".bolamu-dessert-card-back button, " +
+       ".bolamu-dessert-card-back [tabindex]"
+     )
+   );
+
+   card.classList.toggle("is-flipped", isFlipped);
+
+   if (front) {
+     front.setAttribute("aria-expanded", isFlipped ? "true" : "false");
+     front.setAttribute("aria-hidden", isFlipped ? "true" : "false");
+     front.tabIndex = isFlipped ? -1 : 0;
+   }
+
+   if (back) {
+     back.setAttribute("aria-hidden", isFlipped ? "false" : "true");
+   }
+
+   backControls.forEach(function (control) {
+     control.tabIndex = isFlipped ? 0 : -1;
+   });
+
+   if (!isFlipped && card.classList.contains("bolamu-dessert-card-mikate")) {
+     resetMikateDial();
+   }
+
+   if (restoreFrontFocus && front) {
+     front.focus();
+   }
+
+   if (isFlipped && backControls[0]) {
+     backControls[0].focus();
+   }
+ }
+
+ function closeAllDessertCards(exceptCard) {
+   dessertCards.forEach(function (card) {
+     if (card !== exceptCard) {
+       setDessertCardFlipped(card, false, false);
+     }
+   });
+ }
+
+ function resetDessertInteractions() {
+   closeAllDessertCards();
+   resetMikateDial();
+
+   if (dessertGallery) {
+     dessertGallery.scrollTo({
+       left: 0,
+       behavior: "auto"
+     });
+
+     window.requestAnimationFrame(updateDessertGalleryArrows);
+   }
+ }
+
+ dessertCards.forEach(function (card) {
+   const front = card.querySelector(".bolamu-dessert-card-front");
+   const backToggle = card.querySelector(
+     ".bolamu-dessert-placeholder-back, .bolamu-dessert-card-return"
+   );
+
+   if (!front || !backToggle) {
+     return;
+   }
+
+   front.addEventListener("pointerdown", function (event) {
+     dessertPointerState.set(front, {
+       x: event.clientX,
+       y: event.clientY,
+       moved: false
+     });
+   });
+
+   front.addEventListener("pointermove", function (event) {
+     const state = dessertPointerState.get(front);
+
+     if (
+       state &&
+       Math.hypot(event.clientX - state.x, event.clientY - state.y) > 10
+     ) {
+       state.moved = true;
+     }
+   });
+
+   front.addEventListener("click", function (event) {
+     const state = dessertPointerState.get(front);
+     const moved = dessertGalleryDragged || (state && state.moved);
+
+     dessertPointerState.delete(front);
+
+     if (moved) {
+       event.preventDefault();
+       return;
+     }
+
+     const shouldFlip = !card.classList.contains("is-flipped");
+
+     if (shouldFlip) {
+       closeAllDessertCards(card);
+     }
+
+     setDessertCardFlipped(card, shouldFlip, !shouldFlip);
+   });
+
+   backToggle.addEventListener("click", function () {
+     setDessertCardFlipped(card, false, true);
+   });
+ });
+
+ if (mikateHeaderToggle) {
+   mikateHeaderToggle.addEventListener("click", function () {
+     const isOpen =
+       mikateHeaderToggle.getAttribute("aria-expanded") === "true";
+
+     setMikateDialOpen(!isOpen);
+   });
+ }
+
+ if (dessertGallery && dessertLeftArrow && dessertRightArrow) {
+   function getDessertScrollAmount() {
+     const firstCard = dessertCards[0];
+     const styles = window.getComputedStyle(dessertGallery);
+     const gap = parseFloat(styles.columnGap || styles.gap || "0");
+
+     return firstCard
+       ? firstCard.getBoundingClientRect().width + gap
+       : dessertGallery.clientWidth * 0.78;
+   }
+
+   dessertLeftArrow.addEventListener("click", function () {
+     dessertGallery.scrollBy({
+       left: -getDessertScrollAmount(),
+       behavior: getDessertScrollBehavior()
+     });
+   });
+
+   dessertRightArrow.addEventListener("click", function () {
+     dessertGallery.scrollBy({
+       left: getDessertScrollAmount(),
+       behavior: getDessertScrollBehavior()
+     });
+   });
+
+   dessertGallery.addEventListener("scroll", updateDessertGalleryArrows, {
+     passive: true
+   });
+
+   dessertGallery.addEventListener("wheel", function (event) {
+     if (
+       Math.abs(event.deltaY) > Math.abs(event.deltaX) &&
+       dessertGallery.scrollWidth > dessertGallery.clientWidth
+     ) {
+       event.preventDefault();
+       dessertGallery.scrollLeft += event.deltaY;
+     }
+   }, {
+     passive: false
+   });
+
+   let dragStartX = 0;
+   let dragStartScroll = 0;
+   let mouseDragging = false;
+
+   dessertGallery.addEventListener("pointerdown", function (event) {
+     if (event.pointerType !== "mouse") {
+       return;
+     }
+
+     dragStartX = event.clientX;
+     dragStartScroll = dessertGallery.scrollLeft;
+     mouseDragging = true;
+     dessertGalleryDragged = false;
+     dessertGallery.setPointerCapture(event.pointerId);
+   });
+
+   dessertGallery.addEventListener("pointermove", function (event) {
+     if (!mouseDragging) {
+       return;
+     }
+
+     const distance = event.clientX - dragStartX;
+
+     if (Math.abs(distance) > 6) {
+       dessertGalleryDragged = true;
+     }
+
+     dessertGallery.scrollLeft = dragStartScroll - distance;
+   });
+
+   dessertGallery.addEventListener("pointerup", function (event) {
+     if (!mouseDragging) {
+       return;
+     }
+
+     mouseDragging = false;
+     dessertGallery.releasePointerCapture(event.pointerId);
+
+     window.setTimeout(function () {
+       dessertGalleryDragged = false;
+     }, 0);
+   });
+
+   dessertGallery.addEventListener("pointercancel", function () {
+     mouseDragging = false;
+     dessertGalleryDragged = false;
+   });
+
+   dessertCards.forEach(function (card) {
+     const image = card.querySelector(".bolamu-dessert-card-front img");
+
+     if (image) {
+       image.addEventListener("load", updateDessertGalleryArrows);
+     }
+   });
+
+   window.addEventListener("resize", updateDessertGalleryArrows);
+   updateDessertGalleryArrows();
+ }
 
  const drinkCategoryButtons = Array.from(
    menu.querySelectorAll(".bolamu-drink-subcategory-banner")
