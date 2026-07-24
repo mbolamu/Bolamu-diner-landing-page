@@ -329,7 +329,7 @@
              aria-label="Open Ice Cream and Frozen Desserts menu"
            >
              <img
-               src="https://ik.imagekit.io/vxel66ikf/94A9A03F-A931-460C-BC95-9BE36B968DFB.png"
+               src="https://ik.imagekit.io/vxel66ikf/Frozen%20desserts%20card.png"
                alt="Ice Cream and Frozen Desserts"
                loading="lazy"
                draggable="false"
@@ -347,7 +347,7 @@
              aria-label="Open Baked Desserts menu"
            >
              <img
-               src="https://ik.imagekit.io/vxel66ikf/BEB165E6-FAA6-4CF4-A05F-07412F8D621E.png"
+               src="https://ik.imagekit.io/vxel66ikf/Baked%20desserts%20card.png"
                alt="Baked Desserts"
                loading="lazy"
                draggable="false"
@@ -365,7 +365,7 @@
              aria-label="Open Chocolate Desserts menu"
            >
              <img
-               src="https://ik.imagekit.io/vxel66ikf/E2845339-F8DE-431F-9B92-AC2749028676.png"
+               src="https://ik.imagekit.io/vxel66ikf/Chocolate%20desserts%20card.png?updatedAt=1784886236712"
                alt="Chocolate Desserts"
                loading="lazy"
                draggable="false"
@@ -383,7 +383,7 @@
              aria-label="Open Mikate Bar menu"
            >
              <img
-               src="https://ik.imagekit.io/vxel66ikf/6412C046-8359-4D6C-A841-FFAAA154AAC1.png"
+               src="https://ik.imagekit.io/vxel66ikf/Mikate%20Bar%20desserts%20card.png"
                alt="Mikate Bar"
                loading="lazy"
                draggable="false"
@@ -456,39 +456,43 @@
          >
            <h2 id="bolamu-dessert-overlay-title-mikate-bar" class="bolamu-menu-visually-hidden">Mikate Bar</h2>
 
-           <div class="bolamu-mikate-header-module">
-             <img
-               class="bolamu-mikate-flavour-dial"
-               id="bolamu-mikate-flavour-dial"
-               src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20flavour%20dial"
-               alt="Mikate Bar flavour dial"
-               loading="lazy"
-               aria-hidden="true"
-             >
-
-             <button
-               class="bolamu-mikate-header-toggle"
-               type="button"
-               aria-expanded="false"
-               aria-controls="bolamu-mikate-flavour-dial"
-               aria-label="Show Mikate Bar flavour dial"
-             >
+           <div class="bolamu-mikate-menu-header-region">
+             <div class="bolamu-mikate-header-module">
                <img
-                 class="bolamu-mikate-header-sticker"
-                 src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header"
-                 alt="Mikate Bar menu header, description and Flavours tab"
+                 class="bolamu-mikate-flavour-dial"
+                 id="bolamu-mikate-flavour-dial"
+                 src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20flavour%20dial"
+                 alt="Mikate Bar flavour dial"
                  loading="lazy"
+                 aria-hidden="true"
                >
-             </button>
+
+               <button
+                 class="bolamu-mikate-header-toggle"
+                 type="button"
+                 aria-expanded="false"
+                 aria-controls="bolamu-mikate-flavour-dial"
+                 aria-label="Show Mikate Bar flavour dial"
+               >
+                 <img
+                   class="bolamu-mikate-header-sticker"
+                   src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header"
+                   alt="Mikate Bar menu header, description and Flavours tab"
+                   loading="lazy"
+                 >
+               </button>
+             </div>
            </div>
 
-           <div
-             class="bolamu-mikate-menu-area"
-             role="region"
-             aria-label="Mikate Bar creations"
-             tabindex="0"
-           >
-             <p>Mikate creations coming next</p>
+           <div class="bolamu-mikate-menu-scroll-region">
+             <div
+               class="bolamu-mikate-menu-area"
+               role="region"
+               aria-label="Mikate Bar creations"
+               tabindex="0"
+             >
+               <p>Mikate creations coming next</p>
+             </div>
            </div>
          </section>
        </div>
@@ -1012,7 +1016,7 @@
  border: 5px solid var(--bolamu-cream);
  border-radius: 15px;
 
- background: var(--bolamu-cream);
+ background: transparent;
  box-shadow:
    0 0 0 3px var(--bolamu-sky-dark),
    0 10px 22px rgba(23, 53, 82, 0.2);
@@ -1354,11 +1358,7 @@
  overflow-y: auto;
  overscroll-behavior: contain;
  -webkit-overflow-scrolling: touch;
-
- padding:
-   max(12px, env(safe-area-inset-top))
-   12px
-   max(18px, env(safe-area-inset-bottom));
+ padding: 0;
 
  transform: scale(0.975) rotateY(-1.5deg);
  transform-origin: center center;
@@ -1367,6 +1367,10 @@
 
 .bolamu-dessert-menu-overlay.is-open .bolamu-dessert-menu-shell {
  transform: scale(1) rotateY(0);
+}
+
+.bolamu-dessert-menu-shell.is-mikate-menu {
+ overflow-y: hidden;
 }
 
 .bolamu-dessert-menu-close {
@@ -1405,13 +1409,15 @@
 }
 
 .bolamu-dessert-menu-content {
- width: min(100%, 960px);
- min-height: calc(100dvh - 30px);
+ width: 100%;
+ min-height: 100vh;
+ min-height: 100dvh;
  margin-inline: auto;
 }
 
 .bolamu-dessert-menu-panel {
- min-height: calc(100dvh - 30px);
+ min-height: 100vh;
+ min-height: 100dvh;
 }
 
 .bolamu-dessert-placeholder-panel {
@@ -1419,7 +1425,10 @@
  place-content: center;
  gap: 20px;
 
- padding: clamp(70px, 12vw, 130px) 20px 40px;
+ padding:
+   max(70px, calc(env(safe-area-inset-top) + 58px))
+   20px
+   max(40px, env(safe-area-inset-bottom));
 
  color: var(--bolamu-ink);
  text-align: center;
@@ -1454,33 +1463,56 @@
 .bolamu-dessert-mikate-panel {
  display: flex;
  flex-direction: column;
- min-height: calc(100dvh - 30px);
- padding-top: 42px;
+ width: 100%;
+ height: 100vh;
+ height: 100dvh;
+ min-height: 0;
+ overflow: hidden;
+
+ background: var(--bolamu-pastel-yellow);
+}
+
+.bolamu-mikate-menu-header-region {
+ position: relative;
+ z-index: 2;
+
+ flex: 0 0 auto;
+ width: 100%;
+ padding:
+   max(56px, calc(env(safe-area-inset-top) + 44px))
+   12px
+   clamp(10px, 2vw, 20px);
+
+ background-image: url("https://ik.imagekit.io/vxel66ikf/Menu%20background.png?updatedAt=1784886804416");
+ background-position: center top;
+ background-repeat: no-repeat;
+ background-size: cover;
+ box-shadow: 0 14px 24px rgba(28, 39, 43, 0.24);
+
+ margin-bottom: clamp(-22px, -2.2vw, -16px);
+ transition:
+   padding-bottom 350ms ease,
+   min-height 350ms ease;
+}
+
+.bolamu-mikate-menu-header-region.is-dial-open {
+ padding-bottom: clamp(18px, 3vw, 30px);
 }
 
 .bolamu-mikate-header-module {
- position: sticky;
- top: 0;
+ position: relative;
  z-index: 3;
 
- flex: 0 0 auto;
  width: min(98%, 760px);
  min-height: 0;
  margin-inline: auto;
- padding-bottom: clamp(8px, 2vw, 18px);
+ padding-bottom: clamp(6px, 1.5vw, 14px);
 
- background: linear-gradient(
-   180deg,
-   rgba(255, 245, 223, 0.98) 0%,
-   rgba(255, 245, 223, 0.92) 82%,
-   rgba(255, 245, 223, 0) 100%
- );
-
- transition: padding-bottom 300ms cubic-bezier(0.22, 0.78, 0.24, 1);
+ transition: padding-bottom 350ms cubic-bezier(0.22, 0.78, 0.24, 1);
 }
 
 .bolamu-mikate-header-module.is-dial-open {
- padding-bottom: clamp(130px, 38vw, 300px);
+ padding-bottom: clamp(140px, 38vw, 300px);
 }
 
 .bolamu-mikate-flavour-dial {
@@ -1500,9 +1532,9 @@
  pointer-events: none;
 
  transition:
-   transform 300ms cubic-bezier(0.22, 0.78, 0.24, 1),
-   opacity 180ms ease,
-   visibility 0s linear 300ms;
+   transform 350ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   opacity 190ms ease,
+   visibility 0s linear 350ms;
 }
 
 .bolamu-mikate-header-module.is-dial-open .bolamu-mikate-flavour-dial {
@@ -1541,26 +1573,48 @@
  height: auto;
 }
 
-.bolamu-mikate-menu-area {
+.bolamu-mikate-menu-scroll-region {
+ position: relative;
+ z-index: 1;
+
  flex: 1 1 auto;
- min-height: clamp(320px, 48dvh, 620px);
- margin: clamp(8px, 2vw, 18px) auto 0;
- padding: clamp(24px, 5vw, 48px);
+ min-height: 0;
+ width: 100%;
+ overflow-x: hidden;
  overflow-y: auto;
  overscroll-behavior: contain;
+ -webkit-overflow-scrolling: touch;
 
- width: min(96%, 900px);
- border: 4px solid var(--bolamu-red);
+ padding:
+   clamp(36px, 5vw, 54px)
+   max(18px, env(safe-area-inset-right))
+   max(28px, env(safe-area-inset-bottom))
+   max(18px, env(safe-area-inset-left));
+
+ background-image: url("https://ik.imagekit.io/vxel66ikf/Menu%20scroll%20container%20background");
+ background-position: top center;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ scrollbar-width: thin;
+}
+
+.bolamu-mikate-menu-area {
+ width: min(90%, 900px);
+ min-height: clamp(360px, 58dvh, 720px);
+ margin: 0 auto;
+ padding: clamp(24px, 5vw, 48px);
+ overflow: visible;
+
+ border: 3px solid rgba(217, 45, 37, 0.82);
  border-radius: 22px;
 
  color: var(--bolamu-ink);
- background: rgba(255, 255, 255, 0.76);
+ background: rgba(255, 255, 255, 0.64);
  box-shadow:
-   inset 0 0 0 4px rgba(66, 189, 234, 0.34),
-   0 12px 26px rgba(23, 53, 82, 0.18);
+   inset 0 0 0 3px rgba(66, 189, 234, 0.3),
+   0 12px 26px rgba(23, 53, 82, 0.14);
 
  text-align: center;
- scrollbar-width: thin;
 }
 
 .bolamu-mikate-menu-area p {
@@ -2034,6 +2088,7 @@
 
  .bolamu-dessert-menu-overlay,
  .bolamu-dessert-menu-shell,
+ .bolamu-mikate-menu-header-region,
  .bolamu-mikate-header-module,
  .bolamu-mikate-flavour-dial {
    transition: none;
@@ -2193,6 +2248,12 @@
  const mikateHeaderToggle = menu.querySelector(
    ".bolamu-mikate-header-toggle"
  );
+ const mikateHeaderRegion = menu.querySelector(
+   ".bolamu-mikate-menu-header-region"
+ );
+ const mikateScrollRegion = menu.querySelector(
+   ".bolamu-mikate-menu-scroll-region"
+ );
  const mikateHeaderModule = menu.querySelector(
    ".bolamu-mikate-header-module"
  );
@@ -2247,6 +2308,11 @@
        : "Show Mikate Bar flavour dial"
    );
    mikateHeaderModule.classList.toggle("is-dial-open", isOpen);
+
+   if (mikateHeaderRegion) {
+     mikateHeaderRegion.classList.toggle("is-dial-open", isOpen);
+   }
+
    mikateFlavourDial.setAttribute(
      "aria-hidden",
      isOpen ? "false" : "true"
@@ -2325,6 +2391,14 @@
    button.setAttribute("aria-expanded", "true");
    resetMikateDial();
    dessertMenuShell.scrollTop = 0;
+   dessertMenuShell.classList.toggle(
+     "is-mikate-menu",
+     menuName === "mikate-bar"
+   );
+
+   if (mikateScrollRegion) {
+     mikateScrollRegion.scrollTop = 0;
+   }
 
    if (dessertBodyStyles === null) {
      lockDessertPage();
@@ -2360,6 +2434,11 @@
      dessertMenuOverlay.hidden = true;
      unlockDessertPage();
      dessertMenuShell.scrollTop = 0;
+     dessertMenuShell.classList.remove("is-mikate-menu");
+
+     if (mikateScrollRegion) {
+       mikateScrollRegion.scrollTop = 0;
+     }
 
      if (restoreFocus && triggerToRestore) {
        triggerToRestore.focus();
@@ -2470,12 +2549,12 @@
    });
  }
 
- if (dessertMenuShell) {
-   dessertMenuShell.addEventListener("scroll", function () {
+ if (mikateScrollRegion) {
+   mikateScrollRegion.addEventListener("scroll", function () {
      if (
        mikateHeaderToggle &&
        mikateHeaderToggle.getAttribute("aria-expanded") === "true" &&
-       dessertMenuShell.scrollTop > 8
+       mikateScrollRegion.scrollTop > 8
      ) {
        setMikateDialOpen(false);
      }
