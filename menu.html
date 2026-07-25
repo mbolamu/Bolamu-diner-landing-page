@@ -479,7 +479,34 @@
              >
                <div class="bolamu-mikate-dish-list">
                  <div class="bolamu-mikate-menu-area">
-                   <p>Mikate creations coming next</p>
+                   <p class="bolamu-dessert-menu-placeholder">Mikate creations coming next</p>
+
+                   <div class="bolamu-mikate-dish-cards" hidden>
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Loaded%20Mikate.png"
+                       alt="Loaded Mikate served in Bolamu-branded trays with assorted sauces and toppings"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikate%20perdu.png"
+                       alt="Mikate Perdu baked in Bolamu-branded blue trays with assorted flavour toppings"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikate%20parfait.png"
+                       alt="Four layered Mikate parfaits with fruit, sauces and Bolamu branding"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Kamundele.png"
+                       alt="Chocolate-coated filled Mikate skewers in four Bolamu flavours"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/MILIKI%20misato.png"
+                       alt="Three Miliki Misato tres leches desserts in Bolamu-branded blue trays"
+                       loading="lazy"
+                     >
+                   </div>
                  </div>
                </div>
              </div>
@@ -1458,6 +1485,7 @@
  height: 100dvh;
  min-height: 0;
  overflow: hidden;
+ isolation: isolate;
 
  background: var(--bolamu-pastel-yellow);
 }
@@ -1482,9 +1510,23 @@
    0 3px 2px rgba(24, 37, 48, 0.18);
 
  margin-bottom: clamp(-24px, -2.5vw, -18px);
+ overflow: hidden;
+ isolation: isolate;
+
+ height: var(--bolamu-hero-expanded-height, auto);
+ min-height: var(--bolamu-hero-retained-height, 0);
+
  transition:
-   padding-bottom 350ms ease,
-   min-height 350ms ease;
+   height 310ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   padding-bottom 350ms ease;
+}
+
+.bolamu-mikate-menu-header-region.is-scroll-collapsed {
+ height: var(--bolamu-hero-retained-height);
+}
+
+.bolamu-mikate-menu-header-region.is-scroll-collapsed .bolamu-mikate-header-module {
+ transform: translateY(calc(-1 * var(--bolamu-hero-collapse-shift, 0px)));
 }
 
 .bolamu-mikate-menu-header-region.is-dial-open {
@@ -1500,7 +1542,9 @@
  margin-inline: auto;
  padding-bottom: clamp(6px, 1.5vw, 14px);
 
- transition: padding-bottom 350ms cubic-bezier(0.22, 0.78, 0.24, 1);
+ transition:
+   padding-bottom 350ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   transform 310ms cubic-bezier(0.22, 0.78, 0.24, 1);
 }
 
 .bolamu-mikate-header-module.is-dial-open {
@@ -1684,6 +1728,33 @@
 
  font-size: clamp(1.1rem, 3vw, 1.45rem);
  font-weight: 800;
+}
+
+.bolamu-mikate-menu-area.is-mikate-dish-menu {
+ width: min(96%, 960px);
+ padding: clamp(6px, 1.5vw, 14px);
+
+ border: 0;
+ background: transparent;
+ box-shadow: none;
+}
+
+.bolamu-mikate-dish-cards {
+ display: flex;
+ flex-direction: column;
+ gap: clamp(16px, 4vw, 28px);
+ width: 100%;
+ padding-bottom: clamp(48px, 10dvh, 96px);
+}
+
+.bolamu-mikate-dish-cards[hidden] {
+ display: none;
+}
+
+.bolamu-mikate-dish-cards img {
+ display: block;
+ width: 100%;
+ height: auto;
 }
 
 .bolamu-dessert-gallery-arrow {
@@ -2335,6 +2406,15 @@
  const dessertMenuViewport = menu.querySelector(
    ".bolamu-mikate-menu-scroll-viewport"
  );
+ const dessertMenuArea = menu.querySelector(
+   ".bolamu-mikate-menu-area"
+ );
+ const dessertMenuPlaceholder = menu.querySelector(
+   ".bolamu-dessert-menu-placeholder"
+ );
+ const mikateDishCards = menu.querySelector(
+   ".bolamu-mikate-dish-cards"
+ );
  const mikateHeaderToggle = menu.querySelector(
    ".bolamu-mikate-header-toggle"
  );
@@ -2356,6 +2436,8 @@
  let dessertPageScrollY = 0;
  let dessertCloseTimer = null;
  let dessertBodyStyles = null;
+ let activeDessertMenuName = null;
+ let dessertHeroScrollFrame = null;
 
  function dessertMotionReduced() {
    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -2408,6 +2490,8 @@
      isOpen ? "false" : "true"
    );
    mikateFlavourDial.tabIndex = isOpen ? 0 : -1;
+
+   window.setTimeout(syncDessertHeroMetrics, 360);
  }
 
  function resetMikateDial() {
@@ -2448,6 +2532,54 @@
    window.scrollTo(0, dessertPageScrollY);
  }
 
+ function syncDessertHeroMetrics() {
+   if (!mikateHeaderRegion || !mikateHeaderModule) {
+     return;
+   }
+
+   const wasCollapsed =
+     mikateHeaderRegion.classList.contains("is-scroll-collapsed");
+
+   mikateHeaderRegion.classList.remove("is-scroll-collapsed");
+   mikateHeaderRegion.style.removeProperty("--bolamu-hero-expanded-height");
+
+   window.requestAnimationFrame(function () {
+     const expandedHeight = mikateHeaderRegion.scrollHeight;
+     const retainedHeight = Math.min(
+       expandedHeight,
+       Math.max(104, Math.min(190, window.innerWidth * 0.28))
+     );
+
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-expanded-height",
+       expandedHeight + "px"
+     );
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-retained-height",
+       retainedHeight + "px"
+     );
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-collapse-shift",
+       Math.max(0, expandedHeight - retainedHeight) + "px"
+     );
+
+     if (wasCollapsed) {
+       mikateHeaderRegion.classList.add("is-scroll-collapsed");
+     }
+   });
+ }
+
+ function setDessertHeroCollapsed(isCollapsed) {
+   if (!mikateHeaderRegion || activeDessertMenuName !== "mikate-bar") {
+     return;
+   }
+
+   mikateHeaderRegion.classList.toggle(
+     "is-scroll-collapsed",
+     isCollapsed
+   );
+ }
+
  function openDessertMenu(button) {
    if (!dessertMenuOverlay || !dessertMenuShell) {
      return;
@@ -2479,9 +2611,23 @@
      );
    }
 
+   activeDessertMenuName = menuName;
+
+   if (dessertMenuPlaceholder && mikateDishCards && dessertMenuArea) {
+     const isMikateMenu = menuName === "mikate-bar";
+
+     dessertMenuPlaceholder.hidden = isMikateMenu;
+     mikateDishCards.hidden = !isMikateMenu;
+     dessertMenuArea.classList.toggle(
+       "is-mikate-dish-menu",
+       isMikateMenu
+     );
+   }
+
    activeDessertTrigger = button;
    button.setAttribute("aria-expanded", "true");
    resetMikateDial();
+   setDessertHeroCollapsed(false);
    dessertMenuShell.scrollTop = 0;
    dessertMenuShell.classList.add("is-mikate-menu");
 
@@ -2496,6 +2642,7 @@
    dessertMenuOverlay.hidden = false;
    window.requestAnimationFrame(function () {
      dessertMenuOverlay.classList.add("is-open");
+     syncDessertHeroMetrics();
    });
    dessertMenuClose.focus();
  }
@@ -2515,6 +2662,8 @@
    }
 
    activeDessertTrigger = null;
+   setDessertHeroCollapsed(false);
+   activeDessertMenuName = null;
    dessertMenuOverlay.classList.remove("is-open");
 
    window.clearTimeout(dessertCloseTimer);
@@ -2629,6 +2778,14 @@
    }
  });
 
+ if (dessertHeaderImage) {
+   dessertHeaderImage.addEventListener("load", function () {
+     if (activeDessertMenuName) {
+       syncDessertHeroMetrics();
+     }
+   });
+ }
+
  if (mikateHeaderToggle) {
    mikateHeaderToggle.addEventListener("click", function () {
      const isOpen =
@@ -2644,6 +2801,24 @@
      event.stopPropagation();
      setMikateDialOpen(false);
      mikateHeaderToggle.focus();
+   });
+ }
+
+ if (mikateScrollRegion) {
+   mikateScrollRegion.addEventListener("scroll", function () {
+     if (dessertHeroScrollFrame !== null) {
+       return;
+     }
+
+     dessertHeroScrollFrame = window.requestAnimationFrame(function () {
+       dessertHeroScrollFrame = null;
+
+       if (activeDessertMenuName === "mikate-bar") {
+         setDessertHeroCollapsed(mikateScrollRegion.scrollTop > 36);
+       }
+     });
+   }, {
+     passive: true
    });
  }
 
@@ -2744,7 +2919,13 @@
      }
    });
 
-   window.addEventListener("resize", updateDessertGalleryArrows);
+   window.addEventListener("resize", function () {
+     updateDessertGalleryArrows();
+
+     if (activeDessertMenuName === "mikate-bar") {
+       syncDessertHeroMetrics();
+     }
+   });
    updateDessertGalleryArrows();
  }
 
