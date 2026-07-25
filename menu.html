@@ -411,7 +411,7 @@
        class="bolamu-dessert-menu-shell"
        role="dialog"
        aria-modal="true"
-       aria-labelledby="bolamu-dessert-overlay-title-ice-cream"
+       aria-labelledby="bolamu-dessert-overlay-title"
        tabindex="-1"
      >
        <button
@@ -423,38 +423,8 @@
        </button>
 
        <div class="bolamu-dessert-menu-content">
-         <section
-           class="bolamu-dessert-menu-panel bolamu-dessert-placeholder-panel"
-           data-dessert-menu-panel="ice-cream"
-         >
-           <h2 id="bolamu-dessert-overlay-title-ice-cream">Ice Cream &amp; Frozen Desserts</h2>
-           <p>Ice Cream menu coming soon</p>
-         </section>
-
-         <section
-           class="bolamu-dessert-menu-panel bolamu-dessert-placeholder-panel"
-           data-dessert-menu-panel="baked-desserts"
-           hidden
-         >
-           <h2 id="bolamu-dessert-overlay-title-baked-desserts">Baked Desserts</h2>
-           <p>Baked Desserts menu coming soon</p>
-         </section>
-
-         <section
-           class="bolamu-dessert-menu-panel bolamu-dessert-placeholder-panel"
-           data-dessert-menu-panel="chocolate-desserts"
-           hidden
-         >
-           <h2 id="bolamu-dessert-overlay-title-chocolate-desserts">Chocolate Desserts</h2>
-           <p>Chocolate Desserts menu coming soon</p>
-         </section>
-
-         <section
-           class="bolamu-dessert-menu-panel bolamu-dessert-mikate-panel"
-           data-dessert-menu-panel="mikate-bar"
-           hidden
-         >
-           <h2 id="bolamu-dessert-overlay-title-mikate-bar" class="bolamu-menu-visually-hidden">Mikate Bar</h2>
+         <section class="bolamu-dessert-menu-panel bolamu-dessert-mikate-panel">
+           <h2 id="bolamu-dessert-overlay-title" class="bolamu-menu-visually-hidden">Mikate Bar</h2>
 
            <div class="bolamu-mikate-menu-header-region">
              <div class="bolamu-mikate-header-module">
@@ -504,7 +474,7 @@
              <div
                class="bolamu-mikate-menu-scroll-viewport"
                role="region"
-               aria-label="Mikate Bar creations"
+               aria-label="Dessert menu creations"
                tabindex="0"
              >
                <div class="bolamu-mikate-dish-list">
@@ -2334,8 +2304,36 @@
  const dessertMenuClose = menu.querySelector(
    ".bolamu-dessert-menu-close"
  );
- const dessertMenuPanels = Array.from(
-   menu.querySelectorAll("[data-dessert-menu-panel]")
+ const dessertReverseMenus = {
+   "ice-cream": {
+     title: "Ice Cream & Frozen Desserts",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Ice%20cream%20&%20frozen%20desserts.png",
+     contentId: "ice-cream-menu"
+   },
+   "baked-desserts": {
+     title: "Baked Desserts",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Baked%20desserts.png",
+     contentId: "baked-desserts-menu"
+   },
+   "chocolate-desserts": {
+     title: "Chocolate Desserts",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Chocolate%20desserts.png",
+     contentId: "chocolate-desserts-menu"
+   },
+   "mikate-bar": {
+     title: "Mikate Bar",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header",
+     contentId: "mikate-bar-menu"
+   }
+ };
+ const dessertMenuTitle = menu.querySelector(
+   "#bolamu-dessert-overlay-title"
+ );
+ const dessertHeaderImage = menu.querySelector(
+   ".bolamu-mikate-header-sticker"
+ );
+ const dessertMenuViewport = menu.querySelector(
+   ".bolamu-mikate-menu-scroll-viewport"
  );
  const mikateHeaderToggle = menu.querySelector(
    ".bolamu-mikate-header-toggle"
@@ -2396,8 +2394,8 @@
    mikateHeaderToggle.setAttribute(
      "aria-label",
      isOpen
-       ? "Hide Mikate Bar flavour dial"
-       : "Show Mikate Bar flavour dial"
+       ? "Hide signature flavours"
+       : "Show signature flavours"
    );
    mikateHeaderModule.classList.toggle("is-dial-open", isOpen);
 
@@ -2456,11 +2454,9 @@
    }
 
    const menuName = button.dataset.dessertMenu;
-   const panel = dessertMenuPanels.find(function (item) {
-     return item.dataset.dessertMenuPanel === menuName;
-   });
+   const menuConfig = dessertReverseMenus[menuName];
 
-   if (!panel) {
+   if (!menuConfig || !dessertHeaderImage || !dessertMenuTitle) {
      return;
    }
 
@@ -2470,24 +2466,24 @@
      activeDessertTrigger.setAttribute("aria-expanded", "false");
    }
 
-   dessertMenuPanels.forEach(function (item) {
-     item.hidden = item !== panel;
-   });
+   dessertMenuTitle.textContent = menuConfig.title;
+   dessertHeaderImage.src = menuConfig.headerImage;
+   dessertHeaderImage.alt =
+     menuConfig.title + " menu header, description and Flavours tab";
 
-   const title = panel.querySelector("h2[id]");
-
-   if (title) {
-     dessertMenuShell.setAttribute("aria-labelledby", title.id);
+   if (dessertMenuViewport) {
+     dessertMenuViewport.dataset.menuContent = menuConfig.contentId;
+     dessertMenuViewport.setAttribute(
+       "aria-label",
+       menuConfig.title + " creations"
+     );
    }
 
    activeDessertTrigger = button;
    button.setAttribute("aria-expanded", "true");
    resetMikateDial();
    dessertMenuShell.scrollTop = 0;
-   dessertMenuShell.classList.toggle(
-     "is-mikate-menu",
-     menuName === "mikate-bar"
-   );
+   dessertMenuShell.classList.add("is-mikate-menu");
 
    if (mikateScrollRegion) {
      mikateScrollRegion.scrollTop = 0;
