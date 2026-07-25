@@ -426,7 +426,7 @@
          <section class="bolamu-dessert-menu-panel bolamu-dessert-mikate-panel">
            <h2 id="bolamu-dessert-overlay-title" class="bolamu-menu-visually-hidden">Mikate Bar</h2>
 
-           <div class="bolamu-mikate-menu-header-region">
+           <div class="bolamu-mikate-menu-header-region" data-hero-state="full">
              <div class="bolamu-mikate-header-module">
                <button
                  class="bolamu-mikate-flavour-dial-button"
@@ -1521,12 +1521,22 @@
    padding-bottom 350ms ease;
 }
 
-.bolamu-mikate-menu-header-region.is-scroll-collapsed {
+.bolamu-mikate-menu-header-region[data-hero-state="compact"] {
  height: var(--bolamu-hero-retained-height);
 }
 
-.bolamu-mikate-menu-header-region.is-scroll-collapsed .bolamu-mikate-header-module {
+.bolamu-mikate-menu-header-region[data-hero-state="compact"] .bolamu-mikate-header-module {
  transform: translateY(calc(-1 * var(--bolamu-hero-collapse-shift, 0px)));
+}
+
+.bolamu-mikate-menu-header-region[data-hero-state="flavours-open"] {
+ height: var(
+   --bolamu-hero-flavours-height,
+   calc(
+     var(--bolamu-hero-expanded-height) +
+     clamp(140px, 38vw, 300px)
+   )
+ );
 }
 
 .bolamu-mikate-menu-header-region.is-dial-open {
@@ -1694,10 +1704,10 @@
 .bolamu-mikate-dish-list {
  min-height: 100%;
  padding:
-   clamp(36px, 5vw, 54px)
-   max(18px, calc(env(safe-area-inset-right) + 8px))
+   clamp(28px, 4vw, 46px)
+   max(8px, calc(env(safe-area-inset-right) + 4px))
    max(36px, calc(env(safe-area-inset-bottom) + 18px))
-   max(18px, calc(env(safe-area-inset-left) + 8px));
+   max(8px, calc(env(safe-area-inset-left) + 4px));
 }
 
 .bolamu-mikate-menu-area {
@@ -1731,8 +1741,8 @@
 }
 
 .bolamu-mikate-menu-area.is-mikate-dish-menu {
- width: min(96%, 960px);
- padding: clamp(6px, 1.5vw, 14px);
+ width: min(98%, 980px);
+ padding: clamp(4px, 1vw, 8px);
 
  border: 0;
  background: transparent;
@@ -1742,7 +1752,7 @@
 .bolamu-mikate-dish-cards {
  display: flex;
  flex-direction: column;
- gap: clamp(16px, 4vw, 28px);
+ gap: clamp(10px, 2.5vw, 14px);
  width: 100%;
  padding-bottom: clamp(48px, 10dvh, 96px);
 }
@@ -2491,7 +2501,16 @@
    );
    mikateFlavourDial.tabIndex = isOpen ? 0 : -1;
 
-   window.setTimeout(syncDessertHeroMetrics, 360);
+   applyDessertHeroState();
+
+   if (
+     activeDessertMenuName &&
+     dessertMenuOverlay &&
+     !dessertMenuOverlay.hidden
+   ) {
+     window.requestAnimationFrame(syncDessertHeroMetrics);
+     window.setTimeout(syncDessertHeroMetrics, 360);
+   }
  }
 
  function resetMikateDial() {
@@ -2532,27 +2551,59 @@
    window.scrollTo(0, dessertPageScrollY);
  }
 
+ function getDessertHeroState() {
+   if (
+     activeDessertMenuName !== "mikate-bar" ||
+     !mikateHeaderToggle ||
+     !mikateScrollRegion
+   ) {
+     return "full";
+   }
+
+   if (mikateHeaderToggle.getAttribute("aria-expanded") === "true") {
+     return "flavours-open";
+   }
+
+   return mikateScrollRegion.scrollTop > 36 ? "compact" : "full";
+ }
+
+ function applyDessertHeroState() {
+   if (!mikateHeaderRegion) {
+     return;
+   }
+
+   mikateHeaderRegion.dataset.heroState = getDessertHeroState();
+ }
+
  function syncDessertHeroMetrics() {
    if (!mikateHeaderRegion || !mikateHeaderModule) {
      return;
    }
 
-   const wasCollapsed =
-     mikateHeaderRegion.classList.contains("is-scroll-collapsed");
+   const regionStyles = window.getComputedStyle(mikateHeaderRegion);
+   const regionPadding =
+     parseFloat(regionStyles.paddingTop || "0") +
+     parseFloat(regionStyles.paddingBottom || "0");
+   const measuredHeight =
+     Math.ceil(mikateHeaderModule.offsetHeight + regionPadding);
+   const dialIsOpen =
+     mikateHeaderToggle &&
+     mikateHeaderToggle.getAttribute("aria-expanded") === "true";
 
-   mikateHeaderRegion.classList.remove("is-scroll-collapsed");
-   mikateHeaderRegion.style.removeProperty("--bolamu-hero-expanded-height");
-
-   window.requestAnimationFrame(function () {
-     const expandedHeight = mikateHeaderRegion.scrollHeight;
+   if (dialIsOpen) {
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-flavours-height",
+       measuredHeight + "px"
+     );
+   } else {
      const retainedHeight = Math.min(
-       expandedHeight,
-       Math.max(104, Math.min(190, window.innerWidth * 0.28))
+       measuredHeight,
+       Math.max(72, Math.min(112, window.innerWidth * 0.2))
      );
 
      mikateHeaderRegion.style.setProperty(
        "--bolamu-hero-expanded-height",
-       expandedHeight + "px"
+       measuredHeight + "px"
      );
      mikateHeaderRegion.style.setProperty(
        "--bolamu-hero-retained-height",
@@ -2560,24 +2611,11 @@
      );
      mikateHeaderRegion.style.setProperty(
        "--bolamu-hero-collapse-shift",
-       Math.max(0, expandedHeight - retainedHeight) + "px"
+       Math.max(0, measuredHeight - retainedHeight) + "px"
      );
-
-     if (wasCollapsed) {
-       mikateHeaderRegion.classList.add("is-scroll-collapsed");
-     }
-   });
- }
-
- function setDessertHeroCollapsed(isCollapsed) {
-   if (!mikateHeaderRegion || activeDessertMenuName !== "mikate-bar") {
-     return;
    }
 
-   mikateHeaderRegion.classList.toggle(
-     "is-scroll-collapsed",
-     isCollapsed
-   );
+   applyDessertHeroState();
  }
 
  function openDessertMenu(button) {
@@ -2627,13 +2665,15 @@
    activeDessertTrigger = button;
    button.setAttribute("aria-expanded", "true");
    resetMikateDial();
-   setDessertHeroCollapsed(false);
+   applyDessertHeroState();
    dessertMenuShell.scrollTop = 0;
    dessertMenuShell.classList.add("is-mikate-menu");
 
    if (mikateScrollRegion) {
      mikateScrollRegion.scrollTop = 0;
    }
+
+   applyDessertHeroState();
 
    if (dessertBodyStyles === null) {
      lockDessertPage();
@@ -2662,8 +2702,9 @@
    }
 
    activeDessertTrigger = null;
-   setDessertHeroCollapsed(false);
+   applyDessertHeroState();
    activeDessertMenuName = null;
+   applyDessertHeroState();
    dessertMenuOverlay.classList.remove("is-open");
 
    window.clearTimeout(dessertCloseTimer);
@@ -2814,7 +2855,11 @@
        dessertHeroScrollFrame = null;
 
        if (activeDessertMenuName === "mikate-bar") {
-         setDessertHeroCollapsed(mikateScrollRegion.scrollTop > 36);
+         if (
+           mikateHeaderToggle.getAttribute("aria-expanded") !== "true"
+         ) {
+           applyDessertHeroState();
+         }
        }
      });
    }, {
