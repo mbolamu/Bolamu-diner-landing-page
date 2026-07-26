@@ -1752,9 +1752,13 @@
 .bolamu-mikate-dish-cards {
  display: flex;
  flex-direction: column;
- gap: clamp(10px, 2.5vw, 14px);
+ gap: 0;
  width: 100%;
  padding-bottom: clamp(48px, 10dvh, 96px);
+}
+
+.bolamu-mikate-dish-cards img + img {
+ margin-top: clamp(-16px, -3.3vw, -10px);
 }
 
 .bolamu-mikate-dish-cards[hidden] {
