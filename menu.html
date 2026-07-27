@@ -481,7 +481,11 @@
                  <div class="bolamu-mikate-menu-area">
                    <p class="bolamu-dessert-menu-placeholder">Mikate creations coming next</p>
 
-                   <div class="bolamu-mikate-dish-cards" hidden>
+                   <div
+                     class="bolamu-mikate-dish-cards"
+                     data-dessert-dish-menu="mikate-bar"
+                     hidden
+                   >
                      <img
                        src="https://ik.imagekit.io/vxel66ikf/Loaded%20Mikate.png"
                        alt="Loaded Mikate served in Bolamu-branded trays with assorted sauces and toppings"
@@ -504,6 +508,37 @@
                      <img
                        src="https://ik.imagekit.io/vxel66ikf/MILIKI%20misato.png"
                        alt="Three Miliki Misato tres leches desserts in Bolamu-branded blue trays"
+                       loading="lazy"
+                     >
+                   </div>
+
+                   <div
+                     class="bolamu-mikate-dish-cards"
+                     data-dessert-dish-menu="chocolate-desserts"
+                     hidden
+                   >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Rivo%20cups.png"
+                       alt="Rivo Cups chocolate dessert card"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikeno%20chocolate.png"
+                       alt="Mikeno Chocolate dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikeno%20chocolate%20parfait.png"
+                       alt="Mikeno Chocolate Parfait dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikeno%20chocolate%20samosas.png"
+                       alt="Mikeno Chocolate Samosas dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Kin%20billionaire.png"
+                       alt="Kin Billionaire chocolate dessert card"
                        loading="lazy"
                      >
                    </div>
@@ -2403,12 +2438,14 @@
    "chocolate-desserts": {
      title: "Chocolate Desserts",
      headerImage: "https://ik.imagekit.io/vxel66ikf/Chocolate%20desserts.png",
-     contentId: "chocolate-desserts-menu"
+     contentId: "chocolate-desserts-menu",
+     dishMenu: "chocolate-desserts"
    },
    "mikate-bar": {
      title: "Mikate Bar",
      headerImage: "https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header",
-     contentId: "mikate-bar-menu"
+     contentId: "mikate-bar-menu",
+     dishMenu: "mikate-bar"
    }
  };
  const dessertMenuTitle = menu.querySelector(
@@ -2426,8 +2463,8 @@
  const dessertMenuPlaceholder = menu.querySelector(
    ".bolamu-dessert-menu-placeholder"
  );
- const mikateDishCards = menu.querySelector(
-   ".bolamu-mikate-dish-cards"
+ const dessertDishMenus = Array.from(
+   menu.querySelectorAll("[data-dessert-dish-menu]")
  );
  const mikateHeaderToggle = menu.querySelector(
    ".bolamu-mikate-header-toggle"
@@ -2555,9 +2592,15 @@
    window.scrollTo(0, dessertPageScrollY);
  }
 
+ function activeDessertHasDishMenu() {
+   const menuConfig = dessertReverseMenus[activeDessertMenuName];
+
+   return Boolean(menuConfig && menuConfig.dishMenu);
+ }
+
  function getDessertHeroState() {
    if (
-     activeDessertMenuName !== "mikate-bar" ||
+     !activeDessertHasDishMenu() ||
      !mikateHeaderToggle ||
      !mikateScrollRegion
    ) {
@@ -2655,14 +2698,18 @@
 
    activeDessertMenuName = menuName;
 
-   if (dessertMenuPlaceholder && mikateDishCards && dessertMenuArea) {
-     const isMikateMenu = menuName === "mikate-bar";
+   if (dessertMenuPlaceholder && dessertMenuArea) {
+     const dishMenuName = menuConfig.dishMenu || "";
+     const hasDishMenu = Boolean(dishMenuName);
 
-     dessertMenuPlaceholder.hidden = isMikateMenu;
-     mikateDishCards.hidden = !isMikateMenu;
+     dessertMenuPlaceholder.hidden = hasDishMenu;
+     dessertDishMenus.forEach(function (dishMenu) {
+       dishMenu.hidden =
+         dishMenu.dataset.dessertDishMenu !== dishMenuName;
+     });
      dessertMenuArea.classList.toggle(
        "is-mikate-dish-menu",
-       isMikateMenu
+       hasDishMenu
      );
    }
 
@@ -2858,7 +2905,7 @@
      dessertHeroScrollFrame = window.requestAnimationFrame(function () {
        dessertHeroScrollFrame = null;
 
-       if (activeDessertMenuName === "mikate-bar") {
+       if (activeDessertHasDishMenu()) {
          if (
            mikateHeaderToggle.getAttribute("aria-expanded") !== "true"
          ) {
@@ -2971,7 +3018,7 @@
    window.addEventListener("resize", function () {
      updateDessertGalleryArrows();
 
-     if (activeDessertMenuName === "mikate-bar") {
+     if (activeDessertHasDishMenu()) {
        syncDessertHeroMetrics();
      }
    });
