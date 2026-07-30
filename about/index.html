@@ -7,10 +7,11 @@
   <meta name="description" content="The philosophy behind Bolamu Diner and its approach to culture, hospitality and community.">
   <title>Our Philosophy | Bolamu Diner</title>
   <style>
+    @import url("https://cdn.jsdelivr.net/npm/typeface-glacial-indifference@1.1.14/index.css");
     #bolamu-about-page,
     #bolamu-about-page * {
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif !important;
+      font-family: "Glacial Indifference", "Arial Narrow", Arial, Helvetica, sans-serif !important;
     }
 
     #bolamu-about-page {
@@ -36,7 +37,8 @@
       font-style: normal !important;
       font-variant: normal !important;
       text-decoration: none !important;
-      text-transform: none !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
       text-rendering: optimizeLegibility;
     }
 
@@ -54,7 +56,7 @@
       font-weight: inherit !important;
       line-height: inherit !important;
       text-decoration: none !important;
-      text-transform: none !important;
+      text-transform: uppercase !important;
     }
 
     #bolamu-about-page .bolamu-about-eyebrow,
@@ -70,10 +72,10 @@
       color: var(--about-ink) !important;
       font-size: 18px !important;
       line-height: 1.45 !important;
-      letter-spacing: 0 !important;
+      letter-spacing: 0.08em !important;
       text-align: left !important;
       text-decoration: none !important;
-      text-transform: none !important;
+      text-transform: uppercase !important;
       font-style: normal !important;
       text-shadow: 0 0 2px rgba(255,255,255,.18), 0 2px 7px rgba(0,0,0,.82), 0 0 12px rgba(137,220,255,.1) !important;
     }
@@ -136,7 +138,7 @@
       font-size: 13px !important;
       font-weight: 700 !important;
       line-height: 1.35 !important;
-      letter-spacing: .2em !important;
+      letter-spacing: .18em !important;
       text-transform: uppercase !important;
     }
 
@@ -146,7 +148,7 @@
       font-size: clamp(24px, 4vw, 28px) !important;
       font-weight: 700 !important;
       line-height: 1.2 !important;
-      letter-spacing: -.015em !important;
+      letter-spacing: .08em !important;
     }
 
     #bolamu-about-page .bolamu-about-section,
@@ -155,7 +157,6 @@
       padding: 0 !important;
     }
 
-    #bolamu-about-page .bolamu-about-lead,
     #bolamu-about-page .bolamu-about-question,
     #bolamu-about-page .bolamu-about-emphasis,
     #bolamu-about-page .bolamu-about-name,
@@ -166,6 +167,7 @@
       font-weight: 700 !important;
     }
 
+    #bolamu-about-page .bolamu-about-lead,
     #bolamu-about-page .bolamu-about-body {
       max-width: 710px;
       margin: 0 0 16px !important;
@@ -174,7 +176,9 @@
     }
 
     #bolamu-about-page .bolamu-about-practices {
-      display: grid;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 8px;
       margin: 0 0 16px !important;
       padding: 0 !important;
@@ -187,9 +191,6 @@
       font-weight: 400 !important;
     }
 
-    #bolamu-about-page .bolamu-about-practice-offset {
-      padding-left: clamp(20px, 5vw, 68px) !important;
-    }
 
     #bolamu-about-page .bolamu-about-rhythm {
       display: grid;
@@ -255,6 +256,24 @@
     }
 
     @media (max-width: 760px) {
+      #bolamu-about-page,
+      #bolamu-about-page .bolamu-about-eyebrow,
+      #bolamu-about-page .bolamu-about-title,
+      #bolamu-about-page .bolamu-about-question,
+      #bolamu-about-page .bolamu-about-name,
+      #bolamu-about-page .bolamu-about-closing,
+      #bolamu-about-page .bolamu-about-lead,
+      #bolamu-about-page .bolamu-about-body,
+      #bolamu-about-page .bolamu-about-emphasis,
+      #bolamu-about-page .bolamu-about-rhythm-line,
+      #bolamu-about-page .bolamu-about-practice {
+        letter-spacing: 0.055em !important;
+      }
+
+      #bolamu-about-page .bolamu-about-eyebrow {
+        letter-spacing: 0.18em !important;
+      }
+
       #bolamu-about-page .bolamu-about-treatment {
         background: radial-gradient(ellipse at center, rgba(8,11,15,.08) 15%, rgba(8,11,15,.34) 72%, rgba(5,7,10,.6) 100%), rgba(7,10,14,.46);
         backdrop-filter: blur(2px);
@@ -318,11 +337,11 @@
 
         <ul class="bolamu-about-practices" aria-label="Practices that create community">
           <li class="bolamu-about-practice">Hospitality.</li>
-          <li class="bolamu-about-practice bolamu-about-practice-offset">Storytelling.</li>
+          <li class="bolamu-about-practice">Storytelling.</li>
           <li class="bolamu-about-practice">Celebration.</li>
-          <li class="bolamu-about-practice bolamu-about-practice-offset">Music.</li>
+          <li class="bolamu-about-practice">Music.</li>
           <li class="bolamu-about-practice">Family.</li>
-          <li class="bolamu-about-practice bolamu-about-practice-offset">Food.</li>
+          <li class="bolamu-about-practice">Food.</li>
         </ul>
 
         <p class="bolamu-about-body">These are not simply traditions.</p>
