@@ -1,10 +1,17 @@
 <!-- Bolamu About page: paste this entire fragment into one Webador HTML block. -->
 <style>
-    @import url("https://cdn.jsdelivr.net/npm/typeface-glacial-indifference@1.1.14/index.css");
+    @font-face {
+      font-family: "Glacial Indifference";
+      src: url("https://ik.imagekit.io/vxel66ikf/GlacialIndifference-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     #bolamu-about-page,
     #bolamu-about-page * {
       box-sizing: border-box;
-      font-family: "Glacial Indifference", "Arial Narrow", Arial, Helvetica, sans-serif !important;
+      font-family: "Glacial Indifference", Arial, Helvetica, sans-serif !important;
     }
 
     #bolamu-about-page {
@@ -30,7 +37,7 @@
       font-style: normal !important;
       font-variant: normal !important;
       text-decoration: none !important;
-      text-transform: uppercase !important;
+      text-transform: none !important;
       letter-spacing: 0.08em !important;
       text-rendering: optimizeLegibility;
     }
@@ -49,7 +56,7 @@
       font-weight: inherit !important;
       line-height: inherit !important;
       text-decoration: none !important;
-      text-transform: uppercase !important;
+      text-transform: none !important;
     }
 
     #bolamu-about-page .bolamu-about-eyebrow,
@@ -68,7 +75,7 @@
       letter-spacing: 0.08em !important;
       text-align: left !important;
       text-decoration: none !important;
-      text-transform: uppercase !important;
+      text-transform: none !important;
       font-style: normal !important;
       text-shadow: 0 0 2px rgba(255,255,255,.18), 0 2px 7px rgba(0,0,0,.82), 0 0 12px rgba(137,220,255,.1) !important;
     }
