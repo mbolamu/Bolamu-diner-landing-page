@@ -19,7 +19,7 @@
       --about-muted: rgba(255, 250, 240, 0.92);
       --about-accent: #f4cc57;
       --about-glow: rgba(137, 220, 255, 0.16);
-      --about-column: 760px;
+      --about-column: 820px;
       position: relative;
       isolation: isolate;
       width: 100%;
@@ -31,14 +31,14 @@
       overflow-x: hidden;
       color: var(--about-ink) !important;
       background: #111418;
-      font-size: 18px !important;
-      font-weight: 400 !important;
-      line-height: 1.45 !important;
+      font-size: 15px !important;
+      font-weight: 300 !important;
+      line-height: 1.42 !important;
       font-style: normal !important;
       font-variant: normal !important;
       text-decoration: none !important;
       text-transform: none !important;
-      letter-spacing: 0.08em !important;
+      letter-spacing: 0.075em !important;
       text-rendering: optimizeLegibility;
     }
 
@@ -68,11 +68,11 @@
     #bolamu-about-page .bolamu-about-body,
     #bolamu-about-page .bolamu-about-emphasis,
     #bolamu-about-page .bolamu-about-rhythm-line,
-    #bolamu-about-page .bolamu-about-practice {
+    #bolamu-about-page .bolamu-about-value {
       color: var(--about-ink) !important;
-      font-size: 18px !important;
-      line-height: 1.45 !important;
-      letter-spacing: 0.08em !important;
+      font-size: 15px !important;
+      line-height: 1.42 !important;
+      letter-spacing: 0.075em !important;
       text-align: left !important;
       text-decoration: none !important;
       text-transform: none !important;
@@ -123,9 +123,9 @@
     }
 
     #bolamu-about-page .bolamu-about-story {
-      width: min(var(--about-column), calc(100% - 52px));
-      margin: 0 0 0 clamp(26px, 10vw, 15vw) !important;
-      padding: 88px 0 max(64px, env(safe-area-inset-bottom)) !important;
+      width: min(var(--about-column), calc(100% - 64px));
+      margin: 0 0 0 clamp(32px, 8vw, 12vw) !important;
+      padding: 64px 0 max(52px, env(safe-area-inset-bottom)) !important;
     }
 
     #bolamu-about-page .bolamu-about-header {
@@ -144,8 +144,8 @@
 
     #bolamu-about-page .bolamu-about-title {
       max-width: 690px;
-      margin: 0 0 28px !important;
-      font-size: clamp(24px, 4vw, 28px) !important;
+      margin: 0 0 24px !important;
+      font-size: 26px !important;
       font-weight: 700 !important;
       line-height: 1.2 !important;
       letter-spacing: .08em !important;
@@ -153,7 +153,7 @@
 
     #bolamu-about-page .bolamu-about-section,
     #bolamu-about-page .bolamu-about-section-first {
-      margin: 0 0 32px !important;
+      margin: 0 0 24px !important;
       padding: 0 !important;
     }
 
@@ -162,41 +162,59 @@
     #bolamu-about-page .bolamu-about-name,
     #bolamu-about-page .bolamu-about-closing,
     #bolamu-about-page .bolamu-about-bold {
-      max-width: 710px;
-      margin: 0 0 16px !important;
+      max-width: 780px;
+      margin: 0 0 14px !important;
       font-weight: 700 !important;
+    }
+
+    #bolamu-about-page .bolamu-about-question {
+      margin-bottom: 18px !important;
     }
 
     #bolamu-about-page .bolamu-about-lead,
     #bolamu-about-page .bolamu-about-body {
-      max-width: 710px;
-      margin: 0 0 16px !important;
+      max-width: 780px;
+      margin: 0 0 12px !important;
       color: var(--about-muted) !important;
-      font-weight: 400 !important;
+      font-weight: 300 !important;
     }
 
-    #bolamu-about-page .bolamu-about-practices {
+    #bolamu-about-page .bolamu-about-values {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      margin: 0 0 16px !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      column-gap: 8px;
+      row-gap: 5px;
+      max-width: 780px;
+      margin: 18px 0 !important;
       padding: 0 !important;
-      list-style: none !important;
+      color: var(--about-ink) !important;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      line-height: 1.42 !important;
+      letter-spacing: 0.075em !important;
+      text-align: center !important;
+      text-shadow: 0 0 2px rgba(255,255,255,.18), 0 2px 7px rgba(0,0,0,.82), 0 0 12px rgba(137,220,255,.1) !important;
     }
 
-    #bolamu-about-page .bolamu-about-practice {
+    #bolamu-about-page .bolamu-about-value,
+    #bolamu-about-page .bolamu-about-value-separator {
       margin: 0 !important;
       padding: 0 !important;
-      font-weight: 400 !important;
+      font: inherit !important;
+      letter-spacing: inherit !important;
+      line-height: inherit !important;
+      text-indent: 0 !important;
+      transform: none !important;
+      white-space: nowrap;
     }
-
 
     #bolamu-about-page .bolamu-about-rhythm {
       display: grid;
       gap: 8px;
-      max-width: 710px;
-      margin: 0 0 16px !important;
+      max-width: 780px;
+      margin: 0 0 12px !important;
       padding: 0 !important;
     }
 
@@ -211,7 +229,7 @@
       align-items: center;
       width: min(180px, 38vw);
       height: 20px;
-      margin: 28px 0 !important;
+      margin: 24px 0 !important;
       padding: 0 !important;
     }
 
@@ -225,20 +243,18 @@
 
     @media (min-width: 768px) {
       #bolamu-about-page {
-        font-size: 19px !important;
-        line-height: 1.5 !important;
+        font-size: 16.5px !important;
+        line-height: 1.45 !important;
       }
 
       #bolamu-about-page .bolamu-about-title {
-        font-size: 28px !important;
+        font-size: 32px !important;
       }
 
       #bolamu-about-page .bolamu-about-eyebrow {
         font-size: 13px !important;
       }
 
-      #bolamu-about-page .bolamu-about-eyebrow,
-      #bolamu-about-page .bolamu-about-title,
       #bolamu-about-page .bolamu-about-question,
       #bolamu-about-page .bolamu-about-name,
       #bolamu-about-page .bolamu-about-closing,
@@ -246,16 +262,16 @@
       #bolamu-about-page .bolamu-about-body,
       #bolamu-about-page .bolamu-about-emphasis,
       #bolamu-about-page .bolamu-about-rhythm-line,
-      #bolamu-about-page .bolamu-about-practice {
-        font-size: 19px !important;
-        line-height: 1.5 !important;
+      #bolamu-about-page .bolamu-about-values {
+        font-size: 16.5px !important;
+        line-height: 1.45 !important;
       }
 
       #bolamu-about-page .bolamu-about-title { line-height: 1.2 !important; }
       #bolamu-about-page .bolamu-about-eyebrow { line-height: 1.35 !important; }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 767px) {
       #bolamu-about-page,
       #bolamu-about-page .bolamu-about-eyebrow,
       #bolamu-about-page .bolamu-about-title,
@@ -266,7 +282,8 @@
       #bolamu-about-page .bolamu-about-body,
       #bolamu-about-page .bolamu-about-emphasis,
       #bolamu-about-page .bolamu-about-rhythm-line,
-      #bolamu-about-page .bolamu-about-practice {
+      #bolamu-about-page .bolamu-about-value,
+      #bolamu-about-page .bolamu-about-values {
         letter-spacing: 0.055em !important;
       }
 
@@ -281,15 +298,23 @@
       }
 
       #bolamu-about-page .bolamu-about-story {
-        width: calc(100% - 48px);
+        width: calc(100% - 56px);
         margin: 0 auto !important;
-        padding-top: max(72px, calc(env(safe-area-inset-top) + 56px)) !important;
+        padding-top: max(52px, calc(env(safe-area-inset-top) + 36px)) !important;
       }
     }
 
-    @media (max-width: 390px) {
-      #bolamu-about-page .bolamu-about-story {
-        width: calc(100% - 44px);
+    @media (min-width: 390px) and (max-width: 767px) {
+      #bolamu-about-page,
+      #bolamu-about-page .bolamu-about-question,
+      #bolamu-about-page .bolamu-about-name,
+      #bolamu-about-page .bolamu-about-closing,
+      #bolamu-about-page .bolamu-about-lead,
+      #bolamu-about-page .bolamu-about-body,
+      #bolamu-about-page .bolamu-about-emphasis,
+      #bolamu-about-page .bolamu-about-rhythm-line,
+      #bolamu-about-page .bolamu-about-values {
+        font-size: 15.5px !important;
       }
     }
 
@@ -334,14 +359,19 @@
 
         <h2 class="bolamu-about-question">How do strangers become community?</h2>
 
-        <ul class="bolamu-about-practices" aria-label="Practices that create community">
-          <li class="bolamu-about-practice">Hospitality.</li>
-          <li class="bolamu-about-practice">Storytelling.</li>
-          <li class="bolamu-about-practice">Celebration.</li>
-          <li class="bolamu-about-practice">Music.</li>
-          <li class="bolamu-about-practice">Family.</li>
-          <li class="bolamu-about-practice">Food.</li>
-        </ul>
+        <div class="bolamu-about-values" aria-label="Hospitality, Storytelling, Celebration, Music, Family and Food">
+          <span class="bolamu-about-value">Hospitality.</span>
+          <span class="bolamu-about-value-separator" aria-hidden="true">◆</span>
+          <span class="bolamu-about-value">Storytelling.</span>
+          <span class="bolamu-about-value-separator" aria-hidden="true">◆</span>
+          <span class="bolamu-about-value">Celebration.</span>
+          <span class="bolamu-about-value-separator" aria-hidden="true">◆</span>
+          <span class="bolamu-about-value">Music.</span>
+          <span class="bolamu-about-value-separator" aria-hidden="true">◆</span>
+          <span class="bolamu-about-value">Family.</span>
+          <span class="bolamu-about-value-separator" aria-hidden="true">◆</span>
+          <span class="bolamu-about-value">Food.</span>
+        </div>
 
         <p class="bolamu-about-body">These are not simply traditions.</p>
         <p class="bolamu-about-emphasis">They are technologies for human connection.</p>
