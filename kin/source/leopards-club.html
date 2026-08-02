@@ -1,0 +1,580 @@
+The leopards club
+
+<!-- BOLAMU DINER: THE LEOPARDS CLUB CAROUSEL -->
+<section class="bolamu-leopards" aria-labelledby="bolamu-leopards-heading">
+
+ <h2 id="bolamu-leopards-heading" class="bolamu-leopards-visually-hidden">
+   The Leopards Club
+ </h2>
+
+ <img
+   class="bolamu-leopards-badge"
+   src="https://ik.imagekit.io/vxel66ikf/3984218B-AD75-4DC4-AA1F-8405FE0C5417.png?updatedAt=1784306949224"
+   alt="The Leopards Club"
+   loading="eager"
+ >
+
+ <p class="bolamu-leopards-description">
+   For football romantics. Relive the journeys, triumphs and rivalries that shaped the Leopards through classic matches, historic campaigns and unforgettable tournaments.
+ </p>
+
+ <div class="bolamu-leopards-carousel-shell">
+
+   <button
+     class="bolamu-leopards-carousel-arrow bolamu-leopards-carousel-arrow-left"
+     type="button"
+     aria-label="Scroll The Leopards Club left"
+   >
+     &#10094;
+   </button>
+
+   <div
+     class="bolamu-leopards-carousel"
+     id="bolamu-leopards-carousel"
+     role="region"
+     aria-label="The Leopards Club event cards"
+     tabindex="0"
+   >
+     <article class="bolamu-leopards-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/IMG_9191.jpeg"
+         alt="Journey to FIFA World Cup 2026 screening season"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-leopards-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/IMG_9189.jpeg"
+         alt="Road to AFCON screening season"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-leopards-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/IMG_9190.jpeg"
+         alt="AFCON The Full Campaign screening season"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-leopards-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/IMG_9187.jpeg"
+         alt="Leopards From The Vault vintage match screenings"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-leopards-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/IMG_9186.jpeg"
+         alt="Champions of Africa historic screening season"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-leopards-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/IMG_9188.jpeg"
+         alt="The Great Rivalries curated screenings"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+   </div>
+
+   <button
+     class="bolamu-leopards-carousel-arrow bolamu-leopards-carousel-arrow-right"
+     type="button"
+     aria-label="Scroll The Leopards Club right"
+   >
+     &#10095;
+   </button>
+
+   <div
+     class="bolamu-leopards-carousel-fade bolamu-leopards-carousel-fade-left"
+     aria-hidden="true"
+   ></div>
+
+   <div
+     class="bolamu-leopards-carousel-fade bolamu-leopards-carousel-fade-right"
+     aria-hidden="true"
+   ></div>
+
+ </div>
+
+ <p class="bolamu-leopards-swipe-hint" aria-hidden="true">
+   <span class="bolamu-leopards-swipe-arrow bolamu-leopards-swipe-arrow-left">&#10094;</span>
+   <span>Swipe to explore</span>
+   <span class="bolamu-leopards-swipe-arrow bolamu-leopards-swipe-arrow-right">&#10095;</span>
+ </p>
+
+</section>
+
+<style>
+.bolamu-leopards,
+.bolamu-leopards * {
+ box-sizing: border-box;
+}
+
+.bolamu-leopards {
+ --bolamu-leopards-green: #39ff4d;
+ --bolamu-leopards-green-soft: rgba(57, 255, 77, 0.78);
+ --bolamu-leopards-text: #d8ffe0;
+ --bolamu-leopards-gap: 18px;
+ --bolamu-leopards-card-width: clamp(170px, 16.5vw, 235px);
+
+ width: 100%;
+ margin: 0;
+ padding: clamp(24px, 3.6vw, 48px) 0 clamp(34px, 5vw, 70px);
+ overflow: hidden;
+
+ color: #fff;
+ background: #000;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.bolamu-leopards-visually-hidden {
+ position: absolute !important;
+ width: 1px !important;
+ height: 1px !important;
+ padding: 0 !important;
+ margin: -1px !important;
+ overflow: hidden !important;
+ clip: rect(0, 0, 0, 0) !important;
+ white-space: nowrap !important;
+ border: 0 !important;
+}
+
+.bolamu-leopards-badge {
+ display: block;
+ width: min(520px, 70vw);
+ height: auto;
+ margin: 0 auto 12px;
+ object-fit: contain;
+}
+
+.bolamu-leopards-description {
+ width: min(820px, 86vw);
+ margin: 0 auto clamp(24px, 3vw, 36px);
+
+ color: var(--bolamu-leopards-text);
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ line-height: 1.6;
+
+ font-size: clamp(0.82rem, 1.05vw, 1rem);
+ font-weight: 700;
+
+ text-shadow:
+   0 0 4px rgba(57, 255, 77, 0.86),
+   0 0 11px rgba(57, 255, 77, 0.54);
+}
+
+.bolamu-leopards-carousel-shell {
+ position: relative;
+ width: 100%;
+ isolation: isolate;
+}
+
+.bolamu-leopards-carousel {
+ display: flex;
+ gap: var(--bolamu-leopards-gap);
+
+ width: 100%;
+ padding:
+   14px
+   max(
+     30px,
+     calc((100% - var(--bolamu-leopards-card-width)) / 2)
+   )
+   24px;
+
+ overflow-x: auto;
+ overflow-y: hidden;
+ scroll-snap-type: x mandatory;
+ scroll-padding-inline:
+   max(
+     30px,
+     calc((100% - var(--bolamu-leopards-card-width)) / 2)
+   );
+ scroll-behavior: smooth;
+ overscroll-behavior-inline: contain;
+
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+ cursor: grab;
+}
+
+.bolamu-leopards-carousel::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-leopards-carousel:active {
+ cursor: grabbing;
+}
+
+.bolamu-leopards-carousel:focus-visible {
+ outline: 2px solid var(--bolamu-leopards-green);
+ outline-offset: -2px;
+}
+
+.bolamu-leopards-event-card {
+ position: relative;
+ flex: 0 0 var(--bolamu-leopards-card-width);
+ width: var(--bolamu-leopards-card-width);
+ margin: 0;
+
+ scroll-snap-align: center;
+ scroll-snap-stop: always;
+
+ border-radius: 21px;
+ overflow: hidden;
+ background: #05070a;
+
+ transition:
+   transform 220ms ease,
+   filter 220ms ease;
+}
+
+.bolamu-leopards-event-card img {
+ display: block;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ user-select: none;
+ -webkit-user-drag: none;
+}
+
+.bolamu-leopards-event-card:hover {
+ transform: translateY(-7px) scale(1.025);
+ filter:
+   drop-shadow(0 0 8px rgba(57, 255, 77, 0.45))
+   drop-shadow(0 14px 24px rgba(0, 0, 0, 0.72));
+}
+
+.bolamu-leopards-carousel-fade {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ z-index: 3;
+
+ width: clamp(48px, 8vw, 120px);
+ pointer-events: none;
+}
+
+.bolamu-leopards-carousel-fade-left {
+ left: 0;
+ background:
+   linear-gradient(
+     to right,
+     #000 0%,
+     rgba(0, 0, 0, 0.97) 14%,
+     rgba(0, 0, 0, 0.78) 42%,
+     rgba(0, 0, 0, 0.34) 72%,
+     rgba(0, 0, 0, 0) 100%
+   );
+}
+
+.bolamu-leopards-carousel-fade-right {
+ right: 0;
+ background:
+   linear-gradient(
+     to left,
+     #000 0%,
+     rgba(0, 0, 0, 0.97) 14%,
+     rgba(0, 0, 0, 0.78) 42%,
+     rgba(0, 0, 0, 0.34) 72%,
+     rgba(0, 0, 0, 0) 100%
+   );
+}
+
+.bolamu-leopards-carousel-arrow {
+ position: absolute;
+ top: 50%;
+ z-index: 4;
+
+ width: 52px;
+ height: 82px;
+ padding: 0;
+
+ border: 1px solid rgba(255, 255, 255, 0.25);
+ border-radius: 16px;
+
+ color: #fff;
+ background: rgba(0, 0, 0, 0.72);
+
+ -webkit-backdrop-filter: blur(8px);
+ backdrop-filter: blur(8px);
+
+ box-shadow:
+   0 0 12px rgba(57, 255, 77, 0.38),
+   0 10px 28px rgba(0, 0, 0, 0.6);
+
+ font-size: 34px;
+ line-height: 1;
+
+ transform: translateY(-50%);
+ cursor: pointer;
+
+ transition:
+   background 180ms ease,
+   box-shadow 180ms ease,
+   opacity 180ms ease,
+   transform 180ms ease;
+}
+
+.bolamu-leopards-carousel-arrow:hover,
+.bolamu-leopards-carousel-arrow:focus-visible {
+ background: rgba(10, 58, 18, 0.92);
+ box-shadow:
+   0 0 10px var(--bolamu-leopards-green),
+   0 0 26px rgba(57, 255, 77, 0.72),
+   0 12px 30px rgba(0, 0, 0, 0.7);
+ outline: none;
+}
+
+.bolamu-leopards-carousel-arrow:active {
+ transform: translateY(-50%) scale(0.96);
+}
+
+.bolamu-leopards-carousel-arrow-left {
+ left: 12px;
+}
+
+.bolamu-leopards-carousel-arrow-right {
+ right: 12px;
+}
+
+.bolamu-leopards-carousel-arrow[disabled] {
+ opacity: 0;
+ pointer-events: none;
+}
+
+.bolamu-leopards-swipe-hint {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 13px;
+
+ margin: 10px 0 0;
+ padding: 0 16px;
+
+ color: var(--bolamu-leopards-text);
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 0.18em;
+
+ font-size: clamp(0.78rem, 0.95vw, 0.92rem);
+ font-weight: 700;
+
+ text-shadow:
+   0 0 4px rgba(57, 255, 77, 0.86),
+   0 0 11px rgba(57, 255, 77, 0.54);
+}
+
+.bolamu-leopards-swipe-arrow {
+ color: var(--bolamu-leopards-text);
+ font-size: 1.25em;
+ line-height: 1;
+
+ filter:
+   drop-shadow(0 0 2px rgba(57, 255, 77, 0.78))
+   drop-shadow(0 0 7px rgba(57, 255, 77, 0.58));
+}
+
+.bolamu-leopards-swipe-arrow-left {
+ animation: bolamu-leopards-nudge-left 1.8s ease-in-out infinite;
+}
+
+.bolamu-leopards-swipe-arrow-right {
+ animation: bolamu-leopards-nudge-right 1.8s ease-in-out infinite;
+}
+
+@keyframes bolamu-leopards-nudge-left {
+ 0%, 100% { transform: translateX(0); }
+ 50% { transform: translateX(-4px); }
+}
+
+@keyframes bolamu-leopards-nudge-right {
+ 0%, 100% { transform: translateX(0); }
+ 50% { transform: translateX(4px); }
+}
+
+@media (max-width: 768px) {
+ .bolamu-leopards {
+   --bolamu-leopards-gap: 13px;
+   --bolamu-leopards-card-width: min(52vw, 215px);
+
+   padding-top: 20px;
+   padding-bottom: 38px;
+ }
+
+ .bolamu-leopards-badge {
+   width: min(74vw, 410px);
+   margin-bottom: 9px;
+ }
+
+ .bolamu-leopards-description {
+   width: min(88vw, 580px);
+   margin-bottom: 22px;
+   padding-inline: 5px;
+
+   font-size: 0.78rem;
+   letter-spacing: 0.1em;
+   line-height: 1.6;
+ }
+
+ .bolamu-leopards-carousel {
+   padding:
+     10px
+     calc((100% - var(--bolamu-leopards-card-width)) / 2)
+     20px;
+   scroll-padding-inline:
+     calc((100% - var(--bolamu-leopards-card-width)) / 2);
+ }
+
+ .bolamu-leopards-carousel-arrow {
+   display: none;
+ }
+
+ .bolamu-leopards-carousel-fade {
+   width: 12vw;
+ }
+
+ .bolamu-leopards-event-card {
+   border-radius: 18px;
+ }
+
+ .bolamu-leopards-event-card:hover {
+   transform: none;
+   filter: none;
+ }
+
+ .bolamu-leopards-swipe-hint {
+   margin-top: 8px;
+   gap: 11px;
+   font-size: 0.8rem;
+ }
+}
+
+@media (max-width: 390px) {
+ .bolamu-leopards {
+   --bolamu-leopards-card-width: 56vw;
+ }
+
+ .bolamu-leopards-carousel-fade {
+   width: 10vw;
+ }
+
+ .bolamu-leopards-swipe-hint {
+   gap: 9px;
+   letter-spacing: 0.14em;
+   font-size: 0.76rem;
+ }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .bolamu-leopards-carousel {
+   scroll-behavior: auto;
+ }
+
+ .bolamu-leopards-event-card,
+ .bolamu-leopards-carousel-arrow {
+   transition: none;
+ }
+
+ .bolamu-leopards-swipe-arrow {
+   animation: none;
+ }
+}
+</style>
+
+<script>
+(function () {
+ const section = document.querySelector(".bolamu-leopards");
+
+ if (!section || section.dataset.carouselReady === "true") {
+   return;
+ }
+
+ section.dataset.carouselReady = "true";
+
+ const carousel = section.querySelector(".bolamu-leopards-carousel");
+ const leftArrow = section.querySelector(".bolamu-leopards-carousel-arrow-left");
+ const rightArrow = section.querySelector(".bolamu-leopards-carousel-arrow-right");
+
+ if (!carousel || !leftArrow || !rightArrow) {
+   return;
+ }
+
+ function getScrollAmount() {
+   const card = carousel.querySelector(".bolamu-leopards-event-card");
+   const styles = window.getComputedStyle(carousel);
+   const gap = parseFloat(styles.columnGap || styles.gap || "0");
+
+   return card
+     ? card.getBoundingClientRect().width + gap
+     : carousel.clientWidth * 0.72;
+ }
+
+ function updateArrows() {
+   const maximumScroll = carousel.scrollWidth - carousel.clientWidth;
+   const tolerance = 4;
+
+   leftArrow.disabled = carousel.scrollLeft <= tolerance;
+   rightArrow.disabled =
+     carousel.scrollLeft >= maximumScroll - tolerance;
+ }
+
+ leftArrow.addEventListener("click", function () {
+   carousel.scrollBy({
+     left: -getScrollAmount(),
+     behavior: "smooth"
+   });
+ });
+
+ rightArrow.addEventListener("click", function () {
+   carousel.scrollBy({
+     left: getScrollAmount(),
+     behavior: "smooth"
+   });
+ });
+
+ carousel.addEventListener("keydown", function (event) {
+   if (event.key === "ArrowLeft") {
+     event.preventDefault();
+     carousel.scrollBy({
+       left: -getScrollAmount(),
+       behavior: "smooth"
+     });
+   }
+
+   if (event.key === "ArrowRight") {
+     event.preventDefault();
+     carousel.scrollBy({
+       left: getScrollAmount(),
+       behavior: "smooth"
+     });
+   }
+ });
+
+ carousel.addEventListener("scroll", updateArrows, {
+   passive: true
+ });
+
+ window.addEventListener("resize", updateArrows);
+ window.addEventListener("load", updateArrows);
+
+ updateArrows();
+})();
+</script>
