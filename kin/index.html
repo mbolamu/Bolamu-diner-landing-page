@@ -82,10 +82,10 @@
 
   .bolamu-kin-clubs {
     display: grid;
-    gap: clamp(18px, 2.4vw, 30px);
-    width: min(1180px, calc(100% - 32px));
+    gap: clamp(14px, 2vw, 22px);
+    width: min(1050px, calc(100% - 28px));
     margin: 0 auto;
-    padding: clamp(24px, 4vw, 56px) 0 clamp(34px, 5vw, 70px);
+    padding: clamp(20px, 3vw, 38px) 0 clamp(28px, 4vw, 52px);
     background: #000;
   }
 
@@ -96,11 +96,13 @@
     --kin-pulse-delay: 0s;
     position: relative;
     display: grid;
-    grid-template-columns: minmax(260px, 0.52fr) minmax(0, 1fr);
-    gap: clamp(16px, 2vw, 28px);
+    grid-template-columns: minmax(235px, 0.42fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: clamp(14px, 1.8vw, 22px);
+    row-gap: 7px;
     align-items: center;
     min-width: 0;
-    padding: clamp(15px, 1.9vw, 23px);
+    padding: clamp(12px, 1.5vw, 18px);
     overflow: hidden;
     border: 1px solid rgba(var(--kin-colour-rgb), 0.88);
     border-radius: 22px;
@@ -174,39 +176,46 @@
   }
 
   .bolamu-kin-identity {
-    min-width: 0;
-    text-align: left;
+    display: contents;
   }
 
   .bolamu-kin-badge {
     display: block;
-    width: min(100%, 350px);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: min(100%, 315px);
     height: auto;
-    max-height: none;
-    margin: 0 auto 10px 0;
+    max-height: 184px;
+    margin: 0 auto 0 0;
     object-fit: contain;
     object-position: left center;
-    filter: drop-shadow(0 0 7px rgba(var(--kin-colour-rgb), 0.38));
+    background: transparent;
+    filter: none;
   }
 
   .bolamu-kin-description {
-    max-width: 350px;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
     margin: 0;
     color: var(--kin-soft);
     font-family: var(--kin-font) !important;
-    font-size: clamp(0.78rem, 1.05vw, 0.94rem);
+    font-size: clamp(0.7rem, 0.88vw, 0.82rem);
     font-weight: 400;
-    line-height: 1.42;
-    letter-spacing: 0.075em;
+    line-height: 1.34;
+    letter-spacing: 0.085em;
     text-transform: uppercase;
     text-shadow: 0 0 8px rgba(var(--kin-colour-rgb), 0.3);
   }
 
   .bolamu-kin-preview {
-    display: grid;
-    gap: 10px;
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
     min-width: 0;
-    align-self: stretch;
+    align-self: center;
   }
 
   .bolamu-kin-preview-shell,
@@ -232,7 +241,7 @@
   }
 
   .bolamu-kin-preview-rail {
-    padding: 6px 42px 12px 5px;
+    padding: 5px 48px 7px 3px;
   }
 
   .bolamu-kin-preview-rail::-webkit-scrollbar,
@@ -249,8 +258,8 @@
   .bolamu-kin-card-trigger,
   .bolamu-kin-dialog-card {
     display: block;
-    flex: 0 0 clamp(118px, 12.5vw, 156px);
-    width: clamp(118px, 12.5vw, 156px);
+    flex: 0 0 clamp(132px, 16vw, 184px);
+    width: clamp(132px, 16vw, 184px);
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -330,6 +339,14 @@
     height: 24px;
   }
 
+  .bolamu-kin-preview-arrow {
+    width: 38px;
+    height: 38px;
+    border-color: currentColor;
+    color: var(--kin-colour);
+    background: rgba(0, 0, 0, 0.9);
+  }
+
   .bolamu-kin-preview-arrow:hover,
   .bolamu-kin-preview-arrow:focus-visible,
   .bolamu-kin-dialog-arrow:hover,
@@ -345,58 +362,16 @@
     pointer-events: none;
   }
 
-  .bolamu-kin-preview-arrow--left,
   .bolamu-kin-dialog-arrow--left {
     left: 4px;
   }
 
-  .bolamu-kin-preview-arrow--right,
+  .bolamu-kin-preview-arrow--right {
+    right: 2px;
+  }
+
   .bolamu-kin-dialog-arrow--right {
     right: 4px;
-  }
-
-  .bolamu-kin-explore {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    justify-self: end;
-    min-height: 42px;
-    margin: 0;
-    padding: 8px 2px 5px 14px;
-    border: 0;
-    border-bottom: 1px solid rgba(var(--kin-colour-rgb), 0.72);
-    color: var(--kin-soft);
-    background: transparent;
-    font-family: var(--kin-font) !important;
-    font-size: clamp(0.72rem, 1vw, 0.88rem);
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0.13em;
-    text-align: right;
-    text-transform: uppercase;
-    text-shadow: 0 0 8px rgba(var(--kin-colour-rgb), 0.55);
-    cursor: pointer;
-  }
-
-  .bolamu-kin-explore-icon {
-    display: block;
-    flex: 0 0 18px;
-    width: 18px;
-    height: 18px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter: drop-shadow(0 0 4px currentColor);
-  }
-
-  .bolamu-kin-explore:hover,
-  .bolamu-kin-explore:focus-visible {
-    outline: 2px solid var(--kin-colour);
-    outline-offset: 3px;
-    color: #fff;
   }
 
   .bolamu-kin-dialog[hidden] {
@@ -556,8 +531,9 @@
 
     .bolamu-kin-club {
       grid-template-columns: minmax(0, 1fr);
-      gap: 13px;
-      padding: 15px 12px 13px;
+      grid-template-rows: auto auto auto;
+      gap: 9px;
+      padding: 12px 10px 11px;
       border-radius: 18px;
     }
 
@@ -565,46 +541,47 @@
       border-radius: 14px;
     }
 
-    .bolamu-kin-identity {
-      display: block;
-      text-align: center;
-    }
-
     .bolamu-kin-badge {
-      width: min(88%, 390px);
-      max-height: none;
-      margin: 0 auto 9px;
+      grid-column: 1;
+      grid-row: 1;
+      width: min(72%, 280px);
+      max-height: 138px;
+      margin: 0 auto;
       object-position: center;
     }
 
     .bolamu-kin-description {
+      grid-column: 1;
+      grid-row: 3;
       max-width: 560px;
       margin: 0 auto;
-      font-size: clamp(0.7rem, 3vw, 0.8rem);
-      line-height: 1.4;
-      letter-spacing: 0.065em;
+      font-size: clamp(0.66rem, 2.75vw, 0.76rem);
+      line-height: 1.34;
+      letter-spacing: 0.07em;
       text-align: center;
     }
 
+    .bolamu-kin-preview {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
     .bolamu-kin-preview-rail {
-      gap: 11px;
-      padding: 6px 40px 12px 3px;
+      gap: 10px;
+      padding: 4px 42px 6px 2px;
     }
 
     .bolamu-kin-card-trigger {
-      flex-basis: min(52vw, 210px);
-      width: min(52vw, 210px);
+      flex-basis: min(48vw, 180px);
+      width: min(48vw, 180px);
       border-radius: 15px;
     }
 
     .bolamu-kin-preview-arrow {
-      display: none;
-    }
-
-    .bolamu-kin-explore {
-      min-height: 44px;
-      padding-right: 5px;
-      font-size: 0.72rem;
+      display: inline-grid;
+      width: 36px;
+      height: 36px;
+      right: 1px;
     }
 
     .bolamu-kin-dialog {
@@ -658,7 +635,7 @@
     }
 
     .bolamu-kin-badge {
-      width: min(92%, 360px);
+      width: min(74%, 260px);
     }
   }
 
@@ -699,7 +676,6 @@
       </div>
       <div class="bolamu-kin-preview">
         <div class="bolamu-kin-preview-shell">
-          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--left" type="button" aria-label="Scroll The Curiosity Cabinet preview left"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11 4 6 9l5 5"/></svg></button>
           <div class="bolamu-kin-preview-rail" role="region" aria-label="The Curiosity Cabinet event preview" tabindex="0">
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Curiosity Cabinet gallery at card 1"><img src="https://ik.imagekit.io/vxel66ikf/F5944035-44BB-40EA-B9F2-81F33B054DCD.png?updatedAt=1784300890074" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Curiosity Cabinet gallery at card 2"><img src="https://ik.imagekit.io/vxel66ikf/8997E917-2705-4720-A3EE-A6015AB16AF9.png?updatedAt=1784300888937" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
@@ -709,11 +685,7 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Curiosity Cabinet preview right"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
         </div>
-        <button class="bolamu-kin-explore" type="button">
-          <span>Explore the Cabinet</span>
-          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
-        </button>
-      </div>
+        </div>
     </section>
 
     <section class="bolamu-kin-club bolamu-kin-club--archives" data-kin-category="archives" aria-labelledby="bolamu-kin-archives-title">
@@ -724,7 +696,6 @@
       </div>
       <div class="bolamu-kin-preview">
         <div class="bolamu-kin-preview-shell">
-          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--left" type="button" aria-label="Scroll The Forgotten Archives preview left"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11 4 6 9l5 5"/></svg></button>
           <div class="bolamu-kin-preview-rail" role="region" aria-label="The Forgotten Archives event preview" tabindex="0">
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Forgotten Archives gallery at La Vie Est Belle"><img src="https://ik.imagekit.io/vxel66ikf/ACF948BD-CD4A-4D86-91D9-C847E7C75E1E.png?updatedAt=1784277805858" alt="La Vie Est Belle screening event" loading="lazy" draggable="false"></button>
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Forgotten Archives gallery at Soul Power"><img src="https://ik.imagekit.io/vxel66ikf/A6B2AFE6-EA46-437C-B2C1-14F4B1D62B50.png?updatedAt=1784277806181" alt="Soul Power screening event" loading="lazy" draggable="false"></button>
@@ -739,11 +710,7 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Forgotten Archives preview right"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
         </div>
-        <button class="bolamu-kin-explore" type="button">
-          <span>Explore the Archives</span>
-          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
-        </button>
-      </div>
+        </div>
     </section>
 
     <section class="bolamu-kin-club bolamu-kin-club--gambit" data-kin-category="gambit" aria-labelledby="bolamu-kin-gambit-title">
@@ -754,7 +721,6 @@
       </div>
       <div class="bolamu-kin-preview">
         <div class="bolamu-kin-preview-shell">
-          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--left" type="button" aria-label="Scroll The Gambit Club preview left"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11 4 6 9l5 5"/></svg></button>
           <div class="bolamu-kin-preview-rail" role="region" aria-label="The Gambit Club event preview" tabindex="0">
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Gambit Club gallery at card 1"><img src="https://ik.imagekit.io/vxel66ikf/39D816A1-8D1F-4D0E-A125-966056804DA2.png?updatedAt=1784300889736" alt="La Vie Est Belle screening event" loading="lazy" draggable="false"></button>
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Gambit Club gallery at card 2"><img src="https://ik.imagekit.io/vxel66ikf/C0C54B76-77FA-4AFA-B73B-BEDB00A1BD7F.png?updatedAt=1784300890161" alt="Soul Power screening event" loading="lazy" draggable="false"></button>
@@ -763,11 +729,7 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Gambit Club preview right"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
         </div>
-        <button class="bolamu-kin-explore" type="button">
-          <span>Explore the Gambit Club</span>
-          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
-        </button>
-      </div>
+        </div>
     </section>
 
     <section class="bolamu-kin-club bolamu-kin-club--leopards" data-kin-category="leopards" aria-labelledby="bolamu-kin-leopards-title">
@@ -778,7 +740,6 @@
       </div>
       <div class="bolamu-kin-preview">
         <div class="bolamu-kin-preview-shell">
-          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--left" type="button" aria-label="Scroll The Leopards Club preview left"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11 4 6 9l5 5"/></svg></button>
           <div class="bolamu-kin-preview-rail" role="region" aria-label="The Leopards Club event preview" tabindex="0">
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Leopards Club gallery at Journey to FIFA World Cup 2026"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9191.jpeg" alt="Journey to FIFA World Cup 2026 screening season" loading="lazy" draggable="false"></button>
             <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Leopards Club gallery at Road to AFCON"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9189.jpeg" alt="Road to AFCON screening season" loading="lazy" draggable="false"></button>
@@ -789,11 +750,7 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Leopards Club preview right"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
         </div>
-        <button class="bolamu-kin-explore" type="button">
-          <span>Explore the Leopards Club</span>
-          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
-        </button>
-      </div>
+        </div>
     </section>
   </main>
 
@@ -805,7 +762,7 @@
     <div class="bolamu-kin-dialog-shell">
       <div class="bolamu-kin-dialog-header">
         <h2 class="bolamu-kin-dialog-heading" id="bolamu-kin-dialog-heading"></h2>
-        <button class="bolamu-kin-dialog-close" type="button" aria-label="Close gallery">Ã—</button>
+        <button class="bolamu-kin-dialog-close" type="button" aria-label="Close gallery"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M5 5l8 8M13 5l-8 8"/></svg></button>
       </div>
       <div class="bolamu-kin-dialog-gallery-shell">
         <button class="bolamu-kin-dialog-arrow bolamu-kin-dialog-arrow--left" type="button" aria-label="Previous card"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11 4 6 9l5 5"/></svg></button>
@@ -857,21 +814,18 @@
       return card ? card.getBoundingClientRect().width + gap : rail.clientWidth * 0.8;
     }
 
-    function updateRailArrows(rail, left, right) {
+    function updatePreviewArrow(rail, right) {
       var maximum = Math.max(0, rail.scrollWidth - rail.clientWidth);
-      left.disabled = rail.scrollLeft <= 4;
       right.disabled = rail.scrollLeft >= maximum - 4;
     }
 
     function setupPreview(club) {
       var rail = club.querySelector(".bolamu-kin-preview-rail");
-      var left = club.querySelector(".bolamu-kin-preview-arrow--left");
       var right = club.querySelector(".bolamu-kin-preview-arrow--right");
       var pointerStartX = 0;
       var pointerMoved = false;
 
-      function update() { updateRailArrows(rail, left, right); }
-      left.addEventListener("click", function () { rail.scrollBy({ left: -cardStep(rail), behavior: scrollBehavior() }); });
+      function update() { updatePreviewArrow(rail, right); }
       right.addEventListener("click", function () { rail.scrollBy({ left: cardStep(rail), behavior: scrollBehavior() }); });
       rail.addEventListener("keydown", function (event) {
         if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
@@ -887,7 +841,6 @@
         if (pointerMoved) { event.preventDefault(); pointerMoved = false; return; }
         openDialog(club, Number(trigger.dataset.kinCardIndex || 0), trigger);
       });
-      club.querySelector(".bolamu-kin-explore").addEventListener("click", function (event) { openDialog(club, 0, event.currentTarget); });
       window.addEventListener("resize", update, { passive: true });
       update();
     }
