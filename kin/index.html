@@ -15,11 +15,15 @@
 
   .bolamu-kin-page {
     --kin-font: "Glacial Indifference", Arial, Helvetica, sans-serif;
+    --kin-top-bleed: 0px;
     position: relative;
     left: 50%;
+    z-index: 9999;
     width: 100vw;
-    max-width: none;
-    margin: 0 0 0 -50vw !important;
+    max-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: calc(-1 * var(--kin-top-bleed)) 0 0 -50vw !important;
     padding: 0 !important;
     overflow: hidden;
     color: #fff;
@@ -92,11 +96,11 @@
     --kin-pulse-delay: 0s;
     position: relative;
     display: grid;
-    grid-template-columns: minmax(210px, 0.74fr) minmax(0, 1.55fr);
-    gap: clamp(18px, 2.4vw, 34px);
+    grid-template-columns: minmax(260px, 0.52fr) minmax(0, 1fr);
+    gap: clamp(16px, 2vw, 28px);
     align-items: center;
     min-width: 0;
-    padding: clamp(18px, 2.5vw, 30px);
+    padding: clamp(15px, 1.9vw, 23px);
     overflow: hidden;
     border: 1px solid rgba(var(--kin-colour-rgb), 0.88);
     border-radius: 22px;
@@ -176,23 +180,23 @@
 
   .bolamu-kin-badge {
     display: block;
-    width: min(100%, 310px);
+    width: min(100%, 350px);
     height: auto;
-    max-height: 190px;
-    margin: 0 auto 12px 0;
+    max-height: none;
+    margin: 0 auto 10px 0;
     object-fit: contain;
     object-position: left center;
     filter: drop-shadow(0 0 7px rgba(var(--kin-colour-rgb), 0.38));
   }
 
   .bolamu-kin-description {
-    max-width: 340px;
+    max-width: 350px;
     margin: 0;
     color: var(--kin-soft);
     font-family: var(--kin-font) !important;
     font-size: clamp(0.78rem, 1.05vw, 0.94rem);
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.42;
     letter-spacing: 0.075em;
     text-transform: uppercase;
     text-shadow: 0 0 8px rgba(var(--kin-colour-rgb), 0.3);
@@ -245,8 +249,8 @@
   .bolamu-kin-card-trigger,
   .bolamu-kin-dialog-card {
     display: block;
-    flex: 0 0 clamp(128px, 15vw, 174px);
-    width: clamp(128px, 15vw, 174px);
+    flex: 0 0 clamp(118px, 12.5vw, 156px);
+    width: clamp(118px, 12.5vw, 156px);
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -334,6 +338,10 @@
   }
 
   .bolamu-kin-explore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
     justify-self: end;
     min-height: 42px;
     margin: 0;
@@ -353,9 +361,17 @@
     cursor: pointer;
   }
 
-  .bolamu-kin-explore::after {
-    content: "  â€º";
-    font-size: 1.25em;
+  .bolamu-kin-explore-icon {
+    display: block;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 4px currentColor);
   }
 
   .bolamu-kin-explore:hover,
@@ -522,8 +538,8 @@
 
     .bolamu-kin-club {
       grid-template-columns: minmax(0, 1fr);
-      gap: 16px;
-      padding: 18px 14px 16px;
+      gap: 13px;
+      padding: 15px 12px 13px;
       border-radius: 18px;
     }
 
@@ -532,22 +548,24 @@
     }
 
     .bolamu-kin-identity {
-      display: grid;
-      grid-template-columns: minmax(112px, 0.72fr) minmax(0, 1fr);
-      gap: 14px;
-      align-items: center;
+      display: block;
+      text-align: center;
     }
 
     .bolamu-kin-badge {
-      width: 100%;
-      max-height: 140px;
-      margin: 0;
+      width: min(88%, 390px);
+      max-height: none;
+      margin: 0 auto 9px;
+      object-position: center;
     }
 
     .bolamu-kin-description {
+      max-width: 560px;
+      margin: 0 auto;
       font-size: clamp(0.7rem, 3vw, 0.8rem);
-      line-height: 1.45;
+      line-height: 1.4;
       letter-spacing: 0.065em;
+      text-align: center;
     }
 
     .bolamu-kin-preview-rail {
@@ -556,8 +574,8 @@
     }
 
     .bolamu-kin-card-trigger {
-      flex-basis: min(68vw, 270px);
-      width: min(68vw, 270px);
+      flex-basis: min(52vw, 210px);
+      width: min(52vw, 210px);
       border-radius: 15px;
     }
 
@@ -617,13 +635,12 @@
   }
 
   @media (max-width: 420px) {
-    .bolamu-kin-identity {
-      grid-template-columns: minmax(100px, 0.68fr) minmax(0, 1fr);
-      gap: 11px;
-    }
-
     .bolamu-kin-description {
       font-size: 0.68rem;
+    }
+
+    .bolamu-kin-badge {
+      width: min(92%, 360px);
     }
   }
 
@@ -674,7 +691,10 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Curiosity Cabinet preview right">â€º</button>
         </div>
-        <button class="bolamu-kin-explore" type="button">Explore the Cabinet</button>
+        <button class="bolamu-kin-explore" type="button">
+          <span>Explore the Cabinet</span>
+          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
+        </button>
       </div>
     </section>
 
@@ -701,7 +721,10 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Forgotten Archives preview right">â€º</button>
         </div>
-        <button class="bolamu-kin-explore" type="button">Explore the Archives</button>
+        <button class="bolamu-kin-explore" type="button">
+          <span>Explore the Archives</span>
+          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
+        </button>
       </div>
     </section>
 
@@ -722,7 +745,10 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Gambit Club preview right">â€º</button>
         </div>
-        <button class="bolamu-kin-explore" type="button">Explore the Gambit Club</button>
+        <button class="bolamu-kin-explore" type="button">
+          <span>Explore the Gambit Club</span>
+          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
+        </button>
       </div>
     </section>
 
@@ -745,7 +771,10 @@
           </div>
           <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Scroll The Leopards Club preview right">â€º</button>
         </div>
-        <button class="bolamu-kin-explore" type="button">Explore the Leopards Club</button>
+        <button class="bolamu-kin-explore" type="button">
+          <span>Explore the Leopards Club</span>
+          <svg class="bolamu-kin-explore-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 9h11M10 5l4 4-4 4"/></svg>
+        </button>
       </div>
     </section>
   </main>
@@ -774,6 +803,14 @@
   (function () {
     var page = document.getElementById("bolamu-kin-page");
     if (!page || page.dataset.kinReady === "true") return;
+
+    /* Match the proven full-viewport treatment used by the Home/About embeds.
+       Pull only this page upward across Webador's transparent page-header slot. */
+    var topGap = page.getBoundingClientRect().top;
+    if (topGap > 0 && topGap <= 280) {
+      page.style.setProperty("--kin-top-bleed", Math.round(topGap) + "px");
+    }
+
     page.dataset.kinReady = "true";
 
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
