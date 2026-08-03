@@ -135,6 +135,40 @@
     animation: bolamu-kin-neon-breathe 9s ease-in-out var(--kin-pulse-delay) infinite;
   }
 
+  .bolamu-kin-club-trigger {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: inherit;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .bolamu-kin-club-trigger:focus-visible {
+    outline: 2px solid var(--kin-colour);
+    outline-offset: -5px;
+    box-shadow: inset 0 0 20px rgba(var(--kin-colour-rgb), 0.18);
+  }
+
+  .bolamu-kin-club:hover {
+    box-shadow:
+      0 0 7px rgba(var(--kin-colour-rgb), 0.68),
+      0 0 21px rgba(var(--kin-colour-rgb), 0.22),
+      inset 0 0 16px rgba(var(--kin-colour-rgb), 0.08),
+      0 16px 32px rgba(0, 0, 0, 0.72);
+  }
+
+  .bolamu-kin-club:hover .bolamu-kin-badge {
+    filter: brightness(1.07);
+  }
+
   .bolamu-kin-club::before {
     content: "";
     position: absolute;
@@ -205,8 +239,11 @@
     margin: 0 auto 0 0;
     object-fit: contain;
     object-position: left center;
+    position: relative;
+    z-index: 2;
     background: transparent;
     filter: none;
+    pointer-events: none;
   }
 
   .bolamu-kin-description {
@@ -222,10 +259,15 @@
     line-height: 1.34;
     letter-spacing: 0.085em;
     text-transform: uppercase;
+    position: relative;
+    z-index: 2;
     text-shadow: 0 0 8px rgba(var(--kin-colour-rgb), 0.3);
+    pointer-events: none;
   }
 
   .bolamu-kin-preview {
+    position: relative;
+    z-index: 2;
     grid-column: 2;
     grid-row: 1;
     display: block;
@@ -636,60 +678,76 @@
     }
 
     .bolamu-kin-dialog {
+      --kin-webador-nav-clearance: clamp(96px, 13vh, 124px);
+      top: calc(env(safe-area-inset-top, 0px) + var(--kin-webador-nav-clearance));
+      bottom: 0;
+      height: auto;
       padding:
-        max(8px, env(safe-area-inset-top))
+        4px
         max(7px, env(safe-area-inset-right))
-        max(8px, env(safe-area-inset-bottom))
+        max(7px, env(safe-area-inset-bottom))
         max(7px, env(safe-area-inset-left));
+      place-items: stretch center;
     }
 
     .bolamu-kin-dialog-shell {
       grid-template-rows: auto auto minmax(0, 1fr) auto;
-      gap: 8px;
+      gap: 4px;
       width: 100%;
       height: 100%;
-      padding: 12px 8px 14px;
+      padding: 7px 7px 8px;
       border-radius: 16px;
     }
 
     .bolamu-kin-dialog-header {
-      min-height: 48px;
-      padding-inline: 52px;
+      min-height: 44px;
+      padding-inline: 50px;
     }
 
     .bolamu-kin-dialog-brand {
-      width: min(74vw, 310px);
+      width: min(70vw, 300px);
     }
 
     .bolamu-kin-dialog-badge {
-      max-height: clamp(82px, 15vh, 132px);
+      max-height: clamp(76px, 13vh, 116px);
     }
 
     .bolamu-kin-dialog-description {
-      width: min(92%, 680px);
-      padding: 0 2px;
+      width: min(94%, 680px);
+      padding: 0;
       font-size: clamp(0.82rem, 3.5vw, 1rem);
-      line-height: 1.4;
+      line-height: 1.34;
       letter-spacing: 0.09em;
       text-align: center;
     }
 
     .bolamu-kin-dialog-close {
-      flex-basis: 46px;
-      width: 46px;
-      height: 46px;
+      z-index: 6;
+      flex-basis: 44px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .bolamu-kin-dialog-gallery-shell {
+      overflow: hidden;
     }
 
     .bolamu-kin-dialog-rail {
       gap: 13px;
-      padding: 12px 9vw;
+      padding: 2px 9vw;
       scroll-padding-inline: 9vw;
     }
 
     .bolamu-kin-dialog-card {
-      flex-basis: 82vw;
-      width: 82vw;
+      flex-basis: min(82vw, 440px, calc(100dvh - 330px));
+      width: min(82vw, 440px, calc(100dvh - 330px));
+      min-width: min(76vw, 280px);
       max-width: 440px;
+    }
+
+    .bolamu-kin-dialog-status {
+      min-height: 1.1em;
+      line-height: 1.15;
     }
 
     .bolamu-kin-dialog-arrow {
@@ -739,6 +797,7 @@
 
   <main class="bolamu-kin-clubs" aria-label="KIN Collective clubs">
     <section class="bolamu-kin-club bolamu-kin-club--curiosity" data-kin-category="curiosity" aria-labelledby="bolamu-kin-curiosity-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Curiosity Cabinet"><span class="bolamu-kin-visually-hidden">Explore The Curiosity Cabinet</span></button>
       <div class="bolamu-kin-identity">
         <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-curiosity-title">The Curiosity Cabinet</h2>
         <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/C3D5DEB5-E1F0-4C6F-9C40-434265D94B70.png?updatedAt=1784306949782" alt="The Curiosity Cabinet" loading="lazy">
@@ -759,6 +818,7 @@
     </section>
 
     <section class="bolamu-kin-club bolamu-kin-club--archives" data-kin-category="archives" aria-labelledby="bolamu-kin-archives-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Forgotten Archives"><span class="bolamu-kin-visually-hidden">Explore The Forgotten Archives</span></button>
       <div class="bolamu-kin-identity">
         <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-archives-title">The Forgotten Archives</h2>
         <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/97A17436-2B24-4D0F-857C-FE84C9A72B86.png" alt="The Forgotten Archives" loading="lazy">
@@ -784,6 +844,7 @@
     </section>
 
     <section class="bolamu-kin-club bolamu-kin-club--gambit" data-kin-category="gambit" aria-labelledby="bolamu-kin-gambit-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Gambit Club"><span class="bolamu-kin-visually-hidden">Explore The Gambit Club</span></button>
       <div class="bolamu-kin-identity">
         <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-gambit-title">The Gambit Club</h2>
         <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/BD951809-1727-4F7E-95F1-55C7B502DC55.png?updatedAt=1784306948869" alt="The Gambit Club" loading="lazy">
@@ -803,6 +864,7 @@
     </section>
 
     <section class="bolamu-kin-club bolamu-kin-club--leopards" data-kin-category="leopards" aria-labelledby="bolamu-kin-leopards-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Leopards Club"><span class="bolamu-kin-visually-hidden">Explore The Leopards Club</span></button>
       <div class="bolamu-kin-identity">
         <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-leopards-title">The Leopards Club</h2>
         <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/3984218B-AD75-4DC4-AA1F-8405FE0C5417.png?updatedAt=1784306949224" alt="The Leopards Club" loading="lazy">
@@ -893,10 +955,15 @@
     function setupPreview(club) {
       var rail = club.querySelector(".bolamu-kin-preview-rail");
       var right = club.querySelector(".bolamu-kin-preview-arrow--right");
+      var clubTrigger = club.querySelector(".bolamu-kin-club-trigger");
       var pointerStartX = 0;
       var pointerMoved = false;
 
-      right.addEventListener("click", function () {
+      clubTrigger.addEventListener("click", function () {
+        openDialog(club, 0, clubTrigger);
+      });
+      right.addEventListener("click", function (event) {
+        event.stopPropagation();
         openDialog(club, 0, right);
       });
       rail.addEventListener("keydown", function (event) {
@@ -908,9 +975,13 @@
       rail.addEventListener("pointermove", function (event) { if (Math.abs(event.clientX - pointerStartX) > 8) pointerMoved = true; }, { passive: true });
       rail.addEventListener("click", function (event) {
         var trigger = event.target.closest(".bolamu-kin-card-trigger");
-        if (!trigger) return;
         if (pointerMoved) { event.preventDefault(); pointerMoved = false; return; }
-        openDialog(club, Number(trigger.dataset.kinCardIndex || 0), trigger);
+        event.stopPropagation();
+        if (trigger) {
+          openDialog(club, Number(trigger.dataset.kinCardIndex || 0), trigger);
+          return;
+        }
+        openDialog(club, 0, rail);
       });
 
     }
