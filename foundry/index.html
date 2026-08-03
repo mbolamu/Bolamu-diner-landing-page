@@ -129,28 +129,33 @@
 
   .foundry-page .foundry-categories {
     display: grid;
-    gap: clamp(20px, 3.5vw, 36px);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(16px, 2vw, 22px);
     width: min(1060px, 100%);
     margin: 0 auto;
+    padding: clamp(20px, 2.4vw, 24px);
+    border-radius: clamp(28px, 3vw, 32px);
+    background: #fff;
+    box-shadow:
+      0 18px 42px rgba(23, 53, 82, 0.16),
+      0 4px 12px rgba(23, 53, 82, 0.08);
   }
 
   .foundry-page .foundry-category-card {
     position: relative;
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 6;
+    aspect-ratio: 1 / 1;
     margin: 0;
-    padding: clamp(6px, 1vw, 10px);
+    padding: 0;
     overflow: hidden;
-    border: 3px solid var(--foundry-sky-dark);
-    border-radius: clamp(20px, 2.5vw, 30px);
+    border: 0;
+    border-radius: clamp(18px, 2vw, 22px);
     color: var(--foundry-ink);
-    background: var(--foundry-cream);
+    background: #fff;
     box-shadow:
-      0 0 0 4px rgba(217, 45, 37, 0.84),
-      0 0 0 8px rgba(246, 201, 69, 0.72),
-      0 12px 0 rgba(23, 53, 82, 0.13),
-      0 20px 32px rgba(24, 64, 91, 0.2);
+      0 9px 22px rgba(23, 53, 82, 0.16),
+      0 2px 6px rgba(23, 53, 82, 0.1);
     cursor: pointer;
     transition:
       transform 180ms ease,
@@ -161,15 +166,15 @@
   .foundry-page .foundry-category-card::after {
     content: "";
     position: absolute;
-    inset: clamp(6px, 1vw, 10px);
+    inset: 0;
     z-index: 2;
-    border-radius: calc(clamp(20px, 2.5vw, 30px) - 8px);
+    border-radius: inherit;
     background:
       linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0.04) 35%,
-        transparent 62%
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0.025) 34%,
+        transparent 58%
       );
     pointer-events: none;
   }
@@ -177,24 +182,21 @@
   .foundry-page .foundry-category-card:hover,
   .foundry-page .foundry-category-card:focus-visible {
     outline: none;
-    filter: brightness(1.045) saturate(1.04);
-    transform: translateY(-4px);
+    filter: brightness(1.045);
+    transform: translateY(-4px) scale(1.02);
     box-shadow:
-      0 0 0 4px rgba(217, 45, 37, 0.92),
-      0 0 0 8px rgba(246, 201, 69, 0.8),
-      0 0 22px rgba(66, 189, 234, 0.48),
-      0 14px 0 rgba(23, 53, 82, 0.12),
-      0 24px 36px rgba(24, 64, 91, 0.24);
+      0 16px 30px rgba(23, 53, 82, 0.22),
+      0 4px 10px rgba(23, 53, 82, 0.12);
   }
 
   .foundry-page .foundry-category-card:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 11px;
+    outline: 3px solid var(--foundry-sky-dark);
+    outline-offset: 4px;
   }
 
   .foundry-page .foundry-category-card:active {
     filter: brightness(1.02);
-    transform: translateY(2px) scale(0.995);
+    transform: translateY(1px) scale(0.985);
   }
 
   .foundry-page .foundry-category-image {
@@ -202,9 +204,9 @@
     width: 100%;
     height: 100%;
     border: 0;
-    border-radius: calc(clamp(20px, 2.5vw, 30px) - 9px);
-    background: var(--foundry-sky-dark);
-    object-fit: contain;
+    border-radius: inherit;
+    background: #fff;
+    object-fit: cover;
     object-position: center;
     user-select: none;
     -webkit-user-drag: none;
@@ -234,6 +236,12 @@
     color: var(--foundry-sky-dark);
     font-size: clamp(0.78rem, 1.4vw, 1rem);
     letter-spacing: 0.26em;
+  }
+
+  @media (max-width: 900px) {
+    .foundry-page .foundry-categories {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 640px) {
@@ -279,32 +287,37 @@
     }
 
     .foundry-page .foundry-categories {
-      gap: 20px;
-      width: calc(100% - 8px);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 28px;
     }
 
     .foundry-page .foundry-category-card {
-      aspect-ratio: 16 / 6.5;
-      padding: 5px;
-      border-radius: 20px;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
       box-shadow:
-        0 0 0 3px rgba(217, 45, 37, 0.84),
-        0 0 0 6px rgba(246, 201, 69, 0.72),
-        0 8px 0 rgba(23, 53, 82, 0.13),
-        0 14px 23px rgba(24, 64, 91, 0.19);
+        0 7px 16px rgba(23, 53, 82, 0.16),
+        0 2px 5px rgba(23, 53, 82, 0.09);
     }
 
-    .foundry-page .foundry-category-card::after {
-      inset: 5px;
-      border-radius: 14px;
-    }
-
-    .foundry-page .foundry-category-image {
-      border-radius: 14px;
+    .foundry-page .foundry-category-card:hover {
+      filter: none;
+      transform: none;
+      box-shadow:
+        0 7px 16px rgba(23, 53, 82, 0.16),
+        0 2px 5px rgba(23, 53, 82, 0.09);
     }
 
     .foundry-page .foundry-category-card:focus-visible {
-      outline-offset: 7px;
+      transform: none;
+      outline-offset: 3px;
+    }
+
+    .foundry-page .foundry-category-card:active {
+      filter: brightness(1.025);
+      transform: scale(0.975);
     }
   }
 
