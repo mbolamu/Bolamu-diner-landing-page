@@ -890,11 +890,6 @@
       return card ? card.getBoundingClientRect().width + gap : rail.clientWidth * 0.8;
     }
 
-    function updatePreviewArrow(rail, right) {
-      var maximum = Math.max(0, rail.scrollWidth - rail.clientWidth);
-      right.disabled = rail.scrollLeft >= maximum - 4;
-    }
-
     function setupPreview(club) {
       var rail = club.querySelector(".bolamu-kin-preview-rail");
       var right = club.querySelector(".bolamu-kin-preview-arrow--right");
