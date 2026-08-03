@@ -81,7 +81,7 @@
       0 0 5px rgba(255, 226, 157, 0.2),
       0 0 14px rgba(255, 204, 100, 0.13);
     transform: translate(-50%, -50%);
-    animation: strata-copy-cycle 12s ease-in-out infinite;
+    animation: strata-copy-cycle 15s ease-in-out infinite;
   }
 
   .strata-page .strata-copy::before {
@@ -202,11 +202,11 @@
       opacity: 0;
       transform: translate(-50%, calc(-50% + 7px));
     }
-    18%, 82% {
+    18%, 88% {
       opacity: 1;
       transform: translate(-50%, -50%);
     }
-    92%, 100% {
+    98%, 100% {
       opacity: 0;
       transform: translate(-50%, calc(-50% - 4px));
     }
@@ -321,7 +321,7 @@
     if (!page || page.dataset.strataReady === "true") return;
     page.dataset.strataReady = "true";
 
-    var MOBILE_VIDEO = "https://ik.imagekit.io/vxel66ikf/Strata%20beyond%20mobile%20video%20loop/ik-video.mp4?updatedAt=1785739532488";
+    var MOBILE_VIDEO = "https://ik.imagekit.io/vxel66ikf/Strata%20beyond%20slower%20mobile%20video%20loop/ik-video.mp4?updatedAt=1785742311299";
     var DESKTOP_VIDEO = "https://ik.imagekit.io/vxel66ikf/Strata%20beyond%20slower%20desktop%20video%20loop/ik-video.mp4?updatedAt=1785740755079";
     var phoneQuery = window.matchMedia("(max-width: 767px)");
     var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
