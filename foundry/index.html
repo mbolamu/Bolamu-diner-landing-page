@@ -112,15 +112,18 @@
     display: grid;
     place-items: center;
     width: 100%;
-    margin: 0 auto 2px;
+    margin: 0 auto 10px;
   }
 
   .foundry-page .foundry-departments-sign {
-    width: min(72%, 620px);
+    width: min(48%, 500px);
     height: auto;
   }
 
   .foundry-page .foundry-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     width: min(1040px, 100%);
     margin: 0 auto;
     padding: clamp(5px, 0.9vw, 9px);
@@ -131,11 +134,18 @@
 
   .foundry-page .foundry-department {
     --department-accent: #a66a37;
-    margin: 0 0 1px;
+    margin: 0;
+    padding-block: 0;
   }
 
-  .foundry-page .foundry-department:last-child {
-    margin-bottom: 0;
+  .foundry-page .foundry-department + .foundry-department {
+    margin-top: -6px;
+  }
+
+  .foundry-page .foundry-department:has(
+      > .foundry-department-panel.is-open
+    ) + .foundry-department {
+    margin-top: 0;
   }
 
   .foundry-page .foundry-department--pantry {
@@ -167,6 +177,7 @@
     padding: 0;
     overflow: hidden;
     border: 0;
+    line-height: 0;
     border-radius: 8px;
     color: #fff0c4;
     background: transparent;
@@ -191,15 +202,17 @@
     z-index: 2;
     display: grid;
     place-items: center;
-    width: clamp(38px, 3.8vw, 44px);
-    height: clamp(38px, 3.8vw, 44px);
-    border: 1px solid rgba(255, 218, 132, 0.84);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border: 1px solid rgba(255, 218, 132, 0.76);
     border-radius: 50%;
     color: #ffe4a0;
     background: rgba(20, 24, 27, 0.9);
     box-shadow:
-      0 0 0 2px rgba(0, 0, 0, 0.24),
-      0 0 9px rgba(255, 196, 73, 0.22);
+      0 0 0 1px rgba(0, 0, 0, 0.18),
+      0 0 5px rgba(255, 196, 73, 0.16);
     transform: translateY(-50%);
     pointer-events: none;
   }
@@ -208,8 +221,8 @@
   .foundry-page .foundry-department-indicator::after {
     content: "";
     position: absolute;
-    width: 13px;
-    height: 1.5px;
+    width: 18px;
+    height: 1px;
     border-radius: 2px;
     background: currentColor;
     transition: transform 230ms ease, opacity 230ms ease;
@@ -449,11 +462,11 @@
     }
 
     .foundry-page .foundry-departments-intro {
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
 
     .foundry-page .foundry-departments-sign {
-      width: min(76%, 620px);
+      width: min(58%, 390px);
     }
 
     .foundry-page .foundry-accordion {
@@ -463,7 +476,8 @@
     }
 
     .foundry-page .foundry-department {
-      margin-bottom: 1px;
+      margin-bottom: 0;
+      padding-block: 0;
     }
 
     .foundry-page .foundry-department-toggle {
@@ -472,9 +486,17 @@
     }
 
     .foundry-page .foundry-department-indicator {
-      right: 6px;
-      width: 36px;
-      height: 36px;
+      right: 5px;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      min-height: 28px;
+    }
+
+    .foundry-page .foundry-department-indicator::before,
+    .foundry-page .foundry-department-indicator::after {
+      width: 16px;
+      height: 1px;
     }
 
     .foundry-page .foundry-department-panel-card {
