@@ -290,20 +290,32 @@
     align-items: center;
   }
 
+  .foundry-page .foundry-department-media {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .foundry-page .foundry-department-artwork {
+    display: block;
     width: 100%;
     height: 100%;
     max-height: clamp(190px, 28vw, 330px);
-    display: block;
+    overflow: hidden;
     border: 0;
-    border-radius: 8px;
+    border-radius: 20px;
     background: transparent;
     object-fit: contain;
     object-position: center;
   }
 
   .foundry-page .foundry-department-copy {
+    display: flex;
     min-width: 0;
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: center;
     padding: 1px;
   }
 
@@ -315,6 +327,11 @@
     line-height: 1.08;
     letter-spacing: 0.065em;
     text-transform: uppercase;
+  }
+
+  .foundry-page .foundry-department--pantry .foundry-department-title,
+  .foundry-page .foundry-department--mill .foundry-department-title {
+    color: var(--foundry-ink);
   }
 
   .foundry-page .foundry-department-subtitle {
@@ -340,7 +357,7 @@
     margin: 0 0 7px;
     color: var(--foundry-ink);
     font-size: clamp(0.875rem, 1.12vw, 1rem);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.43;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -348,14 +365,17 @@
 
   .foundry-page .foundry-coming-button {
     position: relative;
-    display: grid;
-    place-items: center;
-    width: 60%;
-    max-width: 240px;
-    height: 34px;
+    display: flex;
+    width: 100%;
+    max-width: none;
+    height: 48px;
     min-height: 0;
     margin: 0;
-    padding: 4px 28px 4px 12px;
+    padding: 5px 30px 5px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
     overflow: hidden;
     border: 2px solid var(--foundry-sky-dark);
     border-radius: 7px;
@@ -368,35 +388,36 @@
   }
 
   .foundry-page .foundry-coming-button-label {
-    font-size: 0.66rem;
+    color: #fff9e9;
+    font-size: 0.8125rem;
     font-weight: 800;
+    line-height: 1.08;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
   .foundry-page .foundry-coming-button-arrow {
     position: absolute;
-    right: 10px;
-    width: 6px;
-    height: 6px;
+    right: 11px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
     border-top: 2px solid currentColor;
     border-right: 2px solid currentColor;
-    transform: rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
   }
 
   .foundry-page .foundry-coming-button-overlay {
-    position: absolute;
-    inset: 3px 24px 3px 4px;
-    display: grid;
-    place-items: center;
-    border-radius: 4px;
+    position: static;
+    display: block;
     color: var(--foundry-red);
-    background: rgba(255, 245, 223, 0.62);
-    font-size: clamp(0.84rem, 1.25vw, 1rem);
-    font-weight: 900;
-    letter-spacing: 0.12em;
+    background: none;
+    font-size: 0.625rem;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: none;
   }
 
   .foundry-page .foundry-ending {
@@ -514,9 +535,14 @@
       align-items: center;
     }
 
+    .foundry-page .foundry-department-media {
+      gap: 9px;
+    }
+
     .foundry-page .foundry-department-artwork {
       height: 100%;
       max-height: 190px;
+      border-radius: 20px;
     }
 
     .foundry-page .foundry-department-title {
@@ -545,20 +571,19 @@
     }
 
     .foundry-page .foundry-coming-button {
-      width: 64%;
+      width: 100%;
       max-width: none;
-      height: 32px;
+      height: 44px;
       min-height: 0;
-      padding: 4px 24px 4px 10px;
+      padding: 4px 26px 4px 8px;
     }
 
     .foundry-page .foundry-coming-button-label {
-      font-size: 0.5rem;
+      font-size: 0.75rem;
     }
 
     .foundry-page .foundry-coming-button-overlay {
-      inset: 3px 20px 3px 3px;
-      font-size: clamp(0.58rem, 2.35vw, 0.7rem);
+      font-size: 0.5625rem;
     }
 
     .foundry-page .foundry-ending {
@@ -622,18 +647,20 @@
             <div class="foundry-department-panel-clip">
               <div class="foundry-department-panel-card">
                 <div class="foundry-department-layout">
+                  <div class="foundry-department-media">
                   <img class="foundry-department-artwork" src="https://ik.imagekit.io/vxel66ikf/The%20pantry.png" alt="The Pantry sauces and spreads premixes" loading="lazy" decoding="async">
-                  <div class="foundry-department-copy">
-                    <h2 class="foundry-department-title">The Pantry</h2>
-                    <p class="foundry-department-subtitle">Sauces &amp; Spreads Pre-Mixes</p>
-                    <p class="foundry-department-description">Premixes for sauces and spreads in Bolamu’s signature flavours, created to help home cooks, cafés and restaurants turn familiar formats into distinctive menu ideas with less development time.</p>
-                    <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
+                  <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
                       <span class="foundry-coming-button-label">Explore the Pantry</span>
                       <span class="foundry-coming-button-arrow" aria-hidden="true"></span>
                       <span class="foundry-coming-button-overlay">Coming Soon</span>
                     </button>
-                  </div>
                 </div>
+                <div class="foundry-department-copy">
+                    <h2 class="foundry-department-title">The Pantry</h2>
+                    <p class="foundry-department-subtitle">Sauces &amp; Spreads Pre-Mixes</p>
+                    <p class="foundry-department-description">Premixes for sauces and spreads in Bolamu’s signature flavours, created to help home cooks, cafés and restaurants turn familiar formats into distinctive menu ideas with less development time.</p>
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -648,18 +675,20 @@
             <div class="foundry-department-panel-clip">
               <div class="foundry-department-panel-card">
                 <div class="foundry-department-layout">
+                  <div class="foundry-department-media">
                   <img class="foundry-department-artwork" src="https://ik.imagekit.io/vxel66ikf/The%20mill.png" alt="The Mill baked dessert premixes" loading="lazy" decoding="async">
-                  <div class="foundry-department-copy">
-                    <h2 class="foundry-department-title">The Mill</h2>
-                    <p class="foundry-department-subtitle">Baked Dessert Pre-Mixes</p>
-                    <p class="foundry-department-description">Dessert premixes in Bolamu’s signature flavours, beginning with cheesecake bases designed to give cafés, caterers and home bakers a reliable foundation for original finished desserts.</p>
-                    <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
+                  <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
                       <span class="foundry-coming-button-label">Explore the Mill</span>
                       <span class="foundry-coming-button-arrow" aria-hidden="true"></span>
                       <span class="foundry-coming-button-overlay">Coming Soon</span>
                     </button>
-                  </div>
                 </div>
+                <div class="foundry-department-copy">
+                    <h2 class="foundry-department-title">The Mill</h2>
+                    <p class="foundry-department-subtitle">Baked Dessert Pre-Mixes</p>
+                    <p class="foundry-department-description">Dessert premixes in Bolamu’s signature flavours, beginning with cheesecake bases designed to give cafés, caterers and home bakers a reliable foundation for original finished desserts.</p>
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -686,18 +715,20 @@
             <div class="foundry-department-panel-clip">
               <div class="foundry-department-panel-card">
                 <div class="foundry-department-layout">
+                  <div class="foundry-department-media">
                   <img class="foundry-department-artwork" src="https://ik.imagekit.io/vxel66ikf/The%20hearth.png" alt="The Hearth hot drink premixes" loading="lazy" decoding="async">
-                  <div class="foundry-department-copy">
-                    <h2 class="foundry-department-title">The Hearth</h2>
-                    <p class="foundry-department-subtitle">Hot Drink Pre-Mixes</p>
-                    <p class="foundry-department-description">Premixes for steamers, cappuccinos, lattes and other warming drinks, developed to help cafés and hospitality businesses serve distinctive flavour combinations with speed and consistency.</p>
-                    <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
+                  <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
                       <span class="foundry-coming-button-label">Explore the Hearth</span>
                       <span class="foundry-coming-button-arrow" aria-hidden="true"></span>
                       <span class="foundry-coming-button-overlay">Coming Soon</span>
                     </button>
-                  </div>
                 </div>
+                <div class="foundry-department-copy">
+                    <h2 class="foundry-department-title">The Hearth</h2>
+                    <p class="foundry-department-subtitle">Hot Drink Pre-Mixes</p>
+                    <p class="foundry-department-description">Premixes for steamers, cappuccinos, lattes and other warming drinks, developed to help cafés and hospitality businesses serve distinctive flavour combinations with speed and consistency.</p>
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -712,18 +743,20 @@
             <div class="foundry-department-panel-clip">
               <div class="foundry-department-panel-card">
                 <div class="foundry-department-layout">
+                  <div class="foundry-department-media">
                   <img class="foundry-department-artwork" src="https://ik.imagekit.io/vxel66ikf/The%20ice%20house.png" alt="The Ice House ice cream and slushy premixes" loading="lazy" decoding="async">
-                  <div class="foundry-department-copy">
-                    <h2 class="foundry-department-title">The Ice House</h2>
-                    <p class="foundry-department-subtitle">Ice Cream &amp; Slushy Pre-Mixes</p>
-                    <p class="foundry-department-description">Premixes for ice creams and slushies in Bolamu’s signature flavours, built for frozen-dessert menus, seasonal activations and businesses that want memorable products without starting from scratch.</p>
-                    <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
+                  <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
                       <span class="foundry-coming-button-label">Explore the Ice House</span>
                       <span class="foundry-coming-button-arrow" aria-hidden="true"></span>
                       <span class="foundry-coming-button-overlay">Coming Soon</span>
                     </button>
-                  </div>
                 </div>
+                <div class="foundry-department-copy">
+                    <h2 class="foundry-department-title">The Ice House</h2>
+                    <p class="foundry-department-subtitle">Ice Cream &amp; Slushy Pre-Mixes</p>
+                    <p class="foundry-department-description">Premixes for ice creams and slushies in Bolamu’s signature flavours, built for frozen-dessert menus, seasonal activations and businesses that want memorable products without starting from scratch.</p>
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -738,18 +771,20 @@
             <div class="foundry-department-panel-clip">
               <div class="foundry-department-panel-card">
                 <div class="foundry-department-layout">
+                  <div class="foundry-department-media">
                   <img class="foundry-department-artwork" src="https://ik.imagekit.io/vxel66ikf/The%20workshop.png" alt="The Workshop business packs and café ingredients" loading="lazy" decoding="async">
-                  <div class="foundry-department-copy">
-                    <h2 class="foundry-department-title">The Workshop</h2>
-                    <p class="foundry-department-subtitle">Business Packs &amp; Café Ingredients</p>
-                    <p class="foundry-department-description">Practical packs for turning ideas into sellable concepts, including dessert-cart formats, café ingredients and structured product combinations designed to shorten the path from inspiration to service.</p>
-                    <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
+                  <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
                       <span class="foundry-coming-button-label">Explore the Workshop</span>
                       <span class="foundry-coming-button-arrow" aria-hidden="true"></span>
                       <span class="foundry-coming-button-overlay">Coming Soon</span>
                     </button>
-                  </div>
                 </div>
+                <div class="foundry-department-copy">
+                    <h2 class="foundry-department-title">The Workshop</h2>
+                    <p class="foundry-department-subtitle">Business Packs &amp; Café Ingredients</p>
+                    <p class="foundry-department-description">Practical packs for turning ideas into sellable concepts, including dessert-cart formats, café ingredients and structured product combinations designed to shorten the path from inspiration to service.</p>
+                </div>
+              </div>
               </div>
             </div>
           </div>
