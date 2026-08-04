@@ -112,18 +112,19 @@
     display: grid;
     place-items: center;
     width: 100%;
-    margin: 0 auto 10px;
+    margin: 0 auto 8px;
   }
 
   .foundry-page .foundry-departments-sign {
-    width: min(48%, 500px);
+    width: min(40%, 440px);
     height: auto;
   }
 
   .foundry-page .foundry-accordion {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 0 !important;
+    row-gap: 0 !important;
     width: min(1040px, 100%);
     margin: 0 auto;
     padding: clamp(5px, 0.9vw, 9px);
@@ -134,18 +135,15 @@
 
   .foundry-page .foundry-department {
     --department-accent: #a66a37;
-    margin: 0;
-    padding-block: 0;
+    margin: 0 !important;
+    margin-block: 0 !important;
+    padding-block: 0 !important;
   }
 
-  .foundry-page .foundry-department + .foundry-department {
-    margin-top: -6px;
-  }
-
-  .foundry-page .foundry-department:has(
-      > .foundry-department-panel.is-open
-    ) + .foundry-department {
-    margin-top: 0;
+  .foundry-page
+    .foundry-department:not(:has(> .foundry-department-panel.is-open))
+    + .foundry-department:not(:has(> .foundry-department-panel.is-open)) {
+    margin-top: -10px !important;
   }
 
   .foundry-page .foundry-department--pantry {
@@ -173,8 +171,10 @@
     display: block;
     width: 100%;
     height: clamp(54px, 6.6vw, 74px);
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    margin-block: 0 !important;
+    padding: 0 !important;
+    padding-block: 0 !important;
     overflow: hidden;
     border: 0;
     line-height: 0;
@@ -206,13 +206,11 @@
     height: 32px;
     min-width: 32px;
     min-height: 32px;
-    border: 1px solid rgba(255, 218, 132, 0.76);
+    border: 1.5px solid rgba(255, 218, 132, 0.76);
     border-radius: 50%;
     color: #ffe4a0;
     background: rgba(20, 24, 27, 0.9);
-    box-shadow:
-      0 0 0 1px rgba(0, 0, 0, 0.18),
-      0 0 5px rgba(255, 196, 73, 0.16);
+    box-shadow: 0 0 3px rgba(255, 196, 73, 0.14);
     transform: translateY(-50%);
     pointer-events: none;
   }
@@ -462,11 +460,11 @@
     }
 
     .foundry-page .foundry-departments-intro {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .foundry-page .foundry-departments-sign {
-      width: min(58%, 390px);
+      width: min(48%, 330px);
     }
 
     .foundry-page .foundry-accordion {
@@ -476,8 +474,8 @@
     }
 
     .foundry-page .foundry-department {
-      margin-bottom: 0;
-      padding-block: 0;
+      margin-block: 0 !important;
+      padding-block: 0 !important;
     }
 
     .foundry-page .foundry-department-toggle {
