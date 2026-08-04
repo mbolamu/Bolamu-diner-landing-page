@@ -293,8 +293,9 @@
   .foundry-page .foundry-department-media {
     display: flex;
     min-width: 0;
+    align-self: stretch;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .foundry-page .foundry-department-artwork {
@@ -302,6 +303,8 @@
     width: 100%;
     height: 100%;
     max-height: clamp(190px, 28vw, 330px);
+    min-height: 0;
+    flex: 1 1 auto;
     overflow: hidden;
     border: 0;
     border-radius: 20px;
@@ -357,7 +360,7 @@
     margin: 0 0 7px;
     color: var(--foundry-ink);
     font-size: clamp(0.875rem, 1.12vw, 1rem);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.43;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -368,20 +371,20 @@
     display: flex;
     width: 74%;
     max-width: 250px;
-    height: 44px;
+    height: 36px;
     min-height: 0;
     margin: 0 auto;
-    padding: 4px 28px 4px 10px;
+    padding: 3px 28px 3px 10px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 1px;
     overflow: hidden;
-    border: 1.5px solid #075d8a;
+    border: 1.5px solid #0c6d9a;
     border-radius: 999px;
-    color: rgba(255, 255, 255, 0.62);
-    background: #087eb9;
-    box-shadow: 0 4px 9px rgba(23, 53, 82, 0.16);
+    color: rgba(255, 255, 255, 0.72);
+    background: #1b98cb;
+    box-shadow: 0 3px 7px rgba(23, 53, 82, 0.14);
     font: inherit;
     cursor: not-allowed;
     opacity: 1;
@@ -411,10 +414,12 @@
     position: static;
     display: block;
     color: var(--foundry-red);
-    background: none;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
     font-size: 0.6875rem;
     font-weight: 800;
-    line-height: 1.08;
+    line-height: 1.05;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-shadow: none;
@@ -536,7 +541,7 @@
     }
 
     .foundry-page .foundry-department-media {
-      gap: 9px;
+      gap: 8px;
     }
 
     .foundry-page .foundry-department-artwork {
@@ -573,10 +578,10 @@
     .foundry-page .foundry-coming-button {
       width: 82%;
       max-width: none;
-      height: 42px;
+      height: 32px;
       min-height: 0;
       margin-inline: auto;
-      padding: 4px 25px 4px 8px;
+      padding: 2px 25px 2px 8px;
     }
 
     .foundry-page .foundry-coming-button-label {
