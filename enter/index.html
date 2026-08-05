@@ -1,0 +1,184 @@
+<!-- Bolamu Enter portal: paste this entire fragment into one Webador HTML block. -->
+<style>
+  .bolamu-enter-page,
+  .bolamu-enter-page * {
+    box-sizing: border-box;
+  }
+
+  .bolamu-enter-page {
+    --enter-top-bleed: 0px;
+    position: relative;
+    left: 50%;
+    z-index: 9999;
+    isolation: isolate;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    min-height: 100svh;
+    margin: calc(-1 * var(--enter-top-bleed)) 0 0 -50vw !important;
+    padding: 0 !important;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .bolamu-enter-page .bolamu-enter-artwork,
+  .bolamu-enter-page .bolamu-enter-artwork picture,
+  .bolamu-enter-page .bolamu-enter-artwork img,
+  .bolamu-enter-page .bolamu-enter-hotspots {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bolamu-enter-page .bolamu-enter-artwork {
+    z-index: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .bolamu-enter-page .bolamu-enter-artwork img {
+    border: 0;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .bolamu-enter-page .bolamu-enter-hotspots {
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .bolamu-enter-page .bolamu-enter-hotspots--mobile {
+    display: none;
+  }
+
+  .bolamu-enter-page .bolamu-enter-hotspot {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .bolamu-enter-page .bolamu-enter-hotspot rect {
+    fill: rgba(0, 0, 0, 0.001);
+    stroke: transparent;
+    stroke-width: 5;
+    vector-effect: non-scaling-stroke;
+    transition:
+      stroke-color 160ms ease,
+      fill 160ms ease;
+  }
+
+  .bolamu-enter-page .bolamu-enter-hotspot:focus-visible rect {
+    fill: rgba(255, 249, 225, 0.04);
+    stroke: rgba(255, 249, 225, 0.92);
+  }
+
+  .bolamu-enter-page .bolamu-enter-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  @media (max-width: 767px) {
+    .bolamu-enter-page .bolamu-enter-hotspots--desktop {
+      display: none;
+    }
+
+    .bolamu-enter-page .bolamu-enter-hotspots--mobile {
+      display: block;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bolamu-enter-page .bolamu-enter-hotspot rect {
+      transition: none;
+    }
+  }
+</style>
+
+<main class="bolamu-enter-page" id="bolamu-enter-page" aria-labelledby="bolamu-enter-title">
+  <h1 class="bolamu-enter-visually-hidden" id="bolamu-enter-title">Enter Bolamu</h1>
+
+  <div class="bolamu-enter-artwork" aria-hidden="true">
+    <picture>
+      <source
+        media="(max-width: 767px)"
+        srcset="https://ik.imagekit.io/vxel66ikf/Enter%20page%20mobile.png?updatedAt=1785929636309"
+      >
+      <img
+        src="https://ik.imagekit.io/vxel66ikf/Enter%20page%20desktop.png?updatedAt=1785929635336"
+        alt=""
+        loading="eager"
+        decoding="async"
+        draggable="false"
+      >
+    </picture>
+  </div>
+
+  <svg
+    class="bolamu-enter-hotspots bolamu-enter-hotspots--desktop"
+    viewBox="0 0 1672 941"
+    preserveAspectRatio="xMidYMid slice"
+    aria-label="Bolamu destinations"
+    role="navigation"
+  >
+    <a class="bolamu-enter-hotspot" href="https://www.bolamu.net/the-foundry" target="_top" aria-label="Enter The Foundry">
+      <title>Enter The Foundry</title>
+      <rect x="100" y="160" width="480" height="535" rx="28"></rect>
+    </a>
+    <a class="bolamu-enter-hotspot" href="https://www.bolamu.net/kin-collective" target="_top" aria-label="Enter KIN Collective">
+      <title>Enter KIN Collective</title>
+      <rect x="600" y="155" width="450" height="540" rx="28"></rect>
+    </a>
+    <a class="bolamu-enter-hotspot" href="https://www.bolamu.net/the-strata-beyond" target="_top" aria-label="Enter Strata Beyond">
+      <title>Enter Strata Beyond</title>
+      <rect x="1070" y="150" width="480" height="550" rx="28"></rect>
+    </a>
+  </svg>
+
+  <svg
+    class="bolamu-enter-hotspots bolamu-enter-hotspots--mobile"
+    viewBox="0 0 864 1821"
+    preserveAspectRatio="xMidYMid slice"
+    aria-label="Bolamu destinations"
+    role="navigation"
+  >
+    <a class="bolamu-enter-hotspot" href="https://www.bolamu.net/the-foundry" target="_top" aria-label="Enter The Foundry">
+      <title>Enter The Foundry</title>
+      <rect x="180" y="170" width="510" height="530" rx="30"></rect>
+    </a>
+    <a class="bolamu-enter-hotspot" href="https://www.bolamu.net/kin-collective" target="_top" aria-label="Enter KIN Collective">
+      <title>Enter KIN Collective</title>
+      <rect x="180" y="690" width="510" height="480" rx="30"></rect>
+    </a>
+    <a class="bolamu-enter-hotspot" href="https://www.bolamu.net/the-strata-beyond" target="_top" aria-label="Enter Strata Beyond">
+      <title>Enter Strata Beyond</title>
+      <rect x="180" y="1170" width="520" height="530" rx="30"></rect>
+    </a>
+  </svg>
+</main>
+
+<script>
+  (function () {
+    var page = document.getElementById("bolamu-enter-page");
+    if (!page || page.dataset.enterReady === "true") return;
+    page.dataset.enterReady = "true";
+
+    /* Pull only this embed across Webador's reserved page-header footprint. */
+    var topGap = page.getBoundingClientRect().top;
+    if (topGap > 0 && topGap <= 320) {
+      page.style.setProperty("--enter-top-bleed", Math.round(topGap) + "px");
+    }
+  })();
+</script>
