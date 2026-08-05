@@ -154,6 +154,10 @@
     --department-accent: #c49525;
   }
 
+  .foundry-page .foundry-department--cellar {
+    --department-accent: #6f3b45;
+  }
+
   .foundry-page .foundry-department--hearth {
     --department-accent: #c63a31;
   }
@@ -417,6 +421,19 @@
     .foundry-department--workshop
     .foundry-coming-button-overlay {
     font-size: 0.5625rem;
+  }
+
+  .foundry-page
+    .foundry-department--cellar
+    .foundry-coming-button-label {
+    white-space: nowrap;
+  }
+
+  .foundry-page
+    .foundry-department--cellar
+    .foundry-coming-button-overlay {
+    padding: 0;
+    background: none;
   }
 
   .foundry-page .foundry-coming-button-arrow {
@@ -740,17 +757,33 @@
           </div>
         </article>
 
-        <!-- CELLAR PLACARD URL REQUIRED
-             Existing expanded artwork remains available at:
-             https://ik.imagekit.io/vxel66ikf/The%20cellar.png
-             Insert the Cellar accordion item here when its dedicated placard is supplied.
-
-             OFFICIAL CELLAR CONTENT
-             Heading: THE CELLAR
-             Subheading: COLD DRINK PRE-MIXES
-             Description: Easy-to-mix premixes for milkshakes, frappés and other cold drinks, bringing Bolamu’s signature flavours into café menus, pop-ups and high-volume service.
-             Button: EXPLORE THE CELLAR
-        -->
+        <article class="foundry-department foundry-department--cellar">
+          <button class="foundry-department-toggle" type="button" aria-expanded="false" aria-controls="foundry-panel-cellar">
+            <img class="foundry-placard-image" src="https://ik.imagekit.io/vxel66ikf/Cellar.png" alt="The Cellar" loading="lazy" decoding="async" draggable="false">
+            <span class="foundry-department-indicator" aria-hidden="true"></span>
+          </button>
+          <div class="foundry-department-panel" id="foundry-panel-cellar" aria-hidden="true">
+            <div class="foundry-department-panel-clip">
+              <div class="foundry-department-panel-card">
+                <div class="foundry-department-layout">
+                  <div class="foundry-department-media">
+                    <img class="foundry-department-artwork" src="https://ik.imagekit.io/vxel66ikf/The%20cellar.jpeg?updatedAt=1785771654308" alt="Bolamu cold drink premixes and prepared cold drinks" loading="lazy" decoding="async">
+                    <button class="foundry-coming-button" type="button" disabled aria-disabled="true">
+                      <span class="foundry-coming-button-label">Explore the Cellar</span>
+                      <span class="foundry-coming-button-arrow" aria-hidden="true"></span>
+                      <span class="foundry-coming-button-overlay">Coming Soon</span>
+                    </button>
+                  </div>
+                  <div class="foundry-department-copy">
+                    <h2 class="foundry-department-title">The Cellar</h2>
+                    <p class="foundry-department-subtitle">Cold Drink Pre-Mixes</p>
+                    <p class="foundry-department-description">Easy-to-mix premixes for milkshakes, frappés and other cold drinks, bringing Bolamu’s signature flavours into café menus, pop-ups and high-volume service.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
 
         <article class="foundry-department foundry-department--hearth">
           <button class="foundry-department-toggle" type="button" aria-expanded="false" aria-controls="foundry-panel-hearth">
