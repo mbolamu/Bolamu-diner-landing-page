@@ -1,0 +1,551 @@
+The gambit club 
+
+<!-- BOLAMU DINER: THE GAMBIT CLUB CAROUSEL -->
+<section class="bolamu-gambit" aria-labelledby="bolamu-gambit-heading">
+
+ <h2 id="bolamu-gambit-heading" class="bolamu-visually-hidden">
+   The Gambit Club
+ </h2>
+
+ <img
+   class="bolamu-gambit-badge"
+   src="https://ik.imagekit.io/vxel66ikf/BD951809-1727-4F7E-95F1-55C7B502DC55.png?updatedAt=1784306948869"
+   alt="The Gambit Club"
+   loading="eager"
+ >
+
+ <p class="bolamu-gambit-description">
+   A collection of classic and traditional games, tournaments and quizzes where champions are made and rivalries are remembered.
+ </p>
+
+ <div class="bolamu-carousel-shell">
+
+   <button
+     class="bolamu-carousel-arrow bolamu-carousel-arrow-left"
+     type="button"
+     aria-label="Scroll The Gambit Club left"
+   >
+     &#10094;
+   </button>
+
+   <div
+     class="bolamu-carousel"
+     id="bolamu-gambit-carousel"
+     role="region"
+     aria-label="The Gambit Club event cards"
+     tabindex="0"
+   >
+     <article class="bolamu-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/39D816A1-8D1F-4D0E-A125-966056804DA2.png?updatedAt=1784300889736"
+         alt="La Vie Est Belle screening event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+<article class="bolamu-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/C0C54B76-77FA-4AFA-B73B-BEDB00A1BD7F.png?updatedAt=1784300890161"
+         alt="Soul Power screening event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+<article class="bolamu-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/E6BD4212-1610-4C5C-95D9-7726035C7E69.png?updatedAt=1784300889494"
+         alt="When We Were Kings screening event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+<article class="bolamu-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/AB7A4A5A-AEFC-4F89-8034-B4712D6132D2.png?updatedAt=1784300888742"
+         alt="Felicite screening event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+   </div>
+
+   <button
+     class="bolamu-carousel-arrow bolamu-carousel-arrow-right"
+     type="button"
+     aria-label="Scroll The Gambit Club right"
+   >
+     &#10095;
+   </button>
+
+   <div class="bolamu-carousel-fade bolamu-carousel-fade-left" aria-hidden="true"></div>
+   <div class="bolamu-carousel-fade bolamu-carousel-fade-right" aria-hidden="true"></div>
+
+ </div>
+
+ <p class="bolamu-swipe-hint" aria-hidden="true">
+   <span class="bolamu-swipe-arrow bolamu-swipe-arrow-left">&#10094;</span>
+   <span>Swipe to explore</span>
+   <span class="bolamu-swipe-arrow bolamu-swipe-arrow-right">&#10095;</span>
+ </p>
+
+</section>
+
+<style>
+.bolamu-gambit,
+.bolamu-gambit * {
+ box-sizing: border-box;
+}
+
+.bolamu-gambit {
+ --bolamu-blue: #ffd34f;
+ --bolamu-blue-soft: rgba(255, 211, 79, 0.78);
+ --bolamu-gap: 18px;
+ --bolamu-card-width: clamp(170px, 16.5vw, 235px);
+
+ width: 100%;
+ margin: 0;
+ padding: clamp(24px, 3.6vw, 48px) 0 clamp(34px, 5vw, 70px);
+ overflow: hidden;
+
+ color: #fff;
+ background: #000;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.bolamu-visually-hidden {
+ position: absolute !important;
+ width: 1px !important;
+ height: 1px !important;
+ padding: 0 !important;
+ margin: -1px !important;
+ overflow: hidden !important;
+ clip: rect(0, 0, 0, 0) !important;
+ white-space: nowrap !important;
+ border: 0 !important;
+}
+
+.bolamu-gambit-badge {
+ display: block;
+ width: min(520px, 70vw);
+ height: auto;
+ margin: 0 auto 12px;
+ object-fit: contain;
+}
+
+.bolamu-gambit-description {
+ width: min(820px, 86vw);
+ margin: 0 auto clamp(24px, 3vw, 36px);
+
+ color: #ffeaa3;
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ line-height: 1.6;
+
+ font-size: clamp(0.82rem, 1.05vw, 1rem);
+ font-weight: 700;
+
+ text-shadow:
+   0 0 4px rgba(255, 211, 79, 0.86),
+   0 0 11px rgba(255, 211, 79, 0.54);
+}
+
+.bolamu-carousel-shell {
+ position: relative;
+ width: 100%;
+ isolation: isolate;
+}
+
+.bolamu-carousel {
+ display: flex;
+ gap: var(--bolamu-gap);
+
+ width: 100%;
+ padding:
+   14px
+   max(
+     30px,
+     calc((100% - var(--bolamu-card-width)) / 2)
+   )
+   24px;
+
+ overflow-x: auto;
+ overflow-y: hidden;
+ scroll-snap-type: x mandatory;
+ scroll-padding-inline:
+   max(
+     30px,
+     calc((100% - var(--bolamu-card-width)) / 2)
+   );
+ scroll-behavior: smooth;
+ overscroll-behavior-inline: contain;
+
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+ cursor: grab;
+}
+
+.bolamu-carousel::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-carousel:active {
+ cursor: grabbing;
+}
+
+.bolamu-carousel:focus-visible {
+ outline: 2px solid var(--bolamu-blue);
+ outline-offset: -2px;
+}
+
+.bolamu-event-card {
+ position: relative;
+ flex: 0 0 var(--bolamu-card-width);
+ width: var(--bolamu-card-width);
+ margin: 0;
+
+ scroll-snap-align: center;
+ scroll-snap-stop: always;
+
+ border-radius: 21px;
+ overflow: hidden;
+ background: #05070a;
+
+ transition:
+   transform 220ms ease,
+   filter 220ms ease;
+}
+
+.bolamu-event-card img {
+ display: block;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ user-select: none;
+ -webkit-user-drag: none;
+}
+
+.bolamu-event-card:hover {
+ transform: translateY(-7px) scale(1.025);
+ filter:
+   drop-shadow(0 0 8px rgba(255, 211, 79, 0.45))
+   drop-shadow(0 14px 24px rgba(0, 0, 0, 0.72));
+}
+
+.bolamu-carousel-fade {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ z-index: 3;
+
+ width: clamp(48px, 8vw, 120px);
+ pointer-events: none;
+}
+
+.bolamu-carousel-fade-left {
+ left: 0;
+ background:
+   linear-gradient(
+     to right,
+     #000 0%,
+     rgba(0, 0, 0, 0.97) 14%,
+     rgba(0, 0, 0, 0.78) 42%,
+     rgba(0, 0, 0, 0.34) 72%,
+     rgba(0, 0, 0, 0) 100%
+   );
+}
+
+.bolamu-carousel-fade-right {
+ right: 0;
+ background:
+   linear-gradient(
+     to left,
+     #000 0%,
+     rgba(0, 0, 0, 0.97) 14%,
+     rgba(0, 0, 0, 0.78) 42%,
+     rgba(0, 0, 0, 0.34) 72%,
+     rgba(0, 0, 0, 0) 100%
+   );
+}
+
+.bolamu-carousel-arrow {
+ position: absolute;
+ top: 50%;
+ z-index: 4;
+
+ width: 52px;
+ height: 82px;
+ padding: 0;
+
+ border: 1px solid rgba(255, 255, 255, 0.25);
+ border-radius: 16px;
+
+ color: #fff;
+ background: rgba(0, 0, 0, 0.72);
+
+ -webkit-backdrop-filter: blur(8px);
+ backdrop-filter: blur(8px);
+
+ box-shadow:
+   0 0 12px rgba(255, 211, 79, 0.38),
+   0 10px 28px rgba(0, 0, 0, 0.6);
+
+ font-size: 34px;
+ line-height: 1;
+
+ transform: translateY(-50%);
+ cursor: pointer;
+
+ transition:
+   background 180ms ease,
+   box-shadow 180ms ease,
+   opacity 180ms ease,
+   transform 180ms ease;
+}
+
+.bolamu-carousel-arrow:hover,
+.bolamu-carousel-arrow:focus-visible {
+ background: rgba(10, 40, 58, 0.92);
+ box-shadow:
+   0 0 10px var(--bolamu-blue),
+   0 0 26px rgba(255, 211, 79, 0.72),
+   0 12px 30px rgba(0, 0, 0, 0.7);
+ outline: none;
+}
+
+.bolamu-carousel-arrow:active {
+ transform: translateY(-50%) scale(0.96);
+}
+
+.bolamu-carousel-arrow-left {
+ left: 12px;
+}
+
+.bolamu-carousel-arrow-right {
+ right: 12px;
+}
+
+.bolamu-carousel-arrow[disabled] {
+ opacity: 0;
+ pointer-events: none;
+}
+
+.bolamu-swipe-hint {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 13px;
+
+ margin: 10px 0 0;
+ padding: 0 16px;
+
+ color: #ffeaa3;
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 0.18em;
+
+ font-size: clamp(0.78rem, 0.95vw, 0.92rem);
+ font-weight: 700;
+
+ text-shadow:
+   0 0 4px rgba(255, 211, 79, 0.92),
+   0 0 11px rgba(255, 211, 79, 0.62);
+}
+
+.bolamu-swipe-arrow {
+ color: #e0f8ff;
+ font-size: 1.25em;
+ line-height: 1;
+
+ filter:
+   drop-shadow(0 0 3px var(--bolamu-blue))
+   drop-shadow(0 0 8px var(--bolamu-blue-soft));
+}
+
+.bolamu-swipe-arrow-left {
+ animation: bolamu-nudge-left 1.8s ease-in-out infinite;
+}
+
+.bolamu-swipe-arrow-right {
+ animation: bolamu-nudge-right 1.8s ease-in-out infinite;
+}
+
+@keyframes bolamu-nudge-left {
+ 0%, 100% { transform: translateX(0); }
+ 50% { transform: translateX(-4px); }
+}
+
+@keyframes bolamu-nudge-right {
+ 0%, 100% { transform: translateX(0); }
+ 50% { transform: translateX(4px); }
+}
+
+@media (max-width: 768px) {
+ .bolamu-gambit {
+   --bolamu-gap: 13px;
+   --bolamu-card-width: min(52vw, 215px);
+
+   padding-top: 20px;
+   padding-bottom: 38px;
+ }
+
+ .bolamu-gambit-badge {
+   width: min(74vw, 410px);
+   margin-bottom: 9px;
+ }
+
+ .bolamu-gambit-description {
+   width: min(88vw, 580px);
+   margin-bottom: 22px;
+   padding-inline: 5px;
+
+   font-size: 0.78rem;
+   letter-spacing: 0.1em;
+   line-height: 1.6;
+ }
+
+ .bolamu-carousel {
+   padding:
+     10px
+     calc((100% - var(--bolamu-card-width)) / 2)
+     20px;
+   scroll-padding-inline:
+     calc((100% - var(--bolamu-card-width)) / 2);
+ }
+
+ .bolamu-carousel-arrow {
+   display: none;
+ }
+
+ .bolamu-carousel-fade {
+   width: 12vw;
+ }
+
+ .bolamu-event-card {
+   border-radius: 18px;
+ }
+
+ .bolamu-event-card:hover {
+   transform: none;
+   filter: none;
+ }
+
+ .bolamu-swipe-hint {
+   margin-top: 8px;
+   gap: 11px;
+   font-size: 0.8rem;
+ }
+}
+
+@media (max-width: 390px) {
+ .bolamu-gambit {
+   --bolamu-card-width: 56vw;
+ }
+
+ .bolamu-carousel-fade {
+   width: 10vw;
+ }
+
+ .bolamu-swipe-hint {
+   gap: 9px;
+   letter-spacing: 0.14em;
+   font-size: 0.76rem;
+ }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .bolamu-carousel {
+   scroll-behavior: auto;
+ }
+
+ .bolamu-event-card,
+ .bolamu-carousel-arrow {
+   transition: none;
+ }
+
+ .bolamu-swipe-arrow {
+   animation: none;
+ }
+}
+</style>
+
+<script>
+(function () {
+ const section = document.querySelector(".bolamu-gambit");
+
+ if (!section || section.dataset.carouselReady === "true") {
+   return;
+ }
+
+ section.dataset.carouselReady = "true";
+
+ const carousel = section.querySelector(".bolamu-carousel");
+ const leftArrow = section.querySelector(".bolamu-carousel-arrow-left");
+ const rightArrow = section.querySelector(".bolamu-carousel-arrow-right");
+
+ if (!carousel || !leftArrow || !rightArrow) {
+   return;
+ }
+
+ function getScrollAmount() {
+   const card = carousel.querySelector(".bolamu-event-card");
+   const styles = window.getComputedStyle(carousel);
+   const gap = parseFloat(styles.columnGap || styles.gap || "0");
+
+   return card
+     ? card.getBoundingClientRect().width + gap
+     : carousel.clientWidth * 0.72;
+ }
+
+ function updateArrows() {
+   const maximumScroll = carousel.scrollWidth - carousel.clientWidth;
+   const tolerance = 4;
+
+   leftArrow.disabled = carousel.scrollLeft <= tolerance;
+   rightArrow.disabled =
+     carousel.scrollLeft >= maximumScroll - tolerance;
+ }
+
+ leftArrow.addEventListener("click", function () {
+   carousel.scrollBy({
+     left: -getScrollAmount(),
+     behavior: "smooth"
+   });
+ });
+
+ rightArrow.addEventListener("click", function () {
+   carousel.scrollBy({
+     left: getScrollAmount(),
+     behavior: "smooth"
+   });
+ });
+
+ carousel.addEventListener("keydown", function (event) {
+   if (event.key === "ArrowLeft") {
+     event.preventDefault();
+     carousel.scrollBy({
+       left: -getScrollAmount(),
+       behavior: "smooth"
+     });
+   }
+
+   if (event.key === "ArrowRight") {
+     event.preventDefault();
+     carousel.scrollBy({
+       left: getScrollAmount(),
+       behavior: "smooth"
+     });
+   }
+ });
+
+ carousel.addEventListener("scroll", updateArrows, {
+   passive: true
+ });
+
+ window.addEventListener("resize", updateArrows);
+ window.addEventListener("load", updateArrows);
+
+ updateArrows();
+})();
+</script>

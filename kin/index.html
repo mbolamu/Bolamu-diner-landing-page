@@ -1,0 +1,1139 @@
+<!-- Bolamu KIN Collective: paste this entire file into one Webador HTML block. -->
+<style>
+  @font-face {
+    font-family: "Glacial Indifference";
+    src: url("https://ik.imagekit.io/vxel66ikf/GlacialIndifference-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .bolamu-kin-page,
+  .bolamu-kin-page * {
+    box-sizing: border-box;
+  }
+
+  .bolamu-kin-page {
+    --kin-font: "Glacial Indifference", Arial, Helvetica, sans-serif;
+    --kin-top-bleed: 0px;
+    position: relative;
+    left: 50%;
+    z-index: 9999;
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: calc(-1 * var(--kin-top-bleed)) 0 0 -50vw !important;
+    padding: 0 !important;
+    overflow: hidden;
+    color: #fff;
+    background: #000;
+    font-family: var(--kin-font) !important;
+    isolation: isolate;
+  }
+
+  .bolamu-kin-page button,
+  .bolamu-kin-page img {
+    font: inherit;
+  }
+
+  .bolamu-kin-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .bolamu-kin-hero,
+  .bolamu-kin-footer {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .bolamu-kin-hero img,
+  .bolamu-kin-footer img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border: 0;
+  }
+
+  .bolamu-kin-hero img {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .bolamu-kin-footer img {
+    min-height: clamp(260px, 45vw, 580px);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .bolamu-kin-club-instruction {
+    width: min(1050px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: clamp(14px, 2.2vw, 24px) 0 0;
+    color: rgba(255, 250, 240, 0.88);
+    font-family: var(--kin-font) !important;
+    font-size: clamp(0.64rem, 0.8vw, 0.76rem);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.28em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 7px rgba(255, 238, 205, 0.22);
+  }
+
+  .bolamu-kin-clubs {
+    display: grid;
+    gap: clamp(14px, 2vw, 22px);
+    width: min(1050px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: clamp(12px, 1.8vw, 22px) 0 clamp(28px, 4vw, 52px);
+    background: #000;
+  }
+
+  .bolamu-kin-club {
+    --kin-colour: #ff3131;
+    --kin-colour-rgb: 255, 49, 49;
+    --kin-soft: #ffd0d0;
+    --kin-pulse-delay: 0s;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(235px, 0.42fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: clamp(14px, 1.8vw, 22px);
+    row-gap: 7px;
+    align-items: center;
+    min-width: 0;
+    padding: clamp(12px, 1.5vw, 18px);
+    overflow: hidden;
+    border: 1px solid rgba(var(--kin-colour-rgb), 0.88);
+    border-radius: 22px;
+    color: #fff;
+    background:
+      linear-gradient(115deg, rgba(var(--kin-colour-rgb), 0.09), transparent 34%),
+      radial-gradient(circle at 100% 50%, rgba(var(--kin-colour-rgb), 0.08), transparent 48%),
+      #030303;
+    box-shadow:
+      0 0 5px rgba(var(--kin-colour-rgb), 0.56),
+      0 0 17px rgba(var(--kin-colour-rgb), 0.17),
+      inset 0 0 16px rgba(var(--kin-colour-rgb), 0.06),
+      0 16px 32px rgba(0, 0, 0, 0.72);
+    isolation: isolate;
+    animation: bolamu-kin-neon-breathe 9s ease-in-out var(--kin-pulse-delay) infinite;
+  }
+
+  .bolamu-kin-club-trigger {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: inherit;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .bolamu-kin-club-trigger:focus-visible {
+    outline: 2px solid var(--kin-colour);
+    outline-offset: -5px;
+    box-shadow: inset 0 0 20px rgba(var(--kin-colour-rgb), 0.18);
+  }
+
+  .bolamu-kin-club:hover {
+    box-shadow:
+      0 0 7px rgba(var(--kin-colour-rgb), 0.68),
+      0 0 21px rgba(var(--kin-colour-rgb), 0.22),
+      inset 0 0 16px rgba(var(--kin-colour-rgb), 0.08),
+      0 16px 32px rgba(0, 0, 0, 0.72);
+  }
+
+  .bolamu-kin-club:hover .bolamu-kin-badge {
+    filter: brightness(1.07);
+  }
+
+  .bolamu-kin-club::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    z-index: -1;
+    border: 1px solid rgba(var(--kin-colour-rgb), 0.18);
+    border-radius: 17px;
+    pointer-events: none;
+  }
+
+  .bolamu-kin-club--curiosity {
+    --kin-colour: #ff3131;
+    --kin-colour-rgb: 255, 49, 49;
+    --kin-soft: #ffd0d0;
+    --kin-pulse-delay: 0s;
+  }
+
+  .bolamu-kin-club--archives {
+    --kin-colour: #28bfff;
+    --kin-colour-rgb: 40, 191, 255;
+    --kin-soft: #bdeeff;
+    --kin-pulse-delay: -2.2s;
+  }
+
+  .bolamu-kin-club--gambit {
+    --kin-colour: #ffd34f;
+    --kin-colour-rgb: 255, 211, 79;
+    --kin-soft: #ffeaa3;
+    --kin-pulse-delay: -4.4s;
+  }
+
+  .bolamu-kin-club--leopards {
+    --kin-colour: #39ff4d;
+    --kin-colour-rgb: 57, 255, 77;
+    --kin-soft: #d8ffe0;
+    --kin-pulse-delay: -6.6s;
+  }
+
+  @keyframes bolamu-kin-neon-breathe {
+    0%, 74%, 100% {
+      box-shadow:
+        0 0 5px rgba(var(--kin-colour-rgb), 0.56),
+        0 0 17px rgba(var(--kin-colour-rgb), 0.17),
+        inset 0 0 16px rgba(var(--kin-colour-rgb), 0.06),
+        0 16px 32px rgba(0, 0, 0, 0.72);
+    }
+    82% {
+      box-shadow:
+        0 0 7px rgba(var(--kin-colour-rgb), 0.76),
+        0 0 24px rgba(var(--kin-colour-rgb), 0.25),
+        inset 0 0 20px rgba(var(--kin-colour-rgb), 0.09),
+        0 16px 32px rgba(0, 0, 0, 0.72);
+    }
+  }
+
+  .bolamu-kin-identity {
+    display: contents;
+  }
+
+  .bolamu-kin-badge {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: min(100%, 315px);
+    height: auto;
+    max-height: 184px;
+    margin: 0 auto 0 0;
+    object-fit: contain;
+    object-position: left center;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    filter: none;
+    pointer-events: none;
+  }
+
+  .bolamu-kin-description {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: var(--kin-soft);
+    font-family: var(--kin-font) !important;
+    font-size: clamp(0.7rem, 0.88vw, 0.82rem);
+    font-weight: 400;
+    line-height: 1.34;
+    letter-spacing: 0.085em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 8px rgba(var(--kin-colour-rgb), 0.3);
+    pointer-events: none;
+  }
+
+  .bolamu-kin-preview {
+    position: relative;
+    z-index: 2;
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
+    min-width: 0;
+    align-self: center;
+  }
+
+  .bolamu-kin-preview-shell,
+  .bolamu-kin-dialog-gallery-shell {
+    position: relative;
+    min-width: 0;
+    isolation: isolate;
+  }
+
+  .bolamu-kin-preview-rail,
+  .bolamu-kin-dialog-rail {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  .bolamu-kin-preview-rail {
+    padding: 5px 48px 7px 3px;
+  }
+
+  .bolamu-kin-preview-rail::-webkit-scrollbar,
+  .bolamu-kin-dialog-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bolamu-kin-preview-rail:focus-visible,
+  .bolamu-kin-dialog-rail:focus-visible {
+    outline: 2px solid var(--kin-colour);
+    outline-offset: 2px;
+  }
+
+  .bolamu-kin-card-trigger,
+  .bolamu-kin-dialog-card {
+    display: block;
+    flex: 0 0 clamp(132px, 16vw, 184px);
+    width: clamp(132px, 16vw, 184px);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scroll-snap-align: start;
+    border: 1px solid rgba(var(--kin-colour-rgb), 0.74);
+    border-radius: 15px;
+    color: inherit;
+    background: #050505;
+    box-shadow:
+      0 0 7px rgba(var(--kin-colour-rgb), 0.22),
+      0 8px 18px rgba(0, 0, 0, 0.64);
+  }
+
+  .bolamu-kin-card-trigger {
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .bolamu-kin-card-trigger:hover,
+  .bolamu-kin-card-trigger:focus-visible {
+    outline: 2px solid var(--kin-colour);
+    outline-offset: 2px;
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 10px rgba(var(--kin-colour-rgb), 0.48),
+      0 11px 22px rgba(0, 0, 0, 0.72);
+  }
+
+  .bolamu-kin-card-trigger img,
+  .bolamu-kin-dialog-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .bolamu-kin-preview-arrow,
+  .bolamu-kin-dialog-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: inline-grid;
+    place-items: center;
+    width: 38px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(var(--kin-colour-rgb), 0.82);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.82);
+    box-shadow: 0 0 10px rgba(var(--kin-colour-rgb), 0.42);
+    font-size: 1.35rem;
+    line-height: 1;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .bolamu-kin-arrow-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 4px currentColor);
+    pointer-events: none;
+  }
+
+  .bolamu-kin-dialog-arrow .bolamu-kin-arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bolamu-kin-preview-arrow {
+    width: 38px;
+    height: 38px;
+    border-color: currentColor;
+    color: var(--kin-colour);
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .bolamu-kin-preview-arrow:hover,
+  .bolamu-kin-preview-arrow:focus-visible,
+  .bolamu-kin-dialog-arrow:hover,
+  .bolamu-kin-dialog-arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 14px rgba(var(--kin-colour-rgb), 0.72);
+  }
+
+  .bolamu-kin-preview-arrow[disabled],
+  .bolamu-kin-dialog-arrow[disabled] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .bolamu-kin-dialog-arrow--left {
+    left: 4px;
+  }
+
+  .bolamu-kin-preview-arrow--right {
+    right: 2px;
+  }
+
+  .bolamu-kin-dialog-arrow--right {
+    right: 4px;
+  }
+
+  .bolamu-kin-dialog[hidden] {
+    display: none;
+  }
+
+  .bolamu-kin-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding:
+      max(14px, env(safe-area-inset-top))
+      max(12px, env(safe-area-inset-right))
+      max(14px, env(safe-area-inset-bottom))
+      max(12px, env(safe-area-inset-left));
+    overflow: hidden;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.96);
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+
+  .bolamu-kin-dialog.is-visible {
+    opacity: 1;
+  }
+
+  .bolamu-kin-dialog-shell {
+    --kin-colour: #ff3131;
+    --kin-colour-rgb: 255, 49, 49;
+    --kin-soft: #ffd0d0;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    gap: clamp(8px, 1.4vh, 14px);
+    width: min(1180px, 100%);
+    height: min(820px, 100%);
+    padding: clamp(16px, 3vw, 30px);
+    overflow: hidden;
+    border: 1px solid rgba(var(--kin-colour-rgb), 0.84);
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 50% 0, rgba(var(--kin-colour-rgb), 0.12), transparent 38%),
+      #030303;
+    box-shadow:
+      0 0 12px rgba(var(--kin-colour-rgb), 0.55),
+      0 0 34px rgba(var(--kin-colour-rgb), 0.2);
+    transform: scale(0.985);
+    transition: transform 220ms ease;
+  }
+
+  .bolamu-kin-dialog.is-visible .bolamu-kin-dialog-shell {
+    transform: scale(1);
+  }
+
+  .bolamu-kin-dialog-header {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    min-height: 54px;
+    padding-inline: 58px;
+  }
+
+  .bolamu-kin-dialog-brand {
+    display: grid;
+    place-items: center;
+    width: min(390px, 48vw);
+    min-width: 0;
+  }
+
+  .bolamu-kin-dialog-badge {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: clamp(92px, 16vh, 168px);
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    filter: none;
+  }
+
+  .bolamu-kin-dialog-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-grid;
+    flex: 0 0 48px;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(var(--kin-colour-rgb), 0.9);
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.82);
+    box-shadow: 0 0 11px rgba(var(--kin-colour-rgb), 0.46);
+    font-size: 1.55rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .bolamu-kin-dialog-close:hover,
+  .bolamu-kin-dialog-close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .bolamu-kin-dialog-description {
+    display: block;
+    width: min(880px, 92%);
+    margin: 0 auto;
+    color: var(--kin-soft);
+    font-family: var(--kin-font) !important;
+    font-size: clamp(1rem, 1.35vw, 1.22rem);
+    font-weight: 400;
+    line-height: 1.38;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(var(--kin-colour-rgb), 0.3);
+  }
+
+  .bolamu-kin-dialog-gallery-shell {
+    display: grid;
+    align-items: center;
+    min-height: 0;
+  }
+
+  .bolamu-kin-dialog-rail {
+    align-items: center;
+    height: 100%;
+    padding: 16px max(48px, calc((100% - min(68vh, 560px)) / 2));
+    scroll-padding-inline: max(48px, calc((100% - min(68vh, 560px)) / 2));
+  }
+
+  .bolamu-kin-dialog-card {
+    flex-basis: min(68vh, 560px);
+    width: min(68vh, 560px);
+    max-width: calc(100vw - 110px);
+    border-radius: clamp(16px, 2.5vw, 26px);
+    scroll-snap-align: center;
+    box-shadow:
+      0 0 12px rgba(var(--kin-colour-rgb), 0.38),
+      0 18px 40px rgba(0, 0, 0, 0.78);
+  }
+
+  .bolamu-kin-dialog-status {
+    min-height: 1.4em;
+    margin: 0;
+    color: var(--kin-soft);
+    font-family: var(--kin-font) !important;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 760px) {
+    .bolamu-kin-hero img {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      object-fit: contain;
+    }
+
+    .bolamu-kin-footer img {
+      min-height: clamp(300px, 72vw, 470px);
+      object-position: center;
+    }
+
+    .bolamu-kin-club-instruction {
+      width: calc(100% - 16px);
+      padding-top: 12px;
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+    }
+
+    .bolamu-kin-clubs {
+      gap: 12px;
+      width: calc(100% - 16px);
+      padding: 16px 0 28px;
+    }
+
+    .bolamu-kin-club {
+      grid-template-columns: minmax(104px, 36%) minmax(0, 64%);
+      grid-template-rows: auto;
+      column-gap: 7px;
+      row-gap: 0;
+      align-items: center;
+      padding: 7px 7px 7px 8px;
+      border-radius: 16px;
+    }
+
+    .bolamu-kin-club::before {
+      border-radius: 14px;
+    }
+
+    .bolamu-kin-badge {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+      max-height: 90px;
+      margin: 0;
+      object-position: left center;
+    }
+
+    .bolamu-kin-description {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .bolamu-kin-preview {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    .bolamu-kin-preview-rail {
+      gap: 8px;
+      padding: 3px 38px 3px 1px;
+    }
+
+    .bolamu-kin-card-trigger {
+      flex-basis: min(22vw, 82px);
+      width: min(22vw, 82px);
+      border-radius: 10px;
+    }
+
+    .bolamu-kin-preview-arrow {
+      display: inline-grid;
+      width: 34px;
+      height: 34px;
+      right: 0;
+    }
+
+    .bolamu-kin-dialog {
+      --kin-webador-nav-clearance: clamp(96px, 13vh, 124px);
+      top: calc(env(safe-area-inset-top, 0px) + var(--kin-webador-nav-clearance));
+      bottom: 0;
+      height: auto;
+      padding:
+        4px
+        max(7px, env(safe-area-inset-right))
+        max(7px, env(safe-area-inset-bottom))
+        max(7px, env(safe-area-inset-left));
+      place-items: stretch center;
+    }
+
+    .bolamu-kin-dialog-shell {
+      grid-template-rows: auto auto minmax(0, 1fr) auto;
+      gap: 4px;
+      width: 100%;
+      height: 100%;
+      padding: 7px 7px 8px;
+      border-radius: 16px;
+    }
+
+    .bolamu-kin-dialog-header {
+      min-height: 44px;
+      padding-inline: 50px;
+    }
+
+    .bolamu-kin-dialog-brand {
+      width: min(70vw, 300px);
+    }
+
+    .bolamu-kin-dialog-badge {
+      max-height: clamp(76px, 13vh, 116px);
+    }
+
+    .bolamu-kin-dialog-description {
+      width: min(94%, 680px);
+      padding: 0;
+      font-size: clamp(0.82rem, 3.5vw, 1rem);
+      line-height: 1.34;
+      letter-spacing: 0.09em;
+      text-align: center;
+    }
+
+    .bolamu-kin-dialog-close {
+      z-index: 6;
+      flex-basis: 44px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .bolamu-kin-dialog-gallery-shell {
+      overflow: hidden;
+    }
+
+    .bolamu-kin-dialog-rail {
+      gap: 13px;
+      padding: 2px 9vw;
+      scroll-padding-inline: 9vw;
+    }
+
+    .bolamu-kin-dialog-card {
+      flex-basis: min(82vw, 440px, calc(100dvh - 330px));
+      width: min(82vw, 440px, calc(100dvh - 330px));
+      min-width: min(76vw, 280px);
+      max-width: 440px;
+    }
+
+    .bolamu-kin-dialog-status {
+      min-height: 1.1em;
+      line-height: 1.15;
+    }
+
+    .bolamu-kin-dialog-arrow {
+      display: none;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .bolamu-kin-club {
+      grid-template-columns: minmax(100px, 36%) minmax(0, 64%);
+    }
+
+    .bolamu-kin-badge {
+      max-height: 84px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bolamu-kin-club {
+      animation: none;
+    }
+
+    .bolamu-kin-preview-rail,
+    .bolamu-kin-dialog-rail {
+      scroll-behavior: auto;
+    }
+
+    .bolamu-kin-card-trigger,
+    .bolamu-kin-dialog,
+    .bolamu-kin-dialog-shell {
+      transition: none;
+    }
+  }
+</style>
+
+<div class="bolamu-kin-page" id="bolamu-kin-page">
+  <header class="bolamu-kin-hero">
+    <h1 class="bolamu-kin-visually-hidden">KIN Collective</h1>
+    <img
+      src="https://ik.imagekit.io/vxel66ikf/Kin%20collective%20page%20background%20bottom.png"
+      alt="KIN Collective. Esika bato bayanganaka, nguya ebotaka. Where people gather, collective strength is born. Our clubs. Our stories. Our people."
+      loading="eager"
+    >
+  </header>
+
+  <p class="bolamu-kin-club-instruction">Select a club to explore</p>
+
+  <main class="bolamu-kin-clubs" aria-label="KIN Collective clubs">
+    <section class="bolamu-kin-club bolamu-kin-club--curiosity" data-kin-category="curiosity" aria-labelledby="bolamu-kin-curiosity-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Curiosity Cabinet"><span class="bolamu-kin-visually-hidden">Explore The Curiosity Cabinet</span></button>
+      <div class="bolamu-kin-identity">
+        <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-curiosity-title">The Curiosity Cabinet</h2>
+        <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/C3D5DEB5-E1F0-4C6F-9C40-434265D94B70.png?updatedAt=1784306949782" alt="The Curiosity Cabinet" loading="lazy">
+        <p class="bolamu-kin-description">For curious minds. Explore Congo beyond the headlines through talks, lessons and discoveries that uncover forgotten histories, living languages and hidden worlds.</p>
+      </div>
+      <div class="bolamu-kin-preview">
+        <div class="bolamu-kin-preview-shell">
+          <div class="bolamu-kin-preview-rail" role="region" aria-label="The Curiosity Cabinet event preview" tabindex="0">
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Curiosity Cabinet gallery at card 1"><img src="https://ik.imagekit.io/vxel66ikf/F5944035-44BB-40EA-B9F2-81F33B054DCD.png?updatedAt=1784300890074" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Curiosity Cabinet gallery at card 2"><img src="https://ik.imagekit.io/vxel66ikf/8997E917-2705-4720-A3EE-A6015AB16AF9.png?updatedAt=1784300888937" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="2" aria-label="Open The Curiosity Cabinet gallery at card 3"><img src="https://ik.imagekit.io/vxel66ikf/E8D54F19-B93B-4926-94A8-AD54CEBF00B2.png?updatedAt=1784300888858" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="3" aria-label="Open The Curiosity Cabinet gallery at card 4"><img src="https://ik.imagekit.io/vxel66ikf/6B4CDFEC-D8F6-411A-BC86-81E616C94824.png?updatedAt=1784300888500" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="4" aria-label="Open The Curiosity Cabinet gallery at card 5"><img src="https://ik.imagekit.io/vxel66ikf/FA296411-AF5C-4F53-BDCB-8C0F97274A33.png?updatedAt=1784300885545" alt="Curiosity Cabinet event" loading="lazy" draggable="false"></button>
+          </div>
+          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Open The Curiosity Cabinet full gallery"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
+        </div>
+        </div>
+    </section>
+
+    <section class="bolamu-kin-club bolamu-kin-club--archives" data-kin-category="archives" aria-labelledby="bolamu-kin-archives-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Forgotten Archives"><span class="bolamu-kin-visually-hidden">Explore The Forgotten Archives</span></button>
+      <div class="bolamu-kin-identity">
+        <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-archives-title">The Forgotten Archives</h2>
+        <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/97A17436-2B24-4D0F-857C-FE84C9A72B86.png" alt="The Forgotten Archives" loading="lazy">
+        <p class="bolamu-kin-description">Rare films, documentaries and stories that preserve, question and reclaim Congo's cultural memory.</p>
+      </div>
+      <div class="bolamu-kin-preview">
+        <div class="bolamu-kin-preview-shell">
+          <div class="bolamu-kin-preview-rail" role="region" aria-label="The Forgotten Archives event preview" tabindex="0">
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Forgotten Archives gallery at La Vie Est Belle"><img src="https://ik.imagekit.io/vxel66ikf/ACF948BD-CD4A-4D86-91D9-C847E7C75E1E.png?updatedAt=1784277805858" alt="La Vie Est Belle screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Forgotten Archives gallery at Soul Power"><img src="https://ik.imagekit.io/vxel66ikf/A6B2AFE6-EA46-437C-B2C1-14F4B1D62B50.png?updatedAt=1784277806181" alt="Soul Power screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="2" aria-label="Open The Forgotten Archives gallery at When We Were Kings"><img src="https://ik.imagekit.io/vxel66ikf/0908BC7F-52E4-4A4D-A8EC-2DF57BB8EA59.png?updatedAt=1784277806150" alt="When We Were Kings screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="3" aria-label="Open The Forgotten Archives gallery at Felicite"><img src="https://ik.imagekit.io/vxel66ikf/2EF1F3D5-C806-4508-9B3D-E9DE3FD29E65.png?updatedAt=1784277806843" alt="Felicite screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="4" aria-label="Open The Forgotten Archives gallery at Viva Riva"><img src="https://ik.imagekit.io/vxel66ikf/8720928C-CC4E-474D-902D-8036EA9A619C.png?updatedAt=1784277806938" alt="Viva Riva screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="5" aria-label="Open The Forgotten Archives gallery at Makila"><img src="https://ik.imagekit.io/vxel66ikf/B3024771-1EF7-4A0E-9087-B1CF508E9B91.png?updatedAt=1784277807098" alt="Makila screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="6" aria-label="Open The Forgotten Archives gallery at Congo White King Red Rubber Black Death"><img src="https://ik.imagekit.io/vxel66ikf/9631FE53-6C5A-42D0-B9CB-BC10C25F4ABE.png?updatedAt=1784277807332" alt="Congo White King Red Rubber Black Death screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="7" aria-label="Open The Forgotten Archives gallery at Lumumba"><img src="https://ik.imagekit.io/vxel66ikf/4B80448A-DC7D-4941-8D6D-7097D3C52E3B.png?updatedAt=1784277807343" alt="Lumumba screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="8" aria-label="Open The Forgotten Archives gallery at Soundtrack to a Coup d'Etat"><img src="https://ik.imagekit.io/vxel66ikf/05DF1BC7-4F76-4C74-9F5D-500F0D205482.png?updatedAt=1784277807314" alt="Soundtrack to a Coup d'Etat screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="9" aria-label="Open The Forgotten Archives gallery at Kinshasa Symphony"><img src="https://ik.imagekit.io/vxel66ikf/2A5FBCBF-4946-4486-984B-1C970C20A919.png?updatedAt=1784277805304" alt="Kinshasa Symphony screening event" loading="lazy" draggable="false"></button>
+          </div>
+          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Open The Forgotten Archives full gallery"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
+        </div>
+        </div>
+    </section>
+
+    <section class="bolamu-kin-club bolamu-kin-club--gambit" data-kin-category="gambit" aria-labelledby="bolamu-kin-gambit-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Gambit Club"><span class="bolamu-kin-visually-hidden">Explore The Gambit Club</span></button>
+      <div class="bolamu-kin-identity">
+        <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-gambit-title">The Gambit Club</h2>
+        <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/BD951809-1727-4F7E-95F1-55C7B502DC55.png?updatedAt=1784306948869" alt="The Gambit Club" loading="lazy">
+        <p class="bolamu-kin-description">A collection of classic and traditional games, tournaments and quizzes where champions are made and rivalries are remembered.</p>
+      </div>
+      <div class="bolamu-kin-preview">
+        <div class="bolamu-kin-preview-shell">
+          <div class="bolamu-kin-preview-rail" role="region" aria-label="The Gambit Club event preview" tabindex="0">
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Gambit Club gallery at card 1"><img src="https://ik.imagekit.io/vxel66ikf/39D816A1-8D1F-4D0E-A125-966056804DA2.png?updatedAt=1784300889736" alt="La Vie Est Belle screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Gambit Club gallery at card 2"><img src="https://ik.imagekit.io/vxel66ikf/C0C54B76-77FA-4AFA-B73B-BEDB00A1BD7F.png?updatedAt=1784300890161" alt="Soul Power screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="2" aria-label="Open The Gambit Club gallery at card 3"><img src="https://ik.imagekit.io/vxel66ikf/E6BD4212-1610-4C5C-95D9-7726035C7E69.png?updatedAt=1784300889494" alt="When We Were Kings screening event" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="3" aria-label="Open The Gambit Club gallery at card 4"><img src="https://ik.imagekit.io/vxel66ikf/AB7A4A5A-AEFC-4F89-8034-B4712D6132D2.png?updatedAt=1784300888742" alt="Felicite screening event" loading="lazy" draggable="false"></button>
+          </div>
+          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Open The Gambit Club full gallery"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
+        </div>
+        </div>
+    </section>
+
+    <section class="bolamu-kin-club bolamu-kin-club--leopards" data-kin-category="leopards" aria-labelledby="bolamu-kin-leopards-title">
+      <button class="bolamu-kin-club-trigger" type="button" aria-label="Explore The Leopards Club"><span class="bolamu-kin-visually-hidden">Explore The Leopards Club</span></button>
+      <div class="bolamu-kin-identity">
+        <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-leopards-title">The Leopards Club</h2>
+        <img class="bolamu-kin-badge" src="https://ik.imagekit.io/vxel66ikf/3984218B-AD75-4DC4-AA1F-8405FE0C5417.png?updatedAt=1784306949224" alt="The Leopards Club" loading="lazy">
+        <p class="bolamu-kin-description">For football romantics. Relive the journeys, triumphs and rivalries that shaped the Leopards through classic matches, historic campaigns and unforgettable tournaments.</p>
+      </div>
+      <div class="bolamu-kin-preview">
+        <div class="bolamu-kin-preview-shell">
+          <div class="bolamu-kin-preview-rail" role="region" aria-label="The Leopards Club event preview" tabindex="0">
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="0" aria-label="Open The Leopards Club gallery at Journey to FIFA World Cup 2026"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9191.jpeg" alt="Journey to FIFA World Cup 2026 screening season" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="1" aria-label="Open The Leopards Club gallery at Road to AFCON"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9189.jpeg" alt="Road to AFCON screening season" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="2" aria-label="Open The Leopards Club gallery at AFCON The Full Campaign"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9190.jpeg" alt="AFCON The Full Campaign screening season" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="3" aria-label="Open The Leopards Club gallery at Leopards From The Vault"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9187.jpeg" alt="Leopards From The Vault vintage match screenings" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="4" aria-label="Open The Leopards Club gallery at Champions of Africa"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9186.jpeg" alt="Champions of Africa historic screening season" loading="lazy" draggable="false"></button>
+            <button class="bolamu-kin-card-trigger" type="button" data-kin-card-index="5" aria-label="Open The Leopards Club gallery at The Great Rivalries"><img src="https://ik.imagekit.io/vxel66ikf/IMG_9188.jpeg" alt="The Great Rivalries curated screenings" loading="lazy" draggable="false"></button>
+          </div>
+          <button class="bolamu-kin-preview-arrow bolamu-kin-preview-arrow--right" type="button" aria-label="Open The Leopards Club full gallery"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
+        </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="bolamu-kin-footer">
+    <img src="https://ik.imagekit.io/vxel66ikf/Kin%20collective%20page%20background%20top.png" alt="A highway leading toward the Kinshasa skyline at sunset" loading="lazy">
+  </footer>
+
+  <div class="bolamu-kin-dialog" role="dialog" aria-modal="true" aria-labelledby="bolamu-kin-dialog-heading" hidden>
+    <div class="bolamu-kin-dialog-shell">
+      <div class="bolamu-kin-dialog-header">
+        <div class="bolamu-kin-dialog-brand">
+          <img class="bolamu-kin-dialog-badge" src="" alt="">
+          <h2 class="bolamu-kin-visually-hidden" id="bolamu-kin-dialog-heading"></h2>
+        </div>
+        <button class="bolamu-kin-dialog-close" type="button" aria-label="Close gallery"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M5 5l8 8M13 5l-8 8"/></svg></button>
+      </div>
+      <p class="bolamu-kin-dialog-description"></p>
+      <div class="bolamu-kin-dialog-gallery-shell">
+        <button class="bolamu-kin-dialog-arrow bolamu-kin-dialog-arrow--left" type="button" aria-label="Previous card"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11 4 6 9l5 5"/></svg></button>
+        <div class="bolamu-kin-dialog-rail" role="region" aria-label="Expanded gallery" tabindex="0"></div>
+        <button class="bolamu-kin-dialog-arrow bolamu-kin-dialog-arrow--right" type="button" aria-label="Next card"><svg class="bolamu-kin-arrow-icon" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="m7 4 5 5-5 5"/></svg></button>
+      </div>
+      <p class="bolamu-kin-dialog-status" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var page = document.getElementById("bolamu-kin-page");
+    if (!page || page.dataset.kinReady === "true") return;
+
+    /* Match the proven full-viewport treatment used by the Home/About embeds.
+       Pull only this page upward across Webador's transparent page-header slot. */
+    var topGap = page.getBoundingClientRect().top;
+    if (topGap > 0 && topGap <= 280) {
+      page.style.setProperty("--kin-top-bleed", Math.round(topGap) + "px");
+    }
+
+    page.dataset.kinReady = "true";
+
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var dialog = page.querySelector(".bolamu-kin-dialog");
+    var dialogShell = page.querySelector(".bolamu-kin-dialog-shell");
+    var dialogHeading = page.querySelector("#bolamu-kin-dialog-heading");
+    var dialogBadge = page.querySelector(".bolamu-kin-dialog-badge");
+    var dialogDescription = page.querySelector(".bolamu-kin-dialog-description");
+    var dialogRail = page.querySelector(".bolamu-kin-dialog-rail");
+    var dialogStatus = page.querySelector(".bolamu-kin-dialog-status");
+    var closeButton = page.querySelector(".bolamu-kin-dialog-close");
+    var dialogLeft = page.querySelector(".bolamu-kin-dialog-arrow--left");
+    var dialogRight = page.querySelector(".bolamu-kin-dialog-arrow--right");
+    var activeClub = null;
+    var activeTrigger = null;
+    var savedScrollY = 0;
+    var bodyStyles = {};
+    var scrollFrame = 0;
+
+    function scrollBehavior() {
+      return reducedMotion.matches ? "auto" : "smooth";
+    }
+
+    function cardStep(rail) {
+      var card = rail.querySelector(".bolamu-kin-card-trigger, .bolamu-kin-dialog-card");
+      var styles = window.getComputedStyle(rail);
+      var gap = parseFloat(styles.columnGap || styles.gap || "0");
+      return card ? card.getBoundingClientRect().width + gap : rail.clientWidth * 0.8;
+    }
+
+    function setupPreview(club) {
+      var rail = club.querySelector(".bolamu-kin-preview-rail");
+      var right = club.querySelector(".bolamu-kin-preview-arrow--right");
+      var clubTrigger = club.querySelector(".bolamu-kin-club-trigger");
+      var pointerStartX = 0;
+      var pointerMoved = false;
+
+      clubTrigger.addEventListener("click", function () {
+        openDialog(club, 0, clubTrigger);
+      });
+      right.addEventListener("click", function (event) {
+        event.stopPropagation();
+        openDialog(club, 0, right);
+      });
+      rail.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        rail.scrollBy({ left: (event.key === "ArrowLeft" ? -1 : 1) * cardStep(rail), behavior: scrollBehavior() });
+      });
+      rail.addEventListener("pointerdown", function (event) { pointerStartX = event.clientX; pointerMoved = false; }, { passive: true });
+      rail.addEventListener("pointermove", function (event) { if (Math.abs(event.clientX - pointerStartX) > 8) pointerMoved = true; }, { passive: true });
+      rail.addEventListener("click", function (event) {
+        var trigger = event.target.closest(".bolamu-kin-card-trigger");
+        if (pointerMoved) { event.preventDefault(); pointerMoved = false; return; }
+        event.stopPropagation();
+        if (trigger) {
+          openDialog(club, Number(trigger.dataset.kinCardIndex || 0), trigger);
+          return;
+        }
+        openDialog(club, 0, rail);
+      });
+
+    }
+
+    function copyColourIdentity(club) {
+      var styles = window.getComputedStyle(club);
+      dialogShell.style.setProperty("--kin-colour", styles.getPropertyValue("--kin-colour"));
+      dialogShell.style.setProperty("--kin-colour-rgb", styles.getPropertyValue("--kin-colour-rgb"));
+      dialogShell.style.setProperty("--kin-soft", styles.getPropertyValue("--kin-soft"));
+    }
+
+    function lockPage() {
+      savedScrollY = window.scrollY || window.pageYOffset;
+      bodyStyles = {
+        position: document.body.style.position,
+        top: document.body.style.top,
+        left: document.body.style.left,
+        right: document.body.style.right,
+        width: document.body.style.width,
+        overflow: document.body.style.overflow
+      };
+      document.body.style.position = "fixed";
+      document.body.style.top = "-" + savedScrollY + "px";
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+    }
+
+    function unlockPage() {
+      Object.keys(bodyStyles).forEach(function (key) { document.body.style[key] = bodyStyles[key]; });
+      window.scrollTo(0, savedScrollY);
+    }
+
+    function buildDialogCards(club) {
+      var sourceImages = club.querySelectorAll(".bolamu-kin-card-trigger img");
+      var fragment = document.createDocumentFragment();
+      dialogRail.textContent = "";
+      sourceImages.forEach(function (source, index) {
+        var card = document.createElement("article");
+        var image = document.createElement("img");
+        card.className = "bolamu-kin-dialog-card";
+        card.dataset.kinIndex = String(index);
+        image.src = source.currentSrc || source.src;
+        image.alt = source.alt;
+        image.loading = index === 0 ? "eager" : "lazy";
+        image.draggable = false;
+        card.appendChild(image);
+        fragment.appendChild(card);
+      });
+      dialogRail.appendChild(fragment);
+    }
+
+    function scrollDialogTo(index, instant) {
+      var cards = dialogRail.querySelectorAll(".bolamu-kin-dialog-card");
+      var target = cards[Math.max(0, Math.min(index, cards.length - 1))];
+      if (!target) return;
+      var left = target.offsetLeft - (dialogRail.clientWidth - target.offsetWidth) / 2;
+      dialogRail.scrollTo({
+        left: Math.max(0, left),
+        behavior: instant || reducedMotion.matches ? "auto" : "smooth"
+      });
+    }
+
+    function currentDialogIndex() {
+      var cards = Array.prototype.slice.call(dialogRail.querySelectorAll(".bolamu-kin-dialog-card"));
+      if (!cards.length) return 0;
+      var centre = dialogRail.scrollLeft + dialogRail.clientWidth / 2;
+      var nearest = 0;
+      var distance = Infinity;
+      cards.forEach(function (card, index) {
+        var cardCentre = card.offsetLeft + card.offsetWidth / 2;
+        var delta = Math.abs(cardCentre - centre);
+        if (delta < distance) { distance = delta; nearest = index; }
+      });
+      return nearest;
+    }
+
+    function updateDialogState() {
+      var cards = dialogRail.querySelectorAll(".bolamu-kin-dialog-card");
+      var index = currentDialogIndex();
+      dialogLeft.disabled = index <= 0;
+      dialogRight.disabled = index >= cards.length - 1;
+      dialogStatus.textContent = cards.length ? "Card " + (index + 1) + " of " + cards.length : "";
+    }
+
+    function openDialog(club, index, trigger) {
+      activeClub = club;
+      activeTrigger = trigger;
+      copyColourIdentity(club);
+      dialogHeading.textContent = club.querySelector("h2").textContent.trim();
+      var sourceBadge = club.querySelector(".bolamu-kin-badge");
+      dialogBadge.src = sourceBadge.currentSrc || sourceBadge.src;
+      dialogBadge.alt = sourceBadge.alt;
+      dialogDescription.textContent = club.querySelector(".bolamu-kin-description").textContent.trim();
+      dialogRail.setAttribute("aria-label", dialogHeading.textContent + " expanded gallery");
+      buildDialogCards(club);
+      lockPage();
+      dialog.hidden = false;
+      requestAnimationFrame(function () {
+        dialog.classList.add("is-visible");
+        scrollDialogTo(index, true);
+        updateDialogState();
+        closeButton.focus();
+      });
+    }
+
+    function closeDialog() {
+      if (dialog.hidden) return;
+      dialog.classList.remove("is-visible");
+      var finish = function () {
+        dialog.hidden = true;
+        dialogRail.textContent = "";
+        activeClub = null;
+        unlockPage();
+        if (activeTrigger && document.contains(activeTrigger)) activeTrigger.focus();
+        activeTrigger = null;
+      };
+      if (reducedMotion.matches) finish(); else window.setTimeout(finish, 220);
+    }
+
+    function moveDialog(direction) {
+      scrollDialogTo(currentDialogIndex() + direction, false);
+    }
+
+    function trapFocus(event) {
+      if (dialog.hidden || event.key !== "Tab") return;
+      var focusable = Array.prototype.slice.call(dialog.querySelectorAll("button:not([disabled]), [tabindex]:not([tabindex='-1'])"));
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+
+    page.querySelectorAll(".bolamu-kin-club").forEach(setupPreview);
+    closeButton.addEventListener("click", closeDialog);
+    dialogLeft.addEventListener("click", function () { moveDialog(-1); });
+    dialogRight.addEventListener("click", function () { moveDialog(1); });
+    dialogRail.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") { event.preventDefault(); moveDialog(-1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); moveDialog(1); }
+    });
+    dialogRail.addEventListener("scroll", function () {
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = requestAnimationFrame(updateDialogState);
+    }, { passive: true });
+    document.addEventListener("keydown", function (event) {
+      if (dialog.hidden) return;
+      if (event.key === "Escape") { event.preventDefault(); closeDialog(); return; }
+      trapFocus(event);
+    });
+  })();
+</script>
+

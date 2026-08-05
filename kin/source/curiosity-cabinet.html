@@ -1,0 +1,571 @@
+The curiosity cabinet
+
+<!-- BOLAMU DINER: THE CURIOSITY CABINET CAROUSEL -->
+<section class="bolamu-curiosity" aria-labelledby="bolamu-curiosity-heading">
+
+ <h2 id="bolamu-curiosity-heading" class="bolamu-curiosity-visually-hidden">
+   The Curiosity Cabinet
+ </h2>
+
+ <img
+   class="bolamu-curiosity-badge"
+   src="https://ik.imagekit.io/vxel66ikf/C3D5DEB5-E1F0-4C6F-9C40-434265D94B70.png?updatedAt=1784306949782"
+   alt="The Curiosity Cabinet"
+   loading="eager"
+ >
+
+ <p class="bolamu-curiosity-description">
+   For curious minds. Explore Congo beyond the headlines through talks, lessons and discoveries that uncover forgotten histories, living languages and hidden worlds.
+ </p>
+
+ <div class="bolamu-curiosity-carousel-shell">
+
+   <button
+     class="bolamu-curiosity-carousel-arrow bolamu-curiosity-carousel-arrow-left"
+     type="button"
+     aria-label="Scroll The Curiosity Cabinet left"
+   >
+     &#10094;
+   </button>
+
+   <div
+     class="bolamu-curiosity-carousel"
+     id="bolamu-curiosity-carousel"
+     role="region"
+     aria-label="The Curiosity Cabinet event cards"
+     tabindex="0"
+   >
+     <article class="bolamu-curiosity-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/F5944035-44BB-40EA-B9F2-81F33B054DCD.png?updatedAt=1784300890074"
+         alt="Curiosity Cabinet event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-curiosity-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/8997E917-2705-4720-A3EE-A6015AB16AF9.png?updatedAt=1784300888937"
+         alt="Curiosity Cabinet event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-curiosity-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/E8D54F19-B93B-4926-94A8-AD54CEBF00B2.png?updatedAt=1784300888858"
+         alt="Curiosity Cabinet event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-curiosity-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/6B4CDFEC-D8F6-411A-BC86-81E616C94824.png?updatedAt=1784300888500"
+         alt="Curiosity Cabinet event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+
+     <article class="bolamu-curiosity-event-card">
+       <img
+         src="https://ik.imagekit.io/vxel66ikf/FA296411-AF5C-4F53-BDCB-8C0F97274A33.png?updatedAt=1784300885545"
+         alt="Curiosity Cabinet event"
+         loading="lazy"
+         draggable="false"
+       >
+     </article>
+   </div>
+
+   <button
+     class="bolamu-curiosity-carousel-arrow bolamu-curiosity-carousel-arrow-right"
+     type="button"
+     aria-label="Scroll The Curiosity Cabinet right"
+   >
+     &#10095;
+   </button>
+
+   <div
+     class="bolamu-curiosity-carousel-fade bolamu-curiosity-carousel-fade-left"
+     aria-hidden="true"
+   ></div>
+
+   <div
+     class="bolamu-curiosity-carousel-fade bolamu-curiosity-carousel-fade-right"
+     aria-hidden="true"
+   ></div>
+
+ </div>
+
+ <p class="bolamu-curiosity-swipe-hint" aria-hidden="true">
+   <span class="bolamu-curiosity-swipe-arrow bolamu-curiosity-swipe-arrow-left">&#10094;</span>
+   <span>Swipe to explore</span>
+   <span class="bolamu-curiosity-swipe-arrow bolamu-curiosity-swipe-arrow-right">&#10095;</span>
+ </p>
+
+</section>
+
+<style>
+.bolamu-curiosity,
+.bolamu-curiosity * {
+ box-sizing: border-box;
+}
+
+.bolamu-curiosity {
+ --bolamu-curiosity-red: #ff3131;
+ --bolamu-curiosity-red-soft: rgba(255, 49, 49, 0.78);
+ --bolamu-curiosity-text: #ffd0d0;
+ --bolamu-curiosity-gap: 18px;
+ --bolamu-curiosity-card-width: clamp(170px, 16.5vw, 235px);
+
+ width: 100%;
+ margin: 0;
+ padding: clamp(24px, 3.6vw, 48px) 0 clamp(34px, 5vw, 70px);
+ overflow: hidden;
+
+ color: #fff;
+ background: #000;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.bolamu-curiosity-visually-hidden {
+ position: absolute !important;
+ width: 1px !important;
+ height: 1px !important;
+ padding: 0 !important;
+ margin: -1px !important;
+ overflow: hidden !important;
+ clip: rect(0, 0, 0, 0) !important;
+ white-space: nowrap !important;
+ border: 0 !important;
+}
+
+.bolamu-curiosity-badge {
+ display: block;
+ width: min(520px, 70vw);
+ height: auto;
+ margin: 0 auto 12px;
+ object-fit: contain;
+}
+
+.bolamu-curiosity-description {
+ width: min(820px, 86vw);
+ margin: 0 auto clamp(24px, 3vw, 36px);
+
+ color: var(--bolamu-curiosity-text);
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ line-height: 1.6;
+
+ font-size: clamp(0.82rem, 1.05vw, 1rem);
+ font-weight: 700;
+
+ text-shadow:
+   0 0 4px rgba(255, 49, 49, 0.86),
+   0 0 11px rgba(255, 49, 49, 0.54);
+}
+
+.bolamu-curiosity-carousel-shell {
+ position: relative;
+ width: 100%;
+ isolation: isolate;
+}
+
+.bolamu-curiosity-carousel {
+ display: flex;
+ gap: var(--bolamu-curiosity-gap);
+
+ width: 100%;
+ padding:
+   14px
+   max(
+     30px,
+     calc((100% - var(--bolamu-curiosity-card-width)) / 2)
+   )
+   24px;
+
+ overflow-x: auto;
+ overflow-y: hidden;
+ scroll-snap-type: x mandatory;
+ scroll-padding-inline:
+   max(
+     30px,
+     calc((100% - var(--bolamu-curiosity-card-width)) / 2)
+   );
+ scroll-behavior: smooth;
+ overscroll-behavior-inline: contain;
+
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+ cursor: grab;
+}
+
+.bolamu-curiosity-carousel::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-curiosity-carousel:active {
+ cursor: grabbing;
+}
+
+.bolamu-curiosity-carousel:focus-visible {
+ outline: 2px solid var(--bolamu-curiosity-red);
+ outline-offset: -2px;
+}
+
+.bolamu-curiosity-event-card {
+ position: relative;
+ flex: 0 0 var(--bolamu-curiosity-card-width);
+ width: var(--bolamu-curiosity-card-width);
+ margin: 0;
+
+ scroll-snap-align: center;
+ scroll-snap-stop: always;
+
+ border-radius: 21px;
+ overflow: hidden;
+ background: #05070a;
+
+ transition:
+   transform 220ms ease,
+   filter 220ms ease;
+}
+
+.bolamu-curiosity-event-card img {
+ display: block;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 1 / 1;
+ object-fit: cover;
+ user-select: none;
+ -webkit-user-drag: none;
+}
+
+.bolamu-curiosity-event-card:hover {
+ transform: translateY(-7px) scale(1.025);
+ filter:
+   drop-shadow(0 0 8px rgba(255, 49, 49, 0.45))
+   drop-shadow(0 14px 24px rgba(0, 0, 0, 0.72));
+}
+
+.bolamu-curiosity-carousel-fade {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ z-index: 3;
+
+ width: clamp(48px, 8vw, 120px);
+ pointer-events: none;
+}
+
+.bolamu-curiosity-carousel-fade-left {
+ left: 0;
+ background:
+   linear-gradient(
+     to right,
+     #000 0%,
+     rgba(0, 0, 0, 0.97) 14%,
+     rgba(0, 0, 0, 0.78) 42%,
+     rgba(0, 0, 0, 0.34) 72%,
+     rgba(0, 0, 0, 0) 100%
+   );
+}
+
+.bolamu-curiosity-carousel-fade-right {
+ right: 0;
+ background:
+   linear-gradient(
+     to left,
+     #000 0%,
+     rgba(0, 0, 0, 0.97) 14%,
+     rgba(0, 0, 0, 0.78) 42%,
+     rgba(0, 0, 0, 0.34) 72%,
+     rgba(0, 0, 0, 0) 100%
+   );
+}
+
+.bolamu-curiosity-carousel-arrow {
+ position: absolute;
+ top: 50%;
+ z-index: 4;
+
+ width: 52px;
+ height: 82px;
+ padding: 0;
+
+ border: 1px solid rgba(255, 255, 255, 0.25);
+ border-radius: 16px;
+
+ color: #fff;
+ background: rgba(0, 0, 0, 0.72);
+
+ -webkit-backdrop-filter: blur(8px);
+ backdrop-filter: blur(8px);
+
+ box-shadow:
+   0 0 12px rgba(255, 49, 49, 0.38),
+   0 10px 28px rgba(0, 0, 0, 0.6);
+
+ font-size: 34px;
+ line-height: 1;
+
+ transform: translateY(-50%);
+ cursor: pointer;
+
+ transition:
+   background 180ms ease,
+   box-shadow 180ms ease,
+   opacity 180ms ease,
+   transform 180ms ease;
+}
+
+.bolamu-curiosity-carousel-arrow:hover,
+.bolamu-curiosity-carousel-arrow:focus-visible {
+ background: rgba(58, 10, 10, 0.92);
+ box-shadow:
+   0 0 10px var(--bolamu-curiosity-red),
+   0 0 26px rgba(255, 49, 49, 0.72),
+   0 12px 30px rgba(0, 0, 0, 0.7);
+ outline: none;
+}
+
+.bolamu-curiosity-carousel-arrow:active {
+ transform: translateY(-50%) scale(0.96);
+}
+
+.bolamu-curiosity-carousel-arrow-left {
+ left: 12px;
+}
+
+.bolamu-curiosity-carousel-arrow-right {
+ right: 12px;
+}
+
+.bolamu-curiosity-carousel-arrow[disabled] {
+ opacity: 0;
+ pointer-events: none;
+}
+
+.bolamu-curiosity-swipe-hint {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 13px;
+
+ margin: 10px 0 0;
+ padding: 0 16px;
+
+ color: var(--bolamu-curiosity-text);
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 0.18em;
+
+ font-size: clamp(0.78rem, 0.95vw, 0.92rem);
+ font-weight: 700;
+
+ text-shadow:
+   0 0 4px rgba(255, 49, 49, 0.86),
+   0 0 11px rgba(255, 49, 49, 0.54);
+}
+
+.bolamu-curiosity-swipe-arrow {
+ color: var(--bolamu-curiosity-text);
+ font-size: 1.25em;
+ line-height: 1;
+
+ filter:
+   drop-shadow(0 0 2px rgba(255, 49, 49, 0.78))
+   drop-shadow(0 0 7px rgba(255, 49, 49, 0.58));
+}
+
+.bolamu-curiosity-swipe-arrow-left {
+ animation: bolamu-curiosity-nudge-left 1.8s ease-in-out infinite;
+}
+
+.bolamu-curiosity-swipe-arrow-right {
+ animation: bolamu-curiosity-nudge-right 1.8s ease-in-out infinite;
+}
+
+@keyframes bolamu-curiosity-nudge-left {
+ 0%, 100% { transform: translateX(0); }
+ 50% { transform: translateX(-4px); }
+}
+
+@keyframes bolamu-curiosity-nudge-right {
+ 0%, 100% { transform: translateX(0); }
+ 50% { transform: translateX(4px); }
+}
+
+@media (max-width: 768px) {
+ .bolamu-curiosity {
+   --bolamu-curiosity-gap: 13px;
+   --bolamu-curiosity-card-width: min(52vw, 215px);
+
+   padding-top: 20px;
+   padding-bottom: 38px;
+ }
+
+ .bolamu-curiosity-badge {
+   width: min(74vw, 410px);
+   margin-bottom: 9px;
+ }
+
+ .bolamu-curiosity-description {
+   width: min(88vw, 580px);
+   margin-bottom: 22px;
+   padding-inline: 5px;
+
+   font-size: 0.78rem;
+   letter-spacing: 0.1em;
+   line-height: 1.6;
+ }
+
+ .bolamu-curiosity-carousel {
+   padding:
+     10px
+     calc((100% - var(--bolamu-curiosity-card-width)) / 2)
+     20px;
+   scroll-padding-inline:
+     calc((100% - var(--bolamu-curiosity-card-width)) / 2);
+ }
+
+ .bolamu-curiosity-carousel-arrow {
+   display: none;
+ }
+
+ .bolamu-curiosity-carousel-fade {
+   width: 12vw;
+ }
+
+ .bolamu-curiosity-event-card {
+   border-radius: 18px;
+ }
+
+ .bolamu-curiosity-event-card:hover {
+   transform: none;
+   filter: none;
+ }
+
+ .bolamu-curiosity-swipe-hint {
+   margin-top: 8px;
+   gap: 11px;
+   font-size: 0.8rem;
+ }
+}
+
+@media (max-width: 390px) {
+ .bolamu-curiosity {
+   --bolamu-curiosity-card-width: 56vw;
+ }
+
+ .bolamu-curiosity-carousel-fade {
+   width: 10vw;
+ }
+
+ .bolamu-curiosity-swipe-hint {
+   gap: 9px;
+   letter-spacing: 0.14em;
+   font-size: 0.76rem;
+ }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .bolamu-curiosity-carousel {
+   scroll-behavior: auto;
+ }
+
+ .bolamu-curiosity-event-card,
+ .bolamu-curiosity-carousel-arrow {
+   transition: none;
+ }
+
+ .bolamu-curiosity-swipe-arrow {
+   animation: none;
+ }
+}
+</style>
+
+<script>
+(function () {
+ const section = document.querySelector(".bolamu-curiosity");
+
+ if (!section || section.dataset.carouselReady === "true") {
+   return;
+ }
+
+ section.dataset.carouselReady = "true";
+
+ const carousel = section.querySelector(".bolamu-curiosity-carousel");
+ const leftArrow = section.querySelector(".bolamu-curiosity-carousel-arrow-left");
+ const rightArrow = section.querySelector(".bolamu-curiosity-carousel-arrow-right");
+
+ if (!carousel || !leftArrow || !rightArrow) {
+   return;
+ }
+
+ function getScrollAmount() {
+   const card = carousel.querySelector(".bolamu-curiosity-event-card");
+   const styles = window.getComputedStyle(carousel);
+   const gap = parseFloat(styles.columnGap || styles.gap || "0");
+
+   return card
+     ? card.getBoundingClientRect().width + gap
+     : carousel.clientWidth * 0.72;
+ }
+
+ function updateArrows() {
+   const maximumScroll = carousel.scrollWidth - carousel.clientWidth;
+   const tolerance = 4;
+
+   leftArrow.disabled = carousel.scrollLeft <= tolerance;
+   rightArrow.disabled =
+     carousel.scrollLeft >= maximumScroll - tolerance;
+ }
+
+ leftArrow.addEventListener("click", function () {
+   carousel.scrollBy({
+     left: -getScrollAmount(),
+     behavior: "smooth"
+   });
+ });
+
+ rightArrow.addEventListener("click", function () {
+   carousel.scrollBy({
+     left: getScrollAmount(),
+     behavior: "smooth"
+   });
+ });
+
+ carousel.addEventListener("keydown", function (event) {
+   if (event.key === "ArrowLeft") {
+     event.preventDefault();
+     carousel.scrollBy({
+       left: -getScrollAmount(),
+       behavior: "smooth"
+     });
+   }
+
+   if (event.key === "ArrowRight") {
+     event.preventDefault();
+     carousel.scrollBy({
+       left: getScrollAmount(),
+       behavior: "smooth"
+     });
+   }
+ });
+
+ carousel.addEventListener("scroll", updateArrows, {
+   passive: true
+ });
+
+ window.addEventListener("resize", updateArrows);
+ window.addEventListener("load", updateArrows);
+
+ updateArrows();
+})();
+</script>

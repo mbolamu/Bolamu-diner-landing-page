@@ -1,0 +1,428 @@
+<!-- Bolamu Diner Home page: paste this entire fragment into one Webador HTML block. -->
+<style>
+#bolamu-home-page,
+#bolamu-home-page * {
+box-sizing: border-box;
+}
+
+#bolamu-home-page {
+position: relative;
+isolation: isolate;
+width: 100vw;
+max-width: 100vw;
+min-height: 100vh;
+min-height: 100dvh;
+margin: 0 0 0 calc(50% - 50vw) !important;
+padding: 0 !important;
+overflow: hidden;
+background: #000;
+}
+
+#bolamu-home-page .bolamu-video {
+position: fixed;
+inset: 0;
+z-index: 0;
+width: 100vw;
+height: 100vh;
+height: 100dvh;
+min-height: 100svh;
+overflow: hidden;
+background: #000;
+}
+
+#bolamu-home-page .bolamu-video video {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+display: block;
+object-fit: cover;
+object-position: center center;
+background: #000;
+pointer-events: none;
+}
+
+#bolamu-home-page .bolamu-edge-darkening {
+position: absolute;
+inset: 0;
+z-index: 2;
+pointer-events: none;
+
+background:
+  linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.9) 3%,
+    rgba(0, 0, 0, 0.5) 8%,
+    rgba(0, 0, 0, 0.12) 14%,
+    rgba(0, 0, 0, 0) 21%,
+    rgba(0, 0, 0, 0) 79%,
+    rgba(0, 0, 0, 0.12) 86%,
+    rgba(0, 0, 0, 0.5) 92%,
+    rgba(0, 0, 0, 0.9) 97%,
+    rgba(0, 0, 0, 1) 100%
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.72) 4%,
+    rgba(0, 0, 0, 0.25) 10%,
+    rgba(0, 0, 0, 0) 18%,
+    rgba(0, 0, 0, 0) 72%,
+    rgba(0, 0, 0, 0.3) 84%,
+    rgba(0, 0, 0, 0.82) 94%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* Vertically and horizontally centre the complete navigation group. */
+#bolamu-home-page .bolamu-navigation {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+z-index: 5;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: clamp(18px, 3vw, 36px);
+
+width: min(72%, 500px);
+}
+
+/* Compact neon-glass buttons. */
+#bolamu-home-page .bolamu-button {
+position: relative;
+box-sizing: border-box;
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+
+width: clamp(60px, 6.5vw, 74px);
+min-height: 34px;
+padding: 5px 4px;
+
+border: 1px solid currentColor;
+border-radius: 10px;
+
+color: #fff;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 0.09em;
+
+font-family:
+  "Arial Narrow",
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
+font-size: clamp(0.87rem, 1.05vw, 0.99rem);
+font-weight: 700;
+
+background:
+  linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.105),
+    rgba(255, 255, 255, 0.025)
+  );
+
+-webkit-backdrop-filter: blur(5.5px) saturate(145%);
+backdrop-filter: blur(5.5px) saturate(145%);
+
+box-shadow:
+  0 0 5px currentColor,
+  0 0 11px color-mix(in srgb, currentColor 58%, transparent),
+  inset 0 0 6px rgba(255, 255, 255, 0.08),
+  inset 0 1px 1px rgba(255, 255, 255, 0.62),
+  inset 0 -1px 2px rgba(255, 255, 255, 0.16),
+  0 5px 14px rgba(0, 0, 0, 0.52);
+
+text-shadow:
+  0 0 4px currentColor,
+  0 0 7px currentColor;
+
+transition:
+  transform 180ms ease,
+  box-shadow 180ms ease,
+  background 180ms ease;
+}
+
+#bolamu-home-page .bolamu-button::before {
+content: "";
+position: absolute;
+inset: 2px;
+border-radius: 7px;
+pointer-events: none;
+
+background:
+  linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.34),
+    rgba(255, 255, 255, 0.09) 24%,
+    rgba(255, 255, 255, 0.015) 52%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+#bolamu-home-page .bolamu-button-blue {
+color: #57d9ff;
+}
+
+#bolamu-home-page .bolamu-button-yellow {
+color: #ffd34f;
+}
+
+#bolamu-home-page .bolamu-button-red {
+color: #ff5262;
+}
+
+#bolamu-home-page .bolamu-button > span {
+position: relative;
+z-index: 1;
+}
+
+#bolamu-home-page .bolamu-button > span:last-child {
+color: #fff;
+}
+
+#bolamu-home-page .bolamu-icon {
+width: 13px;
+height: 13px;
+flex: 0 0 13px;
+}
+
+#bolamu-home-page .bolamu-icon svg {
+display: block;
+width: 100%;
+height: 100%;
+
+fill: none;
+stroke: currentColor;
+stroke-width: 1.8;
+stroke-linecap: round;
+stroke-linejoin: round;
+
+filter:
+  drop-shadow(0 0 2px currentColor)
+  drop-shadow(0 0 4px currentColor);
+}
+
+#bolamu-home-page .bolamu-button:hover,
+#bolamu-home-page .bolamu-button:focus-visible {
+transform: translateY(-2px) scale(1.025);
+
+background:
+  linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.07)
+  );
+
+box-shadow:
+  0 0 7px currentColor,
+  0 0 17px currentColor,
+  inset 0 0 10px rgba(255, 255, 255, 0.16),
+  inset 0 1px 1px rgba(255, 255, 255, 0.5),
+  0 7px 18px rgba(0, 0, 0, 0.62);
+
+outline: none;
+}
+
+#bolamu-home-page .bolamu-button:active {
+transform: translateY(0) scale(0.985);
+}
+
+#bolamu-home-page .bolamu-mobile {
+display: none;
+}
+
+/* Desktop-only enlargement. Mobile sizing remains unchanged. */
+@media (min-width: 769px) {
+#bolamu-home-page .bolamu-navigation {
+  width: min(70%, 440px);
+  gap: clamp(34px, 4vw, 54px);
+}
+
+#bolamu-home-page .bolamu-button {
+  width: clamp(150px, 13vw, 190px);
+  min-height: 60px;
+  padding: 13px 22px;
+  gap: 10px;
+
+  border-width: 1.5px;
+  border-radius: 16px;
+
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  letter-spacing: 0.11em;
+}
+
+#bolamu-home-page .bolamu-button::before {
+  inset: 2px;
+  border-radius: 13px;
+}
+
+#bolamu-home-page .bolamu-icon {
+  width: 23px;
+  height: 23px;
+  flex-basis: 23px;
+}
+}
+
+@media (max-width: 768px) {
+#bolamu-home-page .bolamu-desktop {
+  display: none;
+}
+
+#bolamu-home-page .bolamu-mobile {
+  display: block;
+}
+
+#bolamu-home-page .bolamu-mobile #bolamu-home-page .bolamu-edge-darkening {
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.92) 4%,
+      rgba(0, 0, 0, 0.55) 10%,
+      rgba(0, 0, 0, 0.16) 18%,
+      rgba(0, 0, 0, 0) 27%,
+      rgba(0, 0, 0, 0) 73%,
+      rgba(0, 0, 0, 0.16) 82%,
+      rgba(0, 0, 0, 0.55) 90%,
+      rgba(0, 0, 0, 0.92) 96%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.7) 4%,
+      rgba(0, 0, 0, 0.22) 10%,
+      rgba(0, 0, 0, 0) 18%,
+      rgba(0, 0, 0, 0) 67%,
+      rgba(0, 0, 0, 0.28) 78%,
+      rgba(0, 0, 0, 0.78) 91%,
+      rgba(0, 0, 0, 1) 100%
+    );
+}
+
+#bolamu-home-page .bolamu-navigation {
+  top: 50%;
+  width: min(26vw, 92px);
+  flex-direction: column;
+  gap: 16px;
+}
+
+#bolamu-home-page .bolamu-button {
+  width: 100%;
+  min-height: 34px;
+  padding: 5px 3px;
+  border-radius: 10px;
+  font-size: 0.91rem;
+}
+
+#bolamu-home-page .bolamu-button::before {
+  border-radius: 7px;
+}
+
+#bolamu-home-page .bolamu-icon {
+  width: 13px;
+  height: 13px;
+  flex-basis: 13px;
+}
+}
+
+@media (max-width: 390px) {
+#bolamu-home-page .bolamu-navigation {
+  width: min(27vw, 90px);
+  gap: 14px;
+}
+
+#bolamu-home-page .bolamu-button {
+  min-height: 32px;
+  padding: 4px 2px;
+  font-size: 0.88rem;
+}
+
+#bolamu-home-page .bolamu-icon {
+  width: 12px;
+  height: 12px;
+  flex-basis: 12px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+#bolamu-home-page .bolamu-button {
+  transition: none;
+}
+}
+</style>
+
+<div id="bolamu-home-page" class="bolamu-home-page">
+<div class="bolamu-video bolamu-desktop">
+<video autoplay muted loop playsinline preload="auto">
+  <source
+    src="https://pub-75df606138dd43bc8331d3165cf3e9a5.r2.dev/copy_3388E2EF-9C18-4143-981C-CA9AD5FCC524.mov"
+    type="video/quicktime"
+  >
+</video>
+
+<div class="bolamu-edge-darkening"></div>
+
+<nav class="bolamu-navigation" aria-label="Main navigation">
+  <a class="bolamu-button bolamu-button-blue" href="https://www.bolamu.net/menu">
+    <span class="bolamu-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M16 3v18M16 3c3 2 4 5 4 8h-4"/>
+      </svg>
+    </span>
+    <span>Menu</span>
+  </a>
+
+  <a class="bolamu-button bolamu-button-yellow" href="https://www.bolamu.net/enter">
+    <span class="bolamu-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 21V3h12v18"/>
+        <path d="M8 21V6l10-2v17l-10-2V6Z"/>
+        <path d="M3 21h17M15 12h.01"/>
+      </svg>
+    </span>
+    <span>Enter</span>
+  </a>
+</nav>
+</div>
+
+<div class="bolamu-video bolamu-mobile">
+<video autoplay muted loop playsinline preload="auto">
+  <source
+    src="https://pub-75df606138dd43bc8331d3165cf3e9a5.r2.dev/copy_315C5C31-BE79-46ED-A3C9-12BE305262DC.mov"
+    type="video/quicktime"
+  >
+</video>
+
+<div class="bolamu-edge-darkening"></div>
+
+<nav class="bolamu-navigation" aria-label="Main navigation">
+  <a class="bolamu-button bolamu-button-blue" href="https://www.bolamu.net/menu">
+    <span class="bolamu-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M16 3v18M16 3c3 2 4 5 4 8h-4"/>
+      </svg>
+    </span>
+    <span>Menu</span>
+  </a>
+
+  <a class="bolamu-button bolamu-button-yellow" href="https://www.bolamu.net/enter">
+    <span class="bolamu-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 21V3h12v18"/>
+        <path d="M8 21V6l10-2v17l-10-2V6Z"/>
+        <path d="M3 21h17M15 12h.01"/>
+      </svg>
+    </span>
+    <span>Enter</span>
+  </a>
+</nav>
+</div>
+</div>

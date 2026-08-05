@@ -21,7 +21,12 @@
      aria-controls="bolamu-menu-flavours-panel"
      data-target="bolamu-menu-flavours-panel"
    >
-     <span class="bolamu-menu-category-icon" aria-hidden="true">✦</span>
+     <span class="bolamu-menu-category-icon" aria-hidden="true">
+       <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M12 2l1.5 6.5L20 10l-6.5 1.5L12 18l-1.5-6.5L4 10l6.5-1.5L12 2Z"></path>
+         <path d="M19 16v5M16.5 18.5h5"></path>
+       </svg>
+     </span>
      <span>Meet the Flavours</span>
      <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
    </button>
@@ -31,9 +36,6 @@
      id="bolamu-menu-flavours-panel"
    hidden
    >
-     <p class="bolamu-menu-intro">
-       Swipe through the flavour collection and tap the arrow beneath a card to discover its story.
-     </p>
 
      <div class="bolamu-flavour-carousel-shell">
 
@@ -61,27 +63,36 @@
                loading="lazy"
                draggable="false"
              >
-           </div>
 
-           <button
-             class="bolamu-flavour-story-toggle"
-             type="button"
-             aria-expanded="false"
-             aria-controls="bolamu-story-mbika-scoff"
-           >
-             <span class="bolamu-flavour-story-chevron" aria-hidden="true">⌄</span>
-             <span class="bolamu-menu-visually-hidden">Show the Mbika-scoff story</span>
-           </button>
+             <button
+               class="bolamu-flavour-overlay-open"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-story-mbika-scoff"
+               aria-label="Learn more about Mbika-scoff"
+             >
+               <span aria-hidden="true">Learn more</span>
+             </button>
 
-           <div
-             class="bolamu-flavour-story"
-             id="bolamu-story-mbika-scoff"
-             hidden
-           >
-             <h3>Mbika-scoff</h3>
-             <p>
-               You've heard of Biscoff. Now meet Mbika-scoff. A rich cookie butter inspired by Central African flavours, blending roasted egusi, warm spices and caramelised biscuit notes into something comfortingly familiar and completely new.
-             </p>
+             <div
+               class="bolamu-flavour-overlay"
+               id="bolamu-story-mbika-scoff"
+               hidden
+             >
+               <div class="bolamu-flavour-overlay-content">
+                 <h3>Mbika-scoff</h3>
+                 <p>
+                   You've heard of Biscoff. Now meet Mbika-Scoff. A rich cookie butter packed with Congolese flavours, blending mbika, a traditional delicacy made from roasted egusi melon seeds, with a quintessential West African spice blend and caramelised biscuit notes into something comfortingly familiar and completely new.
+                 </p>
+                 <button
+                   class="bolamu-flavour-overlay-close"
+                   type="button"
+                   aria-label="Hide Mbika-scoff description"
+                 >
+                   Hide
+                 </button>
+               </div>
+             </div>
            </div>
          </article>
 
@@ -93,27 +104,36 @@
                loading="lazy"
                draggable="false"
              >
-           </div>
 
-           <button
-             class="bolamu-flavour-story-toggle"
-             type="button"
-             aria-expanded="false"
-             aria-controls="bolamu-story-pili-pili"
-           >
-             <span class="bolamu-flavour-story-chevron" aria-hidden="true">⌄</span>
-             <span class="bolamu-menu-visually-hidden">Show the Pili Pili Coco Noir story</span>
-           </button>
+             <button
+               class="bolamu-flavour-overlay-open"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-story-pili-pili"
+               aria-label="Learn more about Pili Pili Coco Noir"
+             >
+               <span aria-hidden="true">Learn more</span>
+             </button>
 
-           <div
-             class="bolamu-flavour-story"
-             id="bolamu-story-pili-pili"
-             hidden
-           >
-             <h3>Pili Pili Coco Noir</h3>
-             <p>
-               Deep dark chocolate meets smoky sea salt, roasted hazelnut and a gentle spark of Scotch bonnet. Rich, bold and just dangerous enough to keep you coming back for another bite.
-             </p>
+             <div
+               class="bolamu-flavour-overlay"
+               id="bolamu-story-pili-pili"
+               hidden
+             >
+               <div class="bolamu-flavour-overlay-content">
+                 <h3>Pili Pili Coco Noir</h3>
+                 <p>
+                   Meet Nutella's Congolese cousin. Roasted hazelnut butter meets deep dark chocolate, wood-smoked sea salt and a gentle spark of Scotch bonnet. Rich, bold and just dangerous enough to keep you coming back for another bite.
+                 </p>
+                 <button
+                   class="bolamu-flavour-overlay-close"
+                   type="button"
+                   aria-label="Hide Pili Pili Coco Noir description"
+                 >
+                   Hide
+                 </button>
+               </div>
+             </div>
            </div>
          </article>
 
@@ -125,27 +145,36 @@
                loading="lazy"
                draggable="false"
              >
-           </div>
 
-           <button
-             class="bolamu-flavour-story-toggle"
-             type="button"
-             aria-expanded="false"
-             aria-controls="bolamu-story-hypermalt"
-           >
-             <span class="bolamu-flavour-story-chevron" aria-hidden="true">⌄</span>
-             <span class="bolamu-menu-visually-hidden">Show the Hypermalt Crème Molasses story</span>
-           </button>
+             <button
+               class="bolamu-flavour-overlay-open"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-story-hypermalt"
+               aria-label="Learn more about Hypermalt Crème Molasses"
+             >
+               <span aria-hidden="true">Learn more</span>
+             </button>
 
-           <div
-             class="bolamu-flavour-story"
-             id="bolamu-story-hypermalt"
-             hidden
-           >
-             <h3>Hypermalt Crème Molasses</h3>
-             <p>
-               Inspired by the malty drinks found across African households, this flavour blends roasted malt, stout notes and buttery caramel into a rich, velvety dessert experience.
-             </p>
+             <div
+               class="bolamu-flavour-overlay"
+               id="bolamu-story-hypermalt"
+               hidden
+             >
+               <div class="bolamu-flavour-overlay-content">
+                 <h3>Hypermalt Crème Molasses</h3>
+                 <p>
+                   Whether it's Guinness or Supermalt, no Congolese meal feels quite complete without a crisp fizzy malt drink. This flavour blends roasted malt, stout notes and buttery molasses into a rich, creamy caramel layered with hints of toffee.
+                 </p>
+                 <button
+                   class="bolamu-flavour-overlay-close"
+                   type="button"
+                   aria-label="Hide Hypermalt Crème Molasses description"
+                 >
+                   Hide
+                 </button>
+               </div>
+             </div>
            </div>
          </article>
 
@@ -157,27 +186,36 @@
                loading="lazy"
                draggable="false"
              >
-           </div>
 
-           <button
-             class="bolamu-flavour-story-toggle"
-             type="button"
-             aria-expanded="false"
-             aria-controls="bolamu-story-safu"
-           >
-             <span class="bolamu-flavour-story-chevron" aria-hidden="true">⌄</span>
-             <span class="bolamu-menu-visually-hidden">Show the Safu Coco Blanc story</span>
-           </button>
+             <button
+               class="bolamu-flavour-overlay-open"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-story-safu"
+               aria-label="Learn more about Safu Coco Blanc"
+             >
+               <span aria-hidden="true">Learn more</span>
+             </button>
 
-           <div
-             class="bolamu-flavour-story"
-             id="bolamu-story-safu"
-             hidden
-           >
-             <h3>Safu Coco Blanc</h3>
-             <p>
-               Creamy white chocolate meets safu, Africa's beloved butter pear. Fruity, silky and surprisingly luxurious, it's a flavour unlike anything you've tasted before.
-             </p>
+             <div
+               class="bolamu-flavour-overlay"
+               id="bolamu-story-safu"
+               hidden
+             >
+               <div class="bolamu-flavour-overlay-content">
+                 <h3>Safu Coco Blanc</h3>
+                 <p>
+                   A decadent homage to safu, Africa's beloved butter pear. This rare delicacy has a uniquely distinctive flavour that combines the silky richness of avocado with the bright tang of a citrus fruit, creating a taste unlike anything you've experienced before. Blended with creamy white chocolate, the result is fruity, silky and surprisingly luxurious.
+                 </p>
+                 <button
+                   class="bolamu-flavour-overlay-close"
+                   type="button"
+                   aria-label="Hide Safu Coco Blanc description"
+                 >
+                   Hide
+                 </button>
+               </div>
+             </div>
            </div>
          </article>
 
@@ -189,27 +227,36 @@
                loading="lazy"
                draggable="false"
              >
-           </div>
 
-           <button
-             class="bolamu-flavour-story-toggle"
-             type="button"
-             aria-expanded="false"
-             aria-controls="bolamu-story-mbila"
-           >
-             <span class="bolamu-flavour-story-chevron" aria-hidden="true">⌄</span>
-             <span class="bolamu-menu-visually-hidden">Show the Mbila Doré story</span>
-           </button>
+             <button
+               class="bolamu-flavour-overlay-open"
+               type="button"
+               aria-expanded="false"
+               aria-controls="bolamu-story-mbila"
+               aria-label="Learn more about Mbila Doré"
+             >
+               <span aria-hidden="true">Learn more</span>
+             </button>
 
-           <div
-             class="bolamu-flavour-story"
-             id="bolamu-story-mbila"
-             hidden
-           >
-             <h3>Mbila Doré</h3>
-             <p>
-               Golden honey, palm fruit and Scotch bonnet combine in a sweet heat sensation that starts smooth, finishes warm and leaves you reaching for one more spoonful.
-             </p>
+             <div
+               class="bolamu-flavour-overlay"
+               id="bolamu-story-mbila"
+               hidden
+             >
+               <div class="bolamu-flavour-overlay-content">
+                 <h3>Mbila Doré</h3>
+                 <p>
+                   What if hot honey was made in Congo? Mbila, better known as palm nut, is the fruit responsible for the distinctive tang found in the red palm oil used in almost every Congolese dish. This flavour blends palm fruit pulp, golden honey and Scotch bonnet into a sweet heat sensation that starts smooth, finishes warm and leaves you reaching for one more spoonful.
+                 </p>
+                 <button
+                   class="bolamu-flavour-overlay-close"
+                   type="button"
+                   aria-label="Hide Mbila Doré description"
+                 >
+                   Hide
+                 </button>
+               </div>
+             </div>
            </div>
          </article>
 
@@ -233,36 +280,20 @@
    </div>
 
    <button
-     class="bolamu-menu-category bolamu-menu-category-drinks"
-     type="button"
-     aria-expanded="false"
-     aria-controls="bolamu-menu-drinks-panel"
-     data-target="bolamu-menu-drinks-panel"
-   >
-     <span class="bolamu-menu-category-icon" aria-hidden="true">◉</span>
-     <span>Drinks</span>
-     <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
-   </button>
-
-   <div
-     class="bolamu-menu-content"
-     id="bolamu-menu-drinks-panel"
-     hidden
-   >
-     <div class="bolamu-menu-placeholder">
-       <h3>Drinks are coming next</h3>
-       <p>Milkshakes, frappés and lattes will live here.</p>
-     </div>
-   </div>
-
-   <button
      class="bolamu-menu-category bolamu-menu-category-desserts"
      type="button"
      aria-expanded="false"
      aria-controls="bolamu-menu-desserts-panel"
      data-target="bolamu-menu-desserts-panel"
    >
-     <span class="bolamu-menu-category-icon" aria-hidden="true">★</span>
+     <span class="bolamu-menu-category-icon" aria-hidden="true">
+       <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M6 11h12l-1 9H7l-1-9Z"></path>
+         <path d="M8 11a4 4 0 0 1 8 0"></path>
+         <path d="M9 7.5C9.5 5.5 11 4 12 3c1 1 2.5 2.5 3 4.5"></path>
+         <path d="M9 15h6"></path>
+       </svg>
+     </span>
      <span>Desserts</span>
      <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
    </button>
@@ -272,12 +303,599 @@
      id="bolamu-menu-desserts-panel"
      hidden
    >
-     <div class="bolamu-menu-placeholder">
-       <h3>Desserts are coming next</h3>
-       <p>The dessert carousel will be added here.</p>
+     <div class="bolamu-dessert-gallery-shell">
+       <button
+         class="bolamu-dessert-gallery-arrow bolamu-dessert-gallery-arrow-left"
+         type="button"
+         aria-label="Scroll dessert categories left"
+         hidden
+       >
+         ‹
+       </button>
+
+       <div
+         class="bolamu-dessert-gallery"
+         role="region"
+         aria-label="Dessert categories"
+         tabindex="0"
+       >
+         <article class="bolamu-dessert-card" data-dessert-category="ice-cream">
+           <button
+             class="bolamu-dessert-card-front"
+             type="button"
+             data-dessert-menu="ice-cream"
+             aria-expanded="false"
+             aria-controls="bolamu-dessert-menu-overlay"
+             aria-label="Open Ice Cream and Frozen Desserts menu"
+           >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/Frozen%20desserts%20card.png"
+               alt="Ice Cream and Frozen Desserts"
+               loading="lazy"
+               draggable="false"
+             >
+           </button>
+         </article>
+
+         <article class="bolamu-dessert-card" data-dessert-category="baked-desserts">
+           <button
+             class="bolamu-dessert-card-front"
+             type="button"
+             data-dessert-menu="baked-desserts"
+             aria-expanded="false"
+             aria-controls="bolamu-dessert-menu-overlay"
+             aria-label="Open Baked Desserts menu"
+           >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/Baked%20desserts%20category%20card.png"
+               alt="Baked Desserts"
+               loading="lazy"
+               draggable="false"
+             >
+           </button>
+         </article>
+
+         <article class="bolamu-dessert-card" data-dessert-category="chocolate-desserts">
+           <button
+             class="bolamu-dessert-card-front"
+             type="button"
+             data-dessert-menu="chocolate-desserts"
+             aria-expanded="false"
+             aria-controls="bolamu-dessert-menu-overlay"
+             aria-label="Open Chocolate Desserts menu"
+           >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/Chocolate%20desserts%20card.png?updatedAt=1784886236712"
+               alt="Chocolate Desserts"
+               loading="lazy"
+               draggable="false"
+             >
+           </button>
+         </article>
+
+         <article class="bolamu-dessert-card bolamu-dessert-card-mikate" data-dessert-category="mikate-bar">
+           <button
+             class="bolamu-dessert-card-front"
+             type="button"
+             data-dessert-menu="mikate-bar"
+             aria-expanded="false"
+             aria-controls="bolamu-dessert-menu-overlay"
+             aria-label="Open Mikate Bar menu"
+           >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/Mikate%20Bar%20desserts%20card.png"
+               alt="Mikate Bar"
+               loading="lazy"
+               draggable="false"
+             >
+           </button>
+         </article>
+       </div>
+
+       <button
+         class="bolamu-dessert-gallery-arrow bolamu-dessert-gallery-arrow-right"
+         type="button"
+         aria-label="Scroll dessert categories right"
+       >
+         ›
+       </button>
      </div>
    </div>
 
+   <div
+     class="bolamu-dessert-menu-overlay"
+     id="bolamu-dessert-menu-overlay"
+     hidden
+   >
+     <div
+       class="bolamu-dessert-menu-shell"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="bolamu-dessert-overlay-title"
+       tabindex="-1"
+     >
+       <button
+         class="bolamu-dessert-menu-close"
+         type="button"
+         aria-label="Close dessert menu"
+       >
+         <span aria-hidden="true">×</span>
+       </button>
+
+       <div class="bolamu-dessert-menu-content">
+         <section class="bolamu-dessert-menu-panel bolamu-dessert-mikate-panel">
+           <h2 id="bolamu-dessert-overlay-title" class="bolamu-menu-visually-hidden">Mikate Bar</h2>
+
+           <div class="bolamu-mikate-menu-header-region" data-hero-state="full">
+             <div class="bolamu-mikate-header-module">
+               <button
+                 class="bolamu-mikate-flavour-dial-button"
+                 id="bolamu-mikate-flavour-dial"
+                 type="button"
+                 aria-label="Hide signature flavours"
+                 aria-hidden="true"
+                 tabindex="-1"
+               >
+                 <img
+                   class="bolamu-mikate-flavour-dial"
+                   src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20flavour%20dial"
+                   alt=""
+                   loading="lazy"
+                   aria-hidden="true"
+                 >
+                 <span class="bolamu-mikate-flavour-close-hint">
+                   Tap the flavours to close
+                 </span>
+               </button>
+
+               <button
+                 class="bolamu-mikate-header-toggle"
+                 type="button"
+                 aria-expanded="false"
+                 aria-controls="bolamu-mikate-flavour-dial"
+                 aria-label="Show Mikate Bar flavour dial"
+               >
+                 <img
+                   class="bolamu-mikate-header-sticker"
+                   src="https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header"
+                   alt="Mikate Bar menu header, description and Flavours tab"
+                   loading="lazy"
+                 >
+               </button>
+             </div>
+           </div>
+
+           <div class="bolamu-mikate-menu-scroll-region">
+             <div
+               class="bolamu-mikate-menu-scroll-background"
+               aria-hidden="true"
+             ></div>
+
+             <div
+               class="bolamu-mikate-menu-scroll-viewport"
+               role="region"
+               aria-label="Dessert menu creations"
+               tabindex="0"
+             >
+               <div class="bolamu-mikate-dish-list">
+                 <div class="bolamu-mikate-menu-area">
+                   <p class="bolamu-dessert-menu-placeholder">Mikate creations coming next</p>
+
+                   <div
+                     class="bolamu-mikate-dish-cards"
+                     data-dessert-dish-menu="mikate-bar"
+                     hidden
+                   >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Loaded%20Mikate.png"
+                       alt="Loaded Mikate served in Bolamu-branded trays with assorted sauces and toppings"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikate%20perdu.png"
+                       alt="Mikate Perdu baked in Bolamu-branded blue trays with assorted flavour toppings"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikate%20parfait.png"
+                       alt="Four layered Mikate parfaits with fruit, sauces and Bolamu branding"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Kamundele.png"
+                       alt="Chocolate-coated filled Mikate skewers in four Bolamu flavours"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/MILIKI%20misato.png"
+                       alt="Three Miliki Misato tres leches desserts in Bolamu-branded blue trays"
+                       loading="lazy"
+                     >
+                   </div>
+
+                   <div
+                     class="bolamu-mikate-dish-cards"
+                     data-dessert-dish-menu="chocolate-desserts"
+                     hidden
+                   >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Rivo%20cups.png"
+                       alt="Rivo Cups chocolate dessert card"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikeno%20chocolate.png"
+                       alt="Mikeno Chocolate dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikeno%20chocolate%20parfait.png"
+                       alt="Mikeno Chocolate Parfait dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikeno%20chocolate%20samosas.png"
+                       alt="Mikeno Chocolate Samosas dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Kin%20billionaire.png"
+                       alt="Kin Billionaire chocolate dessert card"
+                       loading="lazy"
+                     >
+                   </div>
+
+                   <div
+                     class="bolamu-mikate-dish-cards"
+                     data-dessert-dish-menu="baked-desserts"
+                     hidden
+                   >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Stuffed%20cookie%20cups.png"
+                       alt="Stuffed Cookie Cups dessert card"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Stuffed%20waffles.png"
+                       alt="Stuffed Waffles dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Loaded%20croffle.png"
+                       alt="Loaded Croffles dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Stuffed%20brownie%20cups.png"
+                       alt="Stuffed Brownie Cups dessert card"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Cheesecake.png"
+                       alt="Cheesecakes dessert card"
+                       loading="lazy"
+                     >
+                   </div>
+
+                   <div
+                     class="bolamu-mikate-dish-cards"
+                     data-dessert-dish-menu="ice-cream"
+                     hidden
+                   >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Ice%20cream%20cups.png?updatedAt=1785252786962"
+                       alt="Signature Scoops crafted from Bolamu Ice Cream Base Mix with house flavours, drizzles, crunchy toppings and handcrafted garnishes"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Brioche%20sandwich.png?updatedAt=1785252786702"
+                       alt="Brioche Ice Cream Sandwiches with Bolamu Ice Cream Base Mix, house sauces and icing sugar"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Deep%20fried%20ice%20cream%20balls.png?updatedAt=1785252786820"
+                       alt="Deep Fried Ice Cream Balls coated in golden corn crumbs with house creams, drizzles and garnishes"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Frozen%20cheesecake.png?updatedAt=1785252787019"
+                       alt="Frozen Cheesecakes coated in chocolate with flavour-matched toppings and signature garnishes"
+                       loading="lazy"
+                     >
+                     <img
+                       src="https://ik.imagekit.io/vxel66ikf/Mikilist%20sundae.png?updatedAt=1785252787011"
+                       alt="Mikilist Sundae with golden mikate, fresh fruit, sauces and indulgent house toppings"
+                       loading="lazy"
+                     >
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </section>
+       </div>
+     </div>
+   </div>
+
+   <button
+     class="bolamu-menu-category bolamu-menu-category-drinks"
+     type="button"
+     aria-expanded="false"
+     aria-controls="bolamu-menu-drinks-panel"
+     data-target="bolamu-menu-drinks-panel"
+   >
+     <span class="bolamu-menu-category-icon" aria-hidden="true">
+       <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+         <path d="M8 8h8l-1 11H9L8 8Z"></path>
+         <path d="M7 8h10"></path>
+         <path d="M10 5c.6-1.3 1.7-2 3-2s2.4.7 3 2"></path>
+         <path d="M14 8l4-6"></path>
+         <path d="M10.5 12.5h3"></path>
+       </svg>
+     </span>
+     <span>Drinks</span>
+     <span class="bolamu-menu-category-toggle" aria-hidden="true">+</span>
+   </button>
+
+   <div
+     class="bolamu-menu-content"
+     id="bolamu-menu-drinks-panel"
+     hidden
+   >
+     <div
+       class="bolamu-drink-subcategory-list"
+       role="list"
+       aria-label="Drink categories"
+     >
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="milkshakes"
+       >
+         <button
+           class="bolamu-drink-subcategory-banner"
+           type="button"
+           aria-expanded="false"
+           aria-controls="bolamu-drink-milkshakes-panel"
+         >
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/BA32ADFF-BEAA-4186-A0FD-BA53A722E92D.png"
+             alt="Milkshakes menu category"
+             loading="lazy"
+           >
+           <span class="bolamu-drink-subcategory-indicator" aria-hidden="true">+</span>
+           <span class="bolamu-menu-visually-hidden">Toggle Milkshakes products</span>
+         </button>
+
+         <div
+           class="bolamu-drink-subcategory-panel"
+           id="bolamu-drink-milkshakes-panel"
+           hidden
+         >
+           <p class="bolamu-drink-subcategory-description">
+             Our milkshakes are crafted using Bolamu milkshake house mix and are available in our signature Bolamu flavours. Blended to order and irresistibly creamy, they reimagine the classic diner shake through authentic Congolese flavours.
+           </p>
+
+           <div class="bolamu-drink-products-shell">
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-left"
+               type="button"
+               aria-label="Scroll Milkshakes products left"
+               hidden
+             >
+               ‹
+             </button>
+
+             <div
+               class="bolamu-drink-products-scroller"
+               role="region"
+               aria-label="Milkshakes products"
+               tabindex="0"
+             >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/MANGO%20PUREE%20-%202.png"
+               alt="Milkshakes product range"
+               loading="lazy"
+             >
+             </div>
+
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-right"
+               type="button"
+               aria-label="Scroll Milkshakes products right"
+             >
+               ›
+             </button>
+           </div>
+         </div>
+       </article>
+
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="frappuccinos"
+       >
+         <button
+           class="bolamu-drink-subcategory-banner"
+           type="button"
+           aria-expanded="false"
+           aria-controls="bolamu-drink-frappuccinos-panel"
+         >
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/D4C29DDE-1D55-49AC-A94C-DFC0FC5F7852.jpeg"
+             alt="Frappuccinos menu category"
+             loading="lazy"
+           >
+           <span class="bolamu-drink-subcategory-indicator" aria-hidden="true">+</span>
+           <span class="bolamu-menu-visually-hidden">Toggle Frappuccinos products</span>
+         </button>
+
+         <div
+           class="bolamu-drink-subcategory-panel"
+           id="bolamu-drink-frappuccinos-panel"
+           hidden
+         >
+           <p class="bolamu-drink-subcategory-description">
+             Our frappuccinos are crafted using Bolamu frappuccino house mix and are available in our signature Bolamu flavours. Blended with ice and finished with fresh cream and flavour-matched garnishes, they answer a simple question: what if Starbucks came to Congo?
+           </p>
+
+           <div class="bolamu-drink-products-shell">
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-left"
+               type="button"
+               aria-label="Scroll Frappuccinos products left"
+               hidden
+             >
+               ‹
+             </button>
+
+             <div
+               class="bolamu-drink-products-scroller"
+               role="region"
+               aria-label="Frappuccinos products"
+               tabindex="0"
+             >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/MANGO%20PUREE%20-%203.png"
+               alt="Frappuccinos product range"
+               loading="lazy"
+             >
+             </div>
+
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-right"
+               type="button"
+               aria-label="Scroll Frappuccinos products right"
+             >
+               ›
+             </button>
+           </div>
+         </div>
+       </article>
+
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="lattes"
+       >
+         <button
+           class="bolamu-drink-subcategory-banner"
+           type="button"
+           aria-expanded="false"
+           aria-controls="bolamu-drink-lattes-panel"
+         >
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/C8BF27D2-5858-44AD-91D5-C2B08E1FDB09.png"
+             alt="Lattes menu category"
+             loading="lazy"
+           >
+           <span class="bolamu-drink-subcategory-indicator" aria-hidden="true">+</span>
+           <span class="bolamu-menu-visually-hidden">Toggle Lattes products</span>
+         </button>
+
+         <div
+           class="bolamu-drink-subcategory-panel"
+           id="bolamu-drink-lattes-panel"
+           hidden
+         >
+           <p class="bolamu-drink-subcategory-description">
+             Our speciality lattes are crafted using Bolamu latte house mix. Combining smooth espresso, steamed milk and our signature Bolamu flavours, they transform the everyday coffee break into a taste of Congo.
+           </p>
+
+           <div class="bolamu-drink-products-shell">
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-left"
+               type="button"
+               aria-label="Scroll Lattes products left"
+               hidden
+             >
+               ‹
+             </button>
+
+             <div
+               class="bolamu-drink-products-scroller"
+               role="region"
+               aria-label="Lattes products"
+               tabindex="0"
+             >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/MANGO%20PUREE%20-%204.png"
+               alt="Lattes product range"
+               loading="lazy"
+             >
+             </div>
+
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-right"
+               type="button"
+               aria-label="Scroll Lattes products right"
+             >
+               ›
+             </button>
+           </div>
+         </div>
+       </article>
+
+       <article
+         class="bolamu-drink-subcategory"
+         role="listitem"
+         data-drink-subcategory="slushies"
+       >
+         <button
+           class="bolamu-drink-subcategory-banner"
+           type="button"
+           aria-expanded="false"
+           aria-controls="bolamu-drink-slushies-panel"
+         >
+           <img
+             src="https://ik.imagekit.io/vxel66ikf/8E6DAB41-FFBD-451A-9825-2FABD307E85B.jpeg"
+             alt="Slushies menu category"
+             loading="lazy"
+           >
+           <span class="bolamu-drink-subcategory-indicator" aria-hidden="true">+</span>
+           <span class="bolamu-menu-visually-hidden">Toggle Slushies products</span>
+         </button>
+
+         <div
+           class="bolamu-drink-subcategory-panel"
+           id="bolamu-drink-slushies-panel"
+           hidden
+         >
+           <p class="bolamu-drink-subcategory-description">
+             Our slushies are crafted using Bolamu’s slushie house mix, made using our signature Mbila Doré flavour. Combining the sweet heat of classic hot honey syrup with the quintessentially Congolese flavours of palm fruit and Scotch bonnet pepper, they’re icy, refreshing and blended with vibrant fruit purées inspired by the flavours of Africa.
+           </p>
+
+           <div class="bolamu-drink-products-shell">
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-left"
+               type="button"
+               aria-label="Scroll Slushies products left"
+               hidden
+             >
+               ‹
+             </button>
+
+             <div
+               class="bolamu-drink-products-scroller"
+               role="region"
+               aria-label="Slushies products"
+               tabindex="0"
+             >
+             <img
+               src="https://ik.imagekit.io/vxel66ikf/MANGO%20PUREE%20-%205.png"
+               alt="Slushies product range"
+               loading="lazy"
+             >
+             </div>
+
+             <button
+               class="bolamu-drink-products-arrow bolamu-drink-products-arrow-right"
+               type="button"
+               aria-label="Scroll Slushies products right"
+             >
+               ›
+             </button>
+           </div>
+         </div>
+       </article>
+     </div>
+   </div>
  </div>
 </section>
 
@@ -298,11 +916,19 @@
  --bolamu-ink: #173552;
  --bolamu-border: rgba(23, 53, 82, 0.18);
  --bolamu-shadow: 0 14px 35px rgba(24, 64, 91, 0.18);
- --bolamu-card-width: clamp(145px, 14.4vw, 196px);
+ --bolamu-card-width: clamp(240px, 32vw, 380px);
+ --bolamu-top-bleed: 0px;
 
- width: 100%;
- margin: 0;
+ position: relative;
+ left: 50%;
+ isolation: isolate;
+ width: 100vw;
+ max-width: 100vw;
+ min-height: 100vh;
+ min-height: 100dvh;
+ margin: calc(-1 * var(--bolamu-top-bleed)) 0 0 -50vw !important;
  padding: clamp(26px, 4vw, 54px) clamp(14px, 3vw, 34px) clamp(42px, 6vw, 80px);
+ overflow-x: hidden;
 
  background-color: #f7edcf;
  background-image:
@@ -406,12 +1032,12 @@
  background: linear-gradient(135deg, #118fc8, var(--bolamu-sky));
 }
 
-.bolamu-menu-category-drinks {
+.bolamu-menu-category-desserts {
  background: linear-gradient(135deg, #e7b927, var(--bolamu-yellow));
  color: var(--bolamu-red);
 }
 
-.bolamu-menu-category-desserts {
+.bolamu-menu-category-drinks {
  background: linear-gradient(135deg, #bb211d, var(--bolamu-red));
 }
 
@@ -428,6 +1054,12 @@
  background: rgba(255, 255, 255, 0.12);
  font-size: 1.7rem;
  line-height: 1;
+}
+
+.bolamu-menu-category-icon svg {
+ display: block;
+ width: 30px;
+ height: 30px;
 }
 
 .bolamu-menu-category-toggle {
@@ -452,19 +1084,6 @@
  display: none;
 }
 
-.bolamu-menu-intro {
- width: min(760px, 92%);
- margin: 0 auto 20px;
-
- color: var(--bolamu-ink);
- text-align: center;
- text-transform: uppercase;
- letter-spacing: 0.1em;
- line-height: 1.55;
-
- font-size: clamp(0.76rem, 1.05vw, 0.95rem);
- font-weight: 800;
-}
 
 .bolamu-flavour-carousel-shell {
  position: relative;
@@ -475,19 +1094,19 @@
 .bolamu-flavour-carousel {
  display: flex;
  align-items: flex-start;
- gap: 18px;
+ gap: 14px;
 
  width: 100%;
  padding:
-   14px
-   max(26px, calc((100% - var(--bolamu-card-width)) / 2))
-   24px;
+   8px
+   max(8px, calc((100% - var(--bolamu-card-width)) / 2))
+   12px;
 
  overflow-x: auto;
  overflow-y: hidden;
  scroll-snap-type: x mandatory;
  scroll-padding-inline:
-   max(26px, calc((100% - var(--bolamu-card-width)) / 2));
+   max(8px, calc((100% - var(--bolamu-card-width)) / 2));
  scroll-behavior: smooth;
  overscroll-behavior-inline: contain;
 
@@ -516,13 +1135,11 @@
  width: 100%;
  overflow: hidden;
 
- border: 5px solid var(--bolamu-cream);
- border-radius: 15px;
+ border: 0;
+ border-radius: 16px;
 
- background: var(--bolamu-cream);
- box-shadow:
-   0 0 0 3px var(--bolamu-sky-dark),
-   0 10px 22px rgba(23, 53, 82, 0.2);
+ background: transparent;
+ box-shadow: none;
 }
 
 .bolamu-flavour-card img {
@@ -530,113 +1147,171 @@
  width: 100%;
  height: auto;
  aspect-ratio: 9 / 16;
- object-fit: cover;
+ object-fit: contain;
  user-select: none;
  -webkit-user-drag: none;
 }
 
-.bolamu-flavour-story-toggle {
- display: grid;
- place-items: center;
 
- width: 42px;
- height: 32px;
- margin: 12px auto 0;
- padding: 0;
+.bolamu-flavour-overlay-open {
+ position: absolute;
+ left: 50%;
+ bottom: 10px;
+ z-index: 2;
 
- border: 3px solid var(--bolamu-cream);
+ min-height: 34px;
+ padding: 4px 12px;
+
+ border: 2px solid rgba(255, 255, 255, 0.9);
  border-radius: 999px;
 
  color: #fff;
- background: var(--bolamu-sky-dark);
- box-shadow:
-   0 0 0 3px var(--bolamu-yellow),
-   0 5px 12px rgba(23, 53, 82, 0.2);
+ background: rgba(23, 53, 82, 0.52);
+ text-shadow:
+   0 2px 4px rgba(0, 0, 0, 0.95),
+   0 0 10px rgba(0, 0, 0, 0.85);
 
+ font: inherit;
+ font-size: 0.76rem;
+ font-weight: 900;
+ letter-spacing: 0.04em;
+ white-space: nowrap;
+
+ transform: translateX(-50%);
  cursor: pointer;
  transition:
    background 180ms ease,
-   transform 180ms ease;
+   transform 180ms ease,
+   opacity 180ms ease;
 }
 
-.bolamu-flavour-story-toggle:hover,
-.bolamu-flavour-story-toggle:focus-visible {
- background: var(--bolamu-red);
- transform: translateY(-2px);
- outline: none;
+.bolamu-flavour-overlay-open:hover,
+.bolamu-flavour-overlay-open:focus-visible {
+ background: rgba(23, 53, 82, 0.82);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
+ transform: translateX(-50%) translateY(-2px);
 }
 
-.bolamu-flavour-story-chevron {
- display: block;
- font-size: 1.55rem;
- line-height: 0.8;
- transform-origin: center;
- transition: transform 180ms ease;
+.bolamu-flavour-overlay-open[aria-expanded="true"] {
+ opacity: 0;
+ pointer-events: none;
 }
 
-.bolamu-flavour-story-toggle[aria-expanded="true"] .bolamu-flavour-story-chevron {
- transform: rotate(180deg);
+.bolamu-flavour-overlay {
+ position: absolute;
+ inset: 0;
+ z-index: 3;
+
+ display: grid;
+ place-items: center;
+ overflow: hidden;
+ padding: clamp(10px, 1.4vw, 16px);
+
+ color: #fff;
+ background: rgba(10, 27, 43, 0.78);
+ -webkit-backdrop-filter: blur(6px);
+ backdrop-filter: blur(6px);
 }
 
-.bolamu-flavour-story {
- margin-top: 14px;
- padding: 14px 12px 16px;
-
- border: 3px solid var(--bolamu-yellow);
- border-radius: 14px;
-
- background: var(--bolamu-pastel-yellow);
- box-shadow:
-   inset 0 0 0 3px rgba(255, 255, 255, 0.72),
-   0 8px 16px rgba(23, 53, 82, 0.14);
-
- text-align: center;
-}
-
-.bolamu-flavour-story[hidden] {
+.bolamu-flavour-overlay[hidden] {
  display: none;
 }
 
-.bolamu-flavour-story h3 {
- margin: 0 0 8px;
+.bolamu-flavour-overlay-content {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 
- color: var(--bolamu-red);
+ width: 100%;
+ max-height: 100%;
+ min-height: 0;
+ text-align: center;
+}
+
+.bolamu-flavour-overlay h3 {
+ flex: 0 0 auto;
+ margin: 0 0 14px;
+
+ color: #fff;
  text-transform: uppercase;
  letter-spacing: 0.03em;
+ text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 
- font-size: clamp(0.96rem, 1.4vw, 1.16rem);
+ font-size: clamp(1.34rem, 1.9vw, 1.58rem);
  font-weight: 900;
 }
 
-.bolamu-flavour-story p {
+.bolamu-flavour-overlay p {
+ flex: 0 1 auto;
+
+ width: 100%;
+ min-height: 0;
  margin: 0;
+ overflow-y: auto;
+ overscroll-behavior: contain;
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
 
- color: var(--bolamu-ink);
- line-height: 1.48;
+ color: #fff;
+ line-height: 1.4;
+ text-shadow: 0 2px 4px rgba(0, 0, 0, 0.82);
 
- font-size: clamp(0.76rem, 1vw, 0.9rem);
+ font-size: clamp(0.84rem, 1.15vw, 0.98rem);
  font-weight: 600;
+}
+
+.bolamu-flavour-overlay p::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-flavour-overlay-close {
+ min-height: 38px;
+ margin-top: 16px;
+ padding: 7px 16px;
+
+ border: 2px solid #fff;
+ border-radius: 999px;
+
+ color: #fff;
+ background: rgba(217, 45, 37, 0.82);
+
+ font: inherit;
+ font-size: 0.8rem;
+ font-weight: 900;
+ cursor: pointer;
+}
+
+.bolamu-flavour-overlay-close:hover,
+.bolamu-flavour-overlay-close:focus-visible {
+ background: var(--bolamu-red);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
 }
 
 .bolamu-flavour-arrow {
  position: absolute;
- top: 42%;
- z-index: 3;
+ top: 50%;
+ z-index: 6;
 
- width: 48px;
- height: 72px;
+ display: grid;
+ place-items: center;
+
+ width: 44px;
+ height: 58px;
  padding: 0;
 
- border: 3px solid var(--bolamu-cream);
- border-radius: 16px;
+ border: 2px solid rgba(255, 255, 255, 0.86);
+ border-radius: 999px;
 
  color: #fff;
- background: var(--bolamu-sky-dark);
+ background: rgba(23, 53, 82, 0.54);
  box-shadow:
-   0 0 0 3px var(--bolamu-yellow),
-   0 9px 18px rgba(23, 53, 82, 0.22);
+   0 5px 14px rgba(23, 53, 82, 0.24),
+   0 0 10px rgba(66, 189, 234, 0.34);
 
- font-size: 30px;
+ font-size: 1.8rem;
  line-height: 1;
 
  transform: translateY(-50%);
@@ -645,16 +1320,17 @@
 
 .bolamu-flavour-arrow:hover,
 .bolamu-flavour-arrow:focus-visible {
- background: var(--bolamu-red);
- outline: none;
+ background: rgba(23, 53, 82, 0.82);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
 }
 
 .bolamu-flavour-arrow-left {
- left: 6px;
+ left: 7px;
 }
 
 .bolamu-flavour-arrow-right {
- right: 6px;
+ right: 7px;
 }
 
 .bolamu-flavour-arrow[disabled] {
@@ -682,6 +1358,798 @@
 .bolamu-menu-swipe-hint span:last-child {
  color: var(--bolamu-red);
  font-size: 1.2rem;
+}
+
+.bolamu-dessert-gallery-shell {
+ position: relative;
+ width: 100%;
+}
+
+.bolamu-dessert-gallery {
+ --bolamu-dessert-card-width: clamp(250px, 86vw, 420px);
+
+ display: flex;
+ gap: 16px;
+
+ width: 100%;
+ padding: 8px 8px 12px;
+ overflow-x: auto;
+ overflow-y: hidden;
+
+ scroll-snap-type: x mandatory;
+ scroll-padding-inline: 8px;
+ scroll-behavior: smooth;
+ overscroll-behavior-inline: contain;
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+ cursor: grab;
+}
+
+.bolamu-dessert-gallery:active {
+ cursor: grabbing;
+}
+
+.bolamu-dessert-gallery::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-dessert-gallery:focus-visible {
+ outline: 3px solid var(--bolamu-sky-dark);
+ outline-offset: -3px;
+}
+
+.bolamu-dessert-card {
+ flex: 0 0 var(--bolamu-dessert-card-width);
+ width: var(--bolamu-dessert-card-width);
+ aspect-ratio: 9 / 16;
+
+ scroll-snap-align: center;
+ scroll-snap-stop: always;
+}
+
+.bolamu-dessert-card-front {
+ display: block;
+ width: 100%;
+ height: 100%;
+ padding: 0;
+ overflow: hidden;
+
+ border: 0;
+ border-radius: 18px;
+
+ background: transparent;
+ box-shadow: none;
+
+ font: inherit;
+ touch-action: manipulation;
+ cursor: pointer;
+}
+
+.bolamu-dessert-card-front img {
+ display: block;
+ width: 100%;
+ height: 100%;
+
+ object-fit: contain;
+ object-position: center;
+ user-select: none;
+ -webkit-user-drag: none;
+}
+
+.bolamu-dessert-card-front:hover,
+.bolamu-dessert-card-front:focus-visible {
+ outline: 4px solid var(--bolamu-yellow);
+ outline-offset: -6px;
+}
+
+.bolamu-dessert-menu-overlay {
+ position: fixed;
+ inset: 0;
+ z-index: 9999;
+
+ overflow: hidden;
+
+ background:
+   radial-gradient(circle at 16% 12%, rgba(66, 189, 234, 0.2), transparent 32%),
+   linear-gradient(180deg, var(--bolamu-cream), var(--bolamu-pastel-yellow));
+
+ opacity: 0;
+ transition: opacity 240ms ease;
+}
+
+.bolamu-dessert-menu-overlay[hidden],
+.bolamu-dessert-menu-panel[hidden] {
+ display: none;
+}
+
+.bolamu-dessert-menu-overlay.is-open {
+ opacity: 1;
+}
+
+.bolamu-dessert-menu-shell {
+ position: relative;
+
+ width: 100%;
+ min-height: 100vh;
+ height: 100vh;
+ max-height: 100vh;
+ min-height: 100dvh;
+ height: 100dvh;
+ max-height: 100dvh;
+ overflow-x: hidden;
+ overflow-y: auto;
+ overscroll-behavior: contain;
+ -webkit-overflow-scrolling: touch;
+ padding: 0;
+
+ transform: scale(0.975) rotateY(-1.5deg);
+ transform-origin: center center;
+ transition: transform 280ms cubic-bezier(0.22, 0.78, 0.24, 1);
+}
+
+.bolamu-dessert-menu-overlay.is-open .bolamu-dessert-menu-shell {
+ transform: scale(1) rotateY(0);
+}
+
+.bolamu-dessert-menu-shell.is-mikate-menu {
+ overflow-y: hidden;
+}
+
+.bolamu-dessert-menu-close {
+ position: fixed;
+ top: max(12px, env(safe-area-inset-top));
+ right: max(12px, env(safe-area-inset-right));
+ z-index: 10002;
+
+ display: grid;
+ place-items: center;
+
+ width: 48px;
+ height: 48px;
+ padding: 0;
+
+ border: 3px solid #fff;
+ border-radius: 50%;
+
+ color: #fff;
+ background: var(--bolamu-red);
+ box-shadow:
+   0 0 0 3px var(--bolamu-sky-dark),
+   0 8px 18px rgba(23, 53, 82, 0.28);
+
+ font: inherit;
+ font-size: 1.8rem;
+ font-weight: 900;
+ line-height: 1;
+ cursor: pointer;
+}
+
+.bolamu-dessert-menu-close:hover,
+.bolamu-dessert-menu-close:focus-visible {
+ outline: 4px solid var(--bolamu-yellow);
+ outline-offset: 3px;
+}
+
+.bolamu-dessert-menu-content {
+ width: 100%;
+ min-height: 100vh;
+ min-height: 100dvh;
+ margin-inline: auto;
+}
+
+.bolamu-dessert-menu-panel {
+ min-height: 100vh;
+ min-height: 100dvh;
+}
+
+.bolamu-dessert-placeholder-panel {
+ display: grid;
+ place-content: center;
+ gap: 20px;
+
+ padding:
+   max(70px, calc(env(safe-area-inset-top) + 58px))
+   20px
+   max(40px, env(safe-area-inset-bottom));
+
+ color: var(--bolamu-ink);
+ text-align: center;
+}
+
+.bolamu-dessert-placeholder-panel h2 {
+ margin: 0;
+
+ color: var(--bolamu-red);
+ text-transform: uppercase;
+ letter-spacing: 0.04em;
+
+ font-size: clamp(2rem, 7vw, 4.5rem);
+ line-height: 1.05;
+}
+
+.bolamu-dessert-placeholder-panel p {
+ width: fit-content;
+ margin: 0 auto;
+ padding: 12px 22px;
+
+ border: 3px solid var(--bolamu-red);
+ border-radius: 999px;
+
+ background: rgba(255, 255, 255, 0.78);
+ box-shadow: inset 0 0 0 3px rgba(66, 189, 234, 0.28);
+
+ font-size: clamp(1rem, 3vw, 1.35rem);
+ font-weight: 900;
+}
+
+.bolamu-dessert-mikate-panel {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ height: 100vh;
+ height: 100dvh;
+ min-height: 0;
+ overflow: hidden;
+ isolation: isolate;
+
+ background: var(--bolamu-pastel-yellow);
+}
+
+.bolamu-mikate-menu-header-region {
+ position: relative;
+ z-index: 2;
+
+ flex: 0 0 auto;
+ width: 100%;
+ padding:
+   max(64px, calc(env(safe-area-inset-top) + 52px))
+   10px
+   clamp(10px, 2vw, 20px);
+
+ background-image: url("https://ik.imagekit.io/vxel66ikf/Menu%20background.png?updatedAt=1784886804416");
+ background-position: center top;
+ background-repeat: no-repeat;
+ background-size: cover;
+ box-shadow:
+   0 10px 12px rgba(24, 37, 48, 0.34),
+   0 3px 2px rgba(24, 37, 48, 0.18);
+
+ margin-bottom: clamp(-24px, -2.5vw, -18px);
+ overflow: hidden;
+ isolation: isolate;
+
+ height: var(--bolamu-hero-expanded-height, auto);
+ min-height: var(--bolamu-hero-retained-height, 0);
+
+ transition:
+   height 310ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   padding-bottom 350ms ease;
+}
+
+.bolamu-mikate-menu-header-region[data-hero-state="compact"] {
+ height: var(--bolamu-hero-retained-height);
+}
+
+.bolamu-mikate-menu-header-region[data-hero-state="compact"] .bolamu-mikate-header-module {
+ transform: translateY(calc(-1 * var(--bolamu-hero-collapse-shift, 0px)));
+}
+
+.bolamu-mikate-menu-header-region[data-hero-state="flavours-open"] {
+ height: var(
+   --bolamu-hero-flavours-height,
+   calc(
+     var(--bolamu-hero-expanded-height) +
+     clamp(140px, 38vw, 300px)
+   )
+ );
+}
+
+.bolamu-mikate-menu-header-region.is-dial-open {
+ padding-bottom: clamp(18px, 3vw, 30px);
+}
+
+.bolamu-mikate-header-module {
+ position: relative;
+ z-index: 3;
+
+ width: min(100%, 820px);
+ min-height: 0;
+ margin-inline: auto;
+ padding-bottom: clamp(6px, 1.5vw, 14px);
+
+ transition:
+   padding-bottom 350ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   transform 310ms cubic-bezier(0.22, 0.78, 0.24, 1);
+}
+
+.bolamu-mikate-header-module.is-dial-open {
+ padding-bottom: clamp(140px, 38vw, 300px);
+}
+
+.bolamu-mikate-flavour-dial-button {
+ position: absolute;
+ top: 16%;
+ left: 50%;
+ z-index: 1;
+
+ display: block;
+ width: 96%;
+ max-width: none;
+ height: auto;
+ padding: 0;
+
+ border: 0;
+ background: transparent;
+
+ visibility: hidden;
+ opacity: 0;
+ transform: translate(-50%, -46%) scale(0.9);
+ transform-origin: center top;
+ pointer-events: none;
+
+ transition:
+   transform 350ms cubic-bezier(0.22, 0.78, 0.24, 1),
+   opacity 190ms ease,
+   visibility 0s linear 350ms;
+}
+
+.bolamu-mikate-header-module.is-dial-open .bolamu-mikate-flavour-dial-button {
+ visibility: visible;
+ opacity: 1;
+ transform: translate(-50%, 48%) scale(1);
+ pointer-events: auto;
+
+ transition-delay: 0s;
+ cursor: pointer;
+}
+
+.bolamu-mikate-flavour-dial-button:focus-visible {
+ outline: 4px solid var(--bolamu-yellow);
+ outline-offset: 3px;
+ border-radius: 16px;
+}
+
+.bolamu-mikate-flavour-dial {
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+.bolamu-mikate-flavour-close-hint {
+ display: block;
+ margin-top: clamp(5px, 1.4vw, 10px);
+
+ color: #fff;
+ opacity: 0;
+
+ text-align: center;
+ letter-spacing: 0.03em;
+ text-shadow:
+   0 1px 3px rgba(0, 0, 0, 0.65),
+   0 0 1px rgba(0, 0, 0, 0.8);
+
+ font-size: clamp(0.72rem, 2.8vw, 0.9rem);
+ font-weight: 700;
+
+ transition: opacity 180ms ease 120ms;
+}
+
+.bolamu-mikate-header-module.is-dial-open .bolamu-mikate-flavour-close-hint {
+ opacity: 1;
+}
+
+.bolamu-mikate-header-toggle {
+ position: relative;
+ z-index: 2;
+
+ display: block;
+ width: 100%;
+ padding: 0;
+
+ border: 0;
+ background: transparent;
+
+ cursor: pointer;
+}
+
+.bolamu-mikate-header-toggle:focus-visible {
+ outline: 4px solid var(--bolamu-yellow);
+ outline-offset: 3px;
+ border-radius: 12px;
+}
+
+.bolamu-mikate-header-sticker {
+ display: block;
+ width: 100%;
+ max-width: none;
+ height: auto;
+}
+
+.bolamu-mikate-menu-scroll-region {
+ position: relative;
+ z-index: 1;
+
+ flex: 1 1 auto;
+ min-height: 0;
+ width: 100%;
+ overflow: hidden;
+}
+
+.bolamu-mikate-menu-scroll-background {
+ position: absolute;
+ top: clamp(-58px, -6vw, -38px);
+ right: 0;
+ bottom: 0;
+ left: 0;
+ z-index: 0;
+
+ background-image: url("https://ik.imagekit.io/vxel66ikf/Menu%20scroll%20container%20background");
+ background-position: top center;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+
+ pointer-events: none;
+}
+
+.bolamu-mikate-menu-scroll-viewport {
+ position: relative;
+ z-index: 1;
+
+ width: 100%;
+ height: 100%;
+ overflow-x: hidden;
+ overflow-y: auto;
+ overscroll-behavior: contain;
+ -webkit-overflow-scrolling: touch;
+
+ background: transparent;
+ scrollbar-width: thin;
+}
+
+.bolamu-mikate-dish-list {
+ min-height: 100%;
+ padding:
+   clamp(28px, 4vw, 46px)
+   max(8px, calc(env(safe-area-inset-right) + 4px))
+   max(36px, calc(env(safe-area-inset-bottom) + 18px))
+   max(8px, calc(env(safe-area-inset-left) + 4px));
+}
+
+.bolamu-mikate-menu-area {
+ position: relative;
+ z-index: 1;
+
+ width: min(90%, 900px);
+ min-height: clamp(360px, 58dvh, 720px);
+ margin: 0 auto;
+ padding: clamp(24px, 5vw, 48px);
+ overflow: visible;
+
+ border: 3px solid rgba(217, 45, 37, 0.82);
+ border-radius: 22px;
+
+ color: var(--bolamu-ink);
+ background: rgba(255, 255, 255, 0.64);
+ box-shadow:
+   inset 0 0 0 3px rgba(66, 189, 234, 0.3),
+   0 12px 26px rgba(23, 53, 82, 0.14);
+
+ text-align: center;
+}
+
+.bolamu-mikate-menu-area p {
+ margin: 0;
+ line-height: 1.5;
+
+ font-size: clamp(1.1rem, 3vw, 1.45rem);
+ font-weight: 800;
+}
+
+.bolamu-mikate-menu-area.is-mikate-dish-menu {
+ width: min(98%, 980px);
+ padding: clamp(4px, 1vw, 8px);
+
+ border: 0;
+ background: transparent;
+ box-shadow: none;
+}
+
+.bolamu-mikate-dish-cards {
+ display: flex;
+ flex-direction: column;
+ gap: 0;
+ width: 100%;
+ padding-bottom: clamp(48px, 10dvh, 96px);
+}
+
+.bolamu-mikate-dish-cards img + img {
+ margin-top: clamp(-16px, -3.3vw, -10px);
+}
+
+.bolamu-mikate-dish-cards[hidden] {
+ display: none;
+}
+
+.bolamu-mikate-dish-cards img {
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+.bolamu-dessert-gallery-arrow {
+ position: absolute;
+ top: 50%;
+ z-index: 6;
+
+ display: grid;
+ place-items: center;
+
+ width: 42px;
+ height: 64px;
+ padding: 0;
+
+ border: 2px solid rgba(255, 255, 255, 0.86);
+ border-radius: 999px;
+
+ color: #fff;
+ background: rgba(23, 53, 82, 0.54);
+ box-shadow:
+   0 5px 14px rgba(23, 53, 82, 0.24),
+   0 0 10px rgba(66, 189, 234, 0.34);
+
+ font: inherit;
+ font-size: 2rem;
+ line-height: 1;
+
+ transform: translateY(-50%);
+ cursor: pointer;
+}
+
+.bolamu-dessert-gallery-arrow:hover,
+.bolamu-dessert-gallery-arrow:focus-visible {
+ background: rgba(23, 53, 82, 0.82);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
+}
+
+.bolamu-dessert-gallery-arrow[hidden] {
+ display: none;
+}
+
+.bolamu-dessert-gallery-arrow-left {
+ left: 7px;
+}
+
+.bolamu-dessert-gallery-arrow-right {
+ right: 7px;
+}
+
+.bolamu-drink-subcategory-list {
+ display: grid;
+ gap: 16px;
+
+ width: 100%;
+ margin: 0;
+}
+
+.bolamu-drink-subcategory {
+ display: grid;
+ gap: 8px;
+
+ width: 100%;
+ margin: 0;
+}
+
+.bolamu-drink-subcategory-banner {
+ position: relative;
+
+ width: 100%;
+ padding: 0;
+ overflow: hidden;
+ aspect-ratio: 16 / 5;
+
+ border: 2px solid var(--bolamu-sky-dark);
+ border-radius: 16px;
+
+ background: var(--bolamu-cream);
+ box-shadow:
+   0 0 0 2px rgba(246, 201, 69, 0.5),
+   0 8px 18px rgba(23, 53, 82, 0.16);
+
+ font: inherit;
+ cursor: pointer;
+ transition:
+   transform 180ms ease,
+   filter 180ms ease,
+   box-shadow 180ms ease;
+}
+
+.bolamu-drink-subcategory-banner:hover,
+.bolamu-drink-subcategory-banner:focus-visible {
+ filter: saturate(1.08) brightness(1.03);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 3px;
+ transform: translateY(-2px);
+}
+
+.bolamu-drink-subcategory-banner:active {
+ transform: translateY(2px);
+ box-shadow:
+   0 0 0 2px rgba(246, 201, 69, 0.5),
+   0 4px 10px rgba(23, 53, 82, 0.16);
+}
+
+.bolamu-drink-subcategory-banner img {
+ display: block;
+ width: 100%;
+ height: 100%;
+
+ object-fit: cover;
+ object-position: center;
+}
+
+.bolamu-drink-subcategory-indicator {
+ position: absolute;
+ right: 12px;
+ bottom: 10px;
+
+ display: grid;
+ place-items: center;
+
+ width: 30px;
+ height: 30px;
+
+ border: 2px solid #fff;
+ border-radius: 50%;
+
+ color: #fff;
+ background: rgba(23, 53, 82, 0.74);
+ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+ text-shadow: 0 2px 4px rgba(0, 0, 0, 0.72);
+
+ font-size: 1.2rem;
+ font-weight: 900;
+ line-height: 1;
+}
+
+.bolamu-drink-subcategory-panel {
+ padding: clamp(12px, 2vw, 20px) 0 0;
+
+ border: 0;
+ border-radius: 0;
+
+ background: transparent;
+ box-shadow: none;
+}
+
+.bolamu-drink-subcategory-panel[hidden] {
+ display: none;
+}
+
+.bolamu-drink-subcategory-description {
+ width: min(860px, 100%);
+ margin: 4px auto 20px;
+
+ color: var(--bolamu-ink);
+ text-align: center;
+ line-height: 1.68;
+ letter-spacing: 0.01em;
+
+ font-size: clamp(1rem, 1.45vw, 1.16rem);
+ font-weight: 700;
+}
+
+.bolamu-drink-subcategory-description::after {
+ content: "✦";
+
+ display: block;
+ margin-top: 12px;
+
+ color: var(--bolamu-red);
+ font-size: 0.95rem;
+}
+
+.bolamu-drink-products-shell {
+ position: relative;
+ width: 100%;
+ padding: 6px;
+
+ border: 2px solid var(--bolamu-border);
+ border-radius: 16px;
+
+ background: rgba(255, 255, 255, 0.78);
+ overflow: hidden;
+}
+
+.bolamu-drink-products-scroller {
+ width: 100%;
+ overflow-x: auto;
+ overflow-y: hidden;
+ padding: 0;
+
+ border: 0;
+ border-radius: 11px;
+
+ background: transparent;
+ scroll-behavior: smooth;
+ overscroll-behavior-inline: contain;
+ -webkit-overflow-scrolling: touch;
+ scrollbar-width: none;
+}
+
+.bolamu-drink-products-scroller::-webkit-scrollbar {
+ display: none;
+}
+
+.bolamu-drink-products-scroller:focus-visible {
+ outline: 3px solid var(--bolamu-sky-dark);
+ outline-offset: 2px;
+}
+
+.bolamu-drink-products-scroller img {
+ display: block;
+ width: max(100%, 740px);
+ max-width: none;
+ height: auto;
+}
+
+.bolamu-drink-products-arrow {
+ position: absolute;
+ top: 50%;
+ z-index: 2;
+
+ display: grid;
+ place-items: center;
+
+ width: 44px;
+ height: 48px;
+ padding: 0;
+
+ border: 1px solid rgba(255, 255, 255, 0.82);
+ border-radius: 999px;
+
+ color: #fff;
+ background: rgba(23, 53, 82, 0.42);
+ box-shadow:
+   0 4px 12px rgba(0, 0, 0, 0.28),
+   0 0 12px rgba(255, 255, 255, 0.34);
+ text-shadow:
+   0 0 5px #fff,
+   0 0 10px rgba(66, 189, 234, 0.9);
+
+ font: inherit;
+ font-size: 1.65rem;
+ line-height: 1;
+
+ transform: translateY(-50%);
+ cursor: pointer;
+ transition:
+   background 180ms ease,
+   opacity 180ms ease,
+   transform 180ms ease;
+}
+
+.bolamu-drink-products-arrow:hover,
+.bolamu-drink-products-arrow:focus-visible {
+ background: rgba(23, 53, 82, 0.72);
+ outline: 3px solid var(--bolamu-yellow);
+ outline-offset: 2px;
+}
+
+.bolamu-drink-products-arrow:active {
+ transform: translateY(-50%) scale(0.94);
+}
+
+.bolamu-drink-products-arrow[hidden] {
+ display: none;
+}
+
+.bolamu-drink-products-arrow-left {
+ left: 8px;
+}
+
+.bolamu-drink-products-arrow-right {
+ right: 8px;
 }
 
 .bolamu-menu-placeholder {
@@ -731,12 +2199,12 @@
    grid-row: 1;
  }
 
- .bolamu-menu-category-drinks {
+ .bolamu-menu-category-desserts {
    grid-column: 2;
    grid-row: 1;
  }
 
- .bolamu-menu-category-desserts {
+ .bolamu-menu-category-drinks {
    grid-column: 3;
    grid-row: 1;
  }
@@ -744,7 +2212,7 @@
 
 @media (max-width: 768px) {
  .bolamu-menu {
-   --bolamu-card-width: min(45vw, 176px);
+   --bolamu-card-width: min(82vw, 340px);
 
    padding-inline: 10px;
    background-size: 38px 38px;
@@ -780,44 +2248,82 @@
  }
 
  .bolamu-flavour-carousel {
-   gap: 14px;
+   gap: 12px;
    padding:
-     12px
-     calc((100% - var(--bolamu-card-width)) / 2)
-     22px;
+     6px
+     max(6px, calc((100% - var(--bolamu-card-width)) / 2))
+     10px;
    scroll-padding-inline:
-     calc((100% - var(--bolamu-card-width)) / 2);
+     max(6px, calc((100% - var(--bolamu-card-width)) / 2));
  }
 
  .bolamu-flavour-arrow {
-   display: none;
+   width: 44px;
+   height: 54px;
  }
 
  .bolamu-flavour-card {
    border-radius: 12px;
  }
 
- .bolamu-flavour-story {
-   width: min(72vw, 280px);
-   margin-top: 16px;
-   margin-left: 50%;
-   padding: 18px 16px 20px;
-   transform: translateX(-50%);
+ .bolamu-dessert-gallery {
+   --bolamu-dessert-card-width: min(88vw, 390px);
+
+   gap: 12px;
+   padding-inline: 6px;
+   scroll-padding-inline: 6px;
  }
 
- .bolamu-flavour-story h3 {
-   font-size: 1.15rem;
+ .bolamu-dessert-gallery-arrow {
+   width: 44px;
+   height: 54px;
+   font-size: 1.7rem;
  }
 
- .bolamu-flavour-story p {
-   font-size: 0.95rem;
-   line-height: 1.65;
+ .bolamu-drink-subcategory-list {
+   gap: 14px;
+ }
+
+ .bolamu-drink-subcategory-banner {
+   border-radius: 12px;
+ }
+
+ .bolamu-flavour-overlay {
+   padding: 10px 8px;
+ }
+
+ .bolamu-flavour-overlay h3 {
+   margin-bottom: 12px;
+   font-size: 1.3rem;
+ }
+
+ .bolamu-flavour-overlay p {
+   font-size: 0.86rem;
+   line-height: 1.38;
  }
 }
 
 @media (max-width: 390px) {
+ .bolamu-flavour-overlay {
+   padding: 8px 6px;
+ }
+
+ .bolamu-flavour-overlay h3 {
+   margin-bottom: 10px;
+   font-size: 1.24rem;
+ }
+
+ .bolamu-flavour-overlay p {
+   font-size: 0.82rem;
+   line-height: 1.34;
+ }
+
+ .bolamu-flavour-overlay-close {
+   margin-top: 12px;
+ }
+
  .bolamu-menu {
-   --bolamu-card-width: 48vw;
+   --bolamu-card-width: 84vw;
  }
 
  .bolamu-menu-category {
@@ -833,12 +2339,22 @@
 
 @media (prefers-reduced-motion: reduce) {
  .bolamu-menu-category,
- .bolamu-flavour-story-toggle,
- .bolamu-flavour-story-chevron {
+ .bolamu-flavour-overlay-open {
    transition: none;
  }
 
- .bolamu-flavour-carousel {
+ .bolamu-dessert-menu-overlay,
+ .bolamu-dessert-menu-shell,
+ .bolamu-mikate-menu-header-region,
+ .bolamu-mikate-header-module,
+ .bolamu-mikate-flavour-dial-button,
+ .bolamu-mikate-flavour-close-hint {
+   transition: none;
+ }
+
+ .bolamu-flavour-carousel,
+ .bolamu-drink-products-scroller,
+ .bolamu-dessert-gallery {
    scroll-behavior: auto;
  }
 }
@@ -854,12 +2370,24 @@
 
  menu.dataset.menuReady = "true";
 
+ /* Reuse the tested scoped top-bleed treatment from the Foundry, KIN and
+    Strata embeds. It removes Webador's reserved header footprint only
+    for this Menu instance while preserving natural document scrolling. */
+ const topGap = menu.getBoundingClientRect().top;
+ if (topGap > 0 && topGap <= 320) {
+   menu.style.setProperty("--bolamu-top-bleed", Math.round(topGap) + "px");
+ }
+
  const categoryButtons = Array.from(
    menu.querySelectorAll(".bolamu-menu-category")
  );
 
  categoryButtons.forEach(function (button) {
    button.addEventListener("click", function () {
+     closeAllFlavourOverlays();
+     closeAllDrinkPanels();
+     resetDessertInteractions();
+
      const targetId = button.dataset.target;
      const targetPanel = menu.querySelector("#" + targetId);
      const isOpen = button.getAttribute("aria-expanded") === "true";
@@ -903,45 +2431,824 @@
    });
  });
 
- const storyToggles = Array.from(
-   menu.querySelectorAll(".bolamu-flavour-story-toggle")
+
+ const overlayOpenButtons = Array.from(
+   menu.querySelectorAll(".bolamu-flavour-overlay-open")
  );
 
- function closeAllFlavourStories(exceptToggle) {
-   storyToggles.forEach(function (toggle) {
-     if (toggle === exceptToggle) {
-       return;
-     }
+ function closeFlavourOverlay(openButton, restoreFocus) {
+   const overlayId = openButton.getAttribute("aria-controls");
+   const overlay = menu.querySelector("#" + overlayId);
 
-     const storyId = toggle.getAttribute("aria-controls");
-     const story = menu.querySelector("#" + storyId);
+   openButton.setAttribute("aria-expanded", "false");
 
-     toggle.setAttribute("aria-expanded", "false");
+   if (overlay) {
+     overlay.hidden = true;
+   }
 
-     if (story) {
-       story.hidden = true;
+   if (restoreFocus) {
+     openButton.focus();
+   }
+ }
+
+ function closeAllFlavourOverlays(exceptButton) {
+   overlayOpenButtons.forEach(function (openButton) {
+     if (openButton !== exceptButton) {
+       closeFlavourOverlay(openButton, false);
      }
    });
  }
 
- storyToggles.forEach(function (toggle) {
-   toggle.addEventListener("click", function () {
-     const storyId = toggle.getAttribute("aria-controls");
-     const story = menu.querySelector("#" + storyId);
-     const isOpen = toggle.getAttribute("aria-expanded") === "true";
+ overlayOpenButtons.forEach(function (openButton) {
+   const overlayId = openButton.getAttribute("aria-controls");
+   const overlay = menu.querySelector("#" + overlayId);
+   const closeButton = overlay
+     ? overlay.querySelector(".bolamu-flavour-overlay-close")
+     : null;
 
-     closeAllFlavourStories(toggle);
+   openButton.addEventListener("click", function () {
+     closeAllFlavourOverlays(openButton);
+     openButton.setAttribute("aria-expanded", "true");
 
-     toggle.setAttribute(
-       "aria-expanded",
-       isOpen ? "false" : "true"
+     if (overlay) {
+       overlay.hidden = false;
+     }
+
+     if (closeButton) {
+       closeButton.focus();
+     }
+   });
+
+   if (closeButton) {
+     closeButton.addEventListener("click", function () {
+       closeFlavourOverlay(openButton, true);
+     });
+   }
+ });
+
+ const dessertGallery = menu.querySelector(".bolamu-dessert-gallery");
+ const dessertCards = Array.from(
+   menu.querySelectorAll(".bolamu-dessert-card")
+ );
+ const dessertMenuButtons = Array.from(
+   menu.querySelectorAll(".bolamu-dessert-card-front")
+ );
+ const dessertLeftArrow = menu.querySelector(
+   ".bolamu-dessert-gallery-arrow-left"
+ );
+ const dessertRightArrow = menu.querySelector(
+   ".bolamu-dessert-gallery-arrow-right"
+ );
+ const dessertMenuOverlay = menu.querySelector(
+   "#bolamu-dessert-menu-overlay"
+ );
+ const dessertMenuShell = menu.querySelector(
+   ".bolamu-dessert-menu-shell"
+ );
+ const dessertMenuClose = menu.querySelector(
+   ".bolamu-dessert-menu-close"
+ );
+ const dessertReverseMenus = {
+   "ice-cream": {
+     title: "Ice Cream & Frozen Desserts",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Ice%20cream%20&%20frozen%20desserts.png",
+     contentId: "ice-cream-menu",
+     dishMenu: "ice-cream"
+   },
+   "baked-desserts": {
+     title: "Baked Desserts",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Baked%20desserts.png",
+     contentId: "baked-desserts-menu",
+     dishMenu: "baked-desserts"
+   },
+   "chocolate-desserts": {
+     title: "Chocolate Desserts",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Chocolate%20desserts.png",
+     contentId: "chocolate-desserts-menu",
+     dishMenu: "chocolate-desserts"
+   },
+   "mikate-bar": {
+     title: "Mikate Bar",
+     headerImage: "https://ik.imagekit.io/vxel66ikf/Menu%20reverse%20Mikate%20bar%20header",
+     contentId: "mikate-bar-menu",
+     dishMenu: "mikate-bar"
+   }
+ };
+ const dessertMenuTitle = menu.querySelector(
+   "#bolamu-dessert-overlay-title"
+ );
+ const dessertHeaderImage = menu.querySelector(
+   ".bolamu-mikate-header-sticker"
+ );
+ const dessertMenuViewport = menu.querySelector(
+   ".bolamu-mikate-menu-scroll-viewport"
+ );
+ const dessertMenuArea = menu.querySelector(
+   ".bolamu-mikate-menu-area"
+ );
+ const dessertMenuPlaceholder = menu.querySelector(
+   ".bolamu-dessert-menu-placeholder"
+ );
+ const dessertDishMenus = Array.from(
+   menu.querySelectorAll("[data-dessert-dish-menu]")
+ );
+ const mikateHeaderToggle = menu.querySelector(
+   ".bolamu-mikate-header-toggle"
+ );
+ const mikateHeaderRegion = menu.querySelector(
+   ".bolamu-mikate-menu-header-region"
+ );
+ const mikateScrollRegion = menu.querySelector(
+   ".bolamu-mikate-menu-scroll-viewport"
+ );
+ const mikateHeaderModule = menu.querySelector(
+   ".bolamu-mikate-header-module"
+ );
+ const mikateFlavourDial = menu.querySelector(
+   ".bolamu-mikate-flavour-dial-button"
+ );
+ const dessertPointerState = new WeakMap();
+ let dessertGalleryDragged = false;
+ let activeDessertTrigger = null;
+ let dessertPageScrollY = 0;
+ let dessertCloseTimer = null;
+ let dessertBodyStyles = null;
+ let activeDessertMenuName = null;
+ let dessertHeroScrollFrame = null;
+
+ function dessertMotionReduced() {
+   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ }
+
+ function getDessertScrollBehavior() {
+   return dessertMotionReduced() ? "auto" : "smooth";
+ }
+
+ function updateDessertGalleryArrows() {
+   if (!dessertGallery || !dessertLeftArrow || !dessertRightArrow) {
+     return;
+   }
+
+   const maxScroll = Math.max(
+     0,
+     dessertGallery.scrollWidth - dessertGallery.clientWidth
+   );
+   const tolerance = 4;
+
+   dessertLeftArrow.hidden = dessertGallery.scrollLeft <= tolerance;
+   dessertRightArrow.hidden =
+     maxScroll <= tolerance ||
+     dessertGallery.scrollLeft >= maxScroll - tolerance;
+ }
+
+ function setMikateDialOpen(isOpen) {
+   if (!mikateHeaderToggle || !mikateHeaderModule || !mikateFlavourDial) {
+     return;
+   }
+
+   mikateHeaderToggle.setAttribute(
+     "aria-expanded",
+     isOpen ? "true" : "false"
+   );
+   mikateHeaderToggle.setAttribute(
+     "aria-label",
+     isOpen
+       ? "Hide signature flavours"
+       : "Show signature flavours"
+   );
+   mikateHeaderModule.classList.toggle("is-dial-open", isOpen);
+
+   if (mikateHeaderRegion) {
+     mikateHeaderRegion.classList.toggle("is-dial-open", isOpen);
+   }
+
+   mikateFlavourDial.setAttribute(
+     "aria-hidden",
+     isOpen ? "false" : "true"
+   );
+   mikateFlavourDial.tabIndex = isOpen ? 0 : -1;
+
+   applyDessertHeroState();
+
+   if (
+     activeDessertMenuName &&
+     dessertMenuOverlay &&
+     !dessertMenuOverlay.hidden
+   ) {
+     window.requestAnimationFrame(syncDessertHeroMetrics);
+     window.setTimeout(syncDessertHeroMetrics, 360);
+   }
+ }
+
+ function resetMikateDial() {
+   setMikateDialOpen(false);
+ }
+
+ function lockDessertPage() {
+   dessertPageScrollY = window.scrollY;
+   dessertBodyStyles = {
+     position: document.body.style.position,
+     top: document.body.style.top,
+     left: document.body.style.left,
+     right: document.body.style.right,
+     width: document.body.style.width,
+     overflow: document.body.style.overflow
+   };
+
+   document.body.style.position = "fixed";
+   document.body.style.top = "-" + dessertPageScrollY + "px";
+   document.body.style.left = "0";
+   document.body.style.right = "0";
+   document.body.style.width = "100%";
+   document.body.style.overflow = "hidden";
+ }
+
+ function unlockDessertPage() {
+   if (!dessertBodyStyles) {
+     return;
+   }
+
+   document.body.style.position = dessertBodyStyles.position;
+   document.body.style.top = dessertBodyStyles.top;
+   document.body.style.left = dessertBodyStyles.left;
+   document.body.style.right = dessertBodyStyles.right;
+   document.body.style.width = dessertBodyStyles.width;
+   document.body.style.overflow = dessertBodyStyles.overflow;
+   dessertBodyStyles = null;
+   window.scrollTo(0, dessertPageScrollY);
+ }
+
+ function activeDessertHasDishMenu() {
+   const menuConfig = dessertReverseMenus[activeDessertMenuName];
+
+   return Boolean(menuConfig && menuConfig.dishMenu);
+ }
+
+ function getDessertHeroState() {
+   if (
+     !activeDessertHasDishMenu() ||
+     !mikateHeaderToggle ||
+     !mikateScrollRegion
+   ) {
+     return "full";
+   }
+
+   if (mikateHeaderToggle.getAttribute("aria-expanded") === "true") {
+     return "flavours-open";
+   }
+
+   return mikateScrollRegion.scrollTop > 36 ? "compact" : "full";
+ }
+
+ function applyDessertHeroState() {
+   if (!mikateHeaderRegion) {
+     return;
+   }
+
+   mikateHeaderRegion.dataset.heroState = getDessertHeroState();
+ }
+
+ function syncDessertHeroMetrics() {
+   if (!mikateHeaderRegion || !mikateHeaderModule) {
+     return;
+   }
+
+   const regionStyles = window.getComputedStyle(mikateHeaderRegion);
+   const regionPadding =
+     parseFloat(regionStyles.paddingTop || "0") +
+     parseFloat(regionStyles.paddingBottom || "0");
+   const measuredHeight =
+     Math.ceil(mikateHeaderModule.offsetHeight + regionPadding);
+   const dialIsOpen =
+     mikateHeaderToggle &&
+     mikateHeaderToggle.getAttribute("aria-expanded") === "true";
+
+   if (dialIsOpen) {
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-flavours-height",
+       measuredHeight + "px"
+     );
+   } else {
+     const retainedHeight = Math.min(
+       measuredHeight,
+       Math.max(72, Math.min(112, window.innerWidth * 0.2))
      );
 
-     if (story) {
-       story.hidden = isOpen;
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-expanded-height",
+       measuredHeight + "px"
+     );
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-retained-height",
+       retainedHeight + "px"
+     );
+     mikateHeaderRegion.style.setProperty(
+       "--bolamu-hero-collapse-shift",
+       Math.max(0, measuredHeight - retainedHeight) + "px"
+     );
+   }
+
+   applyDessertHeroState();
+ }
+
+ function openDessertMenu(button) {
+   if (!dessertMenuOverlay || !dessertMenuShell) {
+     return;
+   }
+
+   const menuName = button.dataset.dessertMenu;
+   const menuConfig = dessertReverseMenus[menuName];
+
+   if (!menuConfig || !dessertHeaderImage || !dessertMenuTitle) {
+     return;
+   }
+
+   window.clearTimeout(dessertCloseTimer);
+
+   if (activeDessertTrigger && activeDessertTrigger !== button) {
+     activeDessertTrigger.setAttribute("aria-expanded", "false");
+   }
+
+   dessertMenuTitle.textContent = menuConfig.title;
+   dessertHeaderImage.src = menuConfig.headerImage;
+   dessertHeaderImage.alt =
+     menuConfig.title + " menu header, description and Flavours tab";
+
+   if (dessertMenuViewport) {
+     dessertMenuViewport.dataset.menuContent = menuConfig.contentId;
+     dessertMenuViewport.setAttribute(
+       "aria-label",
+       menuConfig.title + " creations"
+     );
+   }
+
+   activeDessertMenuName = menuName;
+
+   if (dessertMenuPlaceholder && dessertMenuArea) {
+     const dishMenuName = menuConfig.dishMenu || "";
+     const hasDishMenu = Boolean(dishMenuName);
+
+     dessertMenuPlaceholder.hidden = hasDishMenu;
+     dessertDishMenus.forEach(function (dishMenu) {
+       dishMenu.hidden =
+         dishMenu.dataset.dessertDishMenu !== dishMenuName;
+     });
+     dessertMenuArea.classList.toggle(
+       "is-mikate-dish-menu",
+       hasDishMenu
+     );
+   }
+
+   activeDessertTrigger = button;
+   button.setAttribute("aria-expanded", "true");
+   resetMikateDial();
+   applyDessertHeroState();
+   dessertMenuShell.scrollTop = 0;
+   dessertMenuShell.classList.add("is-mikate-menu");
+
+   if (mikateScrollRegion) {
+     mikateScrollRegion.scrollTop = 0;
+   }
+
+   applyDessertHeroState();
+
+   if (dessertBodyStyles === null) {
+     lockDessertPage();
+   }
+
+   dessertMenuOverlay.hidden = false;
+   window.requestAnimationFrame(function () {
+     dessertMenuOverlay.classList.add("is-open");
+     syncDessertHeroMetrics();
+   });
+   dessertMenuClose.focus();
+ }
+
+ function closeDessertMenu(restoreFocus) {
+   if (!dessertMenuOverlay || dessertMenuOverlay.hidden) {
+     resetMikateDial();
+     return;
+   }
+
+   const triggerToRestore = activeDessertTrigger;
+
+   resetMikateDial();
+
+   if (activeDessertTrigger) {
+     activeDessertTrigger.setAttribute("aria-expanded", "false");
+   }
+
+   activeDessertTrigger = null;
+   applyDessertHeroState();
+   activeDessertMenuName = null;
+   applyDessertHeroState();
+   dessertMenuOverlay.classList.remove("is-open");
+
+   window.clearTimeout(dessertCloseTimer);
+
+   function finishClose() {
+     dessertMenuOverlay.hidden = true;
+     unlockDessertPage();
+     dessertMenuShell.scrollTop = 0;
+     dessertMenuShell.classList.remove("is-mikate-menu");
+
+     if (mikateScrollRegion) {
+       mikateScrollRegion.scrollTop = 0;
+     }
+
+     if (restoreFocus && triggerToRestore) {
+       triggerToRestore.focus();
+     }
+   }
+
+   if (dessertMotionReduced()) {
+     finishClose();
+   } else {
+     dessertCloseTimer = window.setTimeout(finishClose, 280);
+   }
+ }
+
+ function resetDessertInteractions() {
+   closeDessertMenu(false);
+   resetMikateDial();
+ }
+
+ dessertMenuButtons.forEach(function (button) {
+   button.addEventListener("pointerdown", function (event) {
+     dessertPointerState.set(button, {
+       x: event.clientX,
+       y: event.clientY,
+       moved: false
+     });
+   });
+
+   button.addEventListener("pointermove", function (event) {
+     const state = dessertPointerState.get(button);
+
+     if (
+       state &&
+       Math.hypot(event.clientX - state.x, event.clientY - state.y) > 10
+     ) {
+       state.moved = true;
+     }
+   });
+
+   button.addEventListener("click", function (event) {
+     const state = dessertPointerState.get(button);
+     const moved = dessertGalleryDragged || (state && state.moved);
+
+     dessertPointerState.delete(button);
+
+     if (moved) {
+       event.preventDefault();
+       return;
+     }
+
+     openDessertMenu(button);
+   });
+ });
+
+ if (dessertMenuClose) {
+   dessertMenuClose.addEventListener("click", function () {
+     closeDessertMenu(true);
+   });
+ }
+
+ document.addEventListener("keydown", function (event) {
+   if (!dessertMenuOverlay || dessertMenuOverlay.hidden) {
+     return;
+   }
+
+   if (event.key === "Escape") {
+     event.preventDefault();
+     closeDessertMenu(true);
+     return;
+   }
+
+   if (event.key !== "Tab") {
+     return;
+   }
+
+   const focusable = Array.from(
+     dessertMenuOverlay.querySelectorAll(
+       'button:not([disabled]), [href], input:not([disabled]), ' +
+       'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+     )
+   ).filter(function (element) {
+     return !element.hidden && element.offsetParent !== null;
+   });
+
+   if (!focusable.length) {
+     event.preventDefault();
+     dessertMenuShell.focus();
+     return;
+   }
+
+   const first = focusable[0];
+   const last = focusable[focusable.length - 1];
+
+   if (event.shiftKey && document.activeElement === first) {
+     event.preventDefault();
+     last.focus();
+   } else if (!event.shiftKey && document.activeElement === last) {
+     event.preventDefault();
+     first.focus();
+   }
+ });
+
+ if (dessertHeaderImage) {
+   dessertHeaderImage.addEventListener("load", function () {
+     if (activeDessertMenuName) {
+       syncDessertHeroMetrics();
+     }
+   });
+ }
+
+ if (mikateHeaderToggle) {
+   mikateHeaderToggle.addEventListener("click", function () {
+     const isOpen =
+       mikateHeaderToggle.getAttribute("aria-expanded") === "true";
+
+     setMikateDialOpen(!isOpen);
+   });
+ }
+
+ if (mikateFlavourDial) {
+   mikateFlavourDial.addEventListener("click", function (event) {
+     event.preventDefault();
+     event.stopPropagation();
+     setMikateDialOpen(false);
+     mikateHeaderToggle.focus();
+   });
+ }
+
+ if (mikateScrollRegion) {
+   mikateScrollRegion.addEventListener("scroll", function () {
+     if (dessertHeroScrollFrame !== null) {
+       return;
+     }
+
+     dessertHeroScrollFrame = window.requestAnimationFrame(function () {
+       dessertHeroScrollFrame = null;
+
+       if (activeDessertHasDishMenu()) {
+         if (
+           mikateHeaderToggle.getAttribute("aria-expanded") !== "true"
+         ) {
+           applyDessertHeroState();
+         }
+       }
+     });
+   }, {
+     passive: true
+   });
+ }
+
+ if (dessertGallery && dessertLeftArrow && dessertRightArrow) {
+   function getDessertScrollAmount() {
+     const firstCard = dessertCards[0];
+     const styles = window.getComputedStyle(dessertGallery);
+     const gap = parseFloat(styles.columnGap || styles.gap || "0");
+
+     return firstCard
+       ? firstCard.getBoundingClientRect().width + gap
+       : dessertGallery.clientWidth * 0.78;
+   }
+
+   dessertLeftArrow.addEventListener("click", function () {
+     dessertGallery.scrollBy({
+       left: -getDessertScrollAmount(),
+       behavior: getDessertScrollBehavior()
+     });
+   });
+
+   dessertRightArrow.addEventListener("click", function () {
+     dessertGallery.scrollBy({
+       left: getDessertScrollAmount(),
+       behavior: getDessertScrollBehavior()
+     });
+   });
+
+   dessertGallery.addEventListener("scroll", updateDessertGalleryArrows, {
+     passive: true
+   });
+
+   dessertGallery.addEventListener("wheel", function (event) {
+     if (
+       Math.abs(event.deltaY) > Math.abs(event.deltaX) &&
+       dessertGallery.scrollWidth > dessertGallery.clientWidth
+     ) {
+       event.preventDefault();
+       dessertGallery.scrollLeft += event.deltaY;
+     }
+   }, {
+     passive: false
+   });
+
+   let dragStartX = 0;
+   let dragStartScroll = 0;
+   let mouseDragging = false;
+
+   dessertGallery.addEventListener("pointerdown", function (event) {
+     if (event.pointerType !== "mouse") {
+       return;
+     }
+
+     dragStartX = event.clientX;
+     dragStartScroll = dessertGallery.scrollLeft;
+     mouseDragging = true;
+     dessertGalleryDragged = false;
+     dessertGallery.setPointerCapture(event.pointerId);
+   });
+
+   dessertGallery.addEventListener("pointermove", function (event) {
+     if (!mouseDragging) {
+       return;
+     }
+
+     const distance = event.clientX - dragStartX;
+
+     if (Math.abs(distance) > 6) {
+       dessertGalleryDragged = true;
+     }
+
+     dessertGallery.scrollLeft = dragStartScroll - distance;
+   });
+
+   dessertGallery.addEventListener("pointerup", function (event) {
+     if (!mouseDragging) {
+       return;
+     }
+
+     mouseDragging = false;
+     dessertGallery.releasePointerCapture(event.pointerId);
+
+     window.setTimeout(function () {
+       dessertGalleryDragged = false;
+     }, 0);
+   });
+
+   dessertGallery.addEventListener("pointercancel", function () {
+     mouseDragging = false;
+     dessertGalleryDragged = false;
+   });
+
+   dessertCards.forEach(function (card) {
+     const image = card.querySelector(".bolamu-dessert-card-front img");
+
+     if (image) {
+       image.addEventListener("load", updateDessertGalleryArrows);
+     }
+   });
+
+   window.addEventListener("resize", function () {
+     updateDessertGalleryArrows();
+
+     if (activeDessertHasDishMenu()) {
+       syncDessertHeroMetrics();
+     }
+   });
+   updateDessertGalleryArrows();
+ }
+
+ const drinkCategoryButtons = Array.from(
+   menu.querySelectorAll(".bolamu-drink-subcategory-banner")
+ );
+ const drinkProductShells = Array.from(
+   menu.querySelectorAll(".bolamu-drink-products-shell")
+ );
+
+ function getDrinkScrollBehavior() {
+   return window.matchMedia("(prefers-reduced-motion: reduce)").matches
+     ? "auto"
+     : "smooth";
+ }
+
+ function updateDrinkProductArrows(shell) {
+   const scroller = shell.querySelector(".bolamu-drink-products-scroller");
+   const leftArrow = shell.querySelector(
+     ".bolamu-drink-products-arrow-left"
+   );
+   const rightArrow = shell.querySelector(
+     ".bolamu-drink-products-arrow-right"
+   );
+
+   if (!scroller || !leftArrow || !rightArrow) {
+     return;
+   }
+
+   const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+   const tolerance = 4;
+
+   leftArrow.hidden = scroller.scrollLeft <= tolerance;
+   rightArrow.hidden =
+     maxScroll <= tolerance ||
+     scroller.scrollLeft >= maxScroll - tolerance;
+ }
+
+ function updateAllDrinkProductArrows() {
+   drinkProductShells.forEach(updateDrinkProductArrows);
+ }
+
+ function closeAllDrinkPanels() {
+   drinkCategoryButtons.forEach(function (button) {
+     const panelId = button.getAttribute("aria-controls");
+     const panel = menu.querySelector("#" + panelId);
+     const indicator = button.querySelector(
+       ".bolamu-drink-subcategory-indicator"
+     );
+
+     button.setAttribute("aria-expanded", "false");
+
+     if (panel) {
+       panel.hidden = true;
+     }
+
+     if (indicator) {
+       indicator.textContent = "+";
+     }
+   });
+ }
+
+ drinkCategoryButtons.forEach(function (button) {
+   button.addEventListener("click", function () {
+     const panelId = button.getAttribute("aria-controls");
+     const panel = menu.querySelector("#" + panelId);
+     const indicator = button.querySelector(
+       ".bolamu-drink-subcategory-indicator"
+     );
+     const isOpen = button.getAttribute("aria-expanded") === "true";
+
+     button.setAttribute("aria-expanded", isOpen ? "false" : "true");
+
+     if (panel) {
+       panel.hidden = isOpen;
+     }
+
+     if (indicator) {
+       indicator.textContent = isOpen ? "+" : "−";
+     }
+
+     if (!isOpen && panel) {
+       window.requestAnimationFrame(function () {
+         const shell = panel.querySelector(".bolamu-drink-products-shell");
+
+         if (shell) {
+           updateDrinkProductArrows(shell);
+         }
+       });
      }
    });
  });
+
+ drinkProductShells.forEach(function (shell) {
+   const scroller = shell.querySelector(".bolamu-drink-products-scroller");
+   const leftArrow = shell.querySelector(
+     ".bolamu-drink-products-arrow-left"
+   );
+   const rightArrow = shell.querySelector(
+     ".bolamu-drink-products-arrow-right"
+   );
+   const productImage = scroller ? scroller.querySelector("img") : null;
+
+   if (!scroller || !leftArrow || !rightArrow) {
+     return;
+   }
+
+   function getDrinkScrollAmount() {
+     return Math.max(220, scroller.clientWidth * 0.72);
+   }
+
+   leftArrow.addEventListener("click", function () {
+     scroller.scrollBy({
+       left: -getDrinkScrollAmount(),
+       behavior: getDrinkScrollBehavior()
+     });
+   });
+
+   rightArrow.addEventListener("click", function () {
+     scroller.scrollBy({
+       left: getDrinkScrollAmount(),
+       behavior: getDrinkScrollBehavior()
+     });
+   });
+
+   scroller.addEventListener("scroll", function () {
+     updateDrinkProductArrows(shell);
+   }, {
+     passive: true
+   });
+
+   if (productImage) {
+     productImage.addEventListener("load", function () {
+       updateDrinkProductArrows(shell);
+     });
+   }
+
+   updateDrinkProductArrows(shell);
+ });
+
+ window.addEventListener("resize", updateAllDrinkProductArrows);
 
  const carousel = menu.querySelector(".bolamu-flavour-carousel");
  const flavourItems = Array.from(
@@ -1010,7 +3317,7 @@
 
    carousel.addEventListener("scroll", function () {
      updateArrows();
-     closeAllFlavourStories();
+     closeAllFlavourOverlays();
    }, {
      passive: true
    });
