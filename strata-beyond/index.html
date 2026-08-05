@@ -324,9 +324,9 @@
     var MOBILE_VIDEO = "https://ik.imagekit.io/vxel66ikf/Strata%20beyond%20slower%20mobile%20video%20loop/ik-video.mp4?updatedAt=1785742311299";
     var DESKTOP_VIDEO = "https://ik.imagekit.io/vxel66ikf/Strata%20beyond%20slower%20desktop%20video%20loop/ik-video.mp4?updatedAt=1785740755079";
     var phoneQuery = window.matchMedia("(max-width: 767px)");
-    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     var video = page.querySelector(".strata-video");
     var resizeTimer = 0;
+    var retryTimer = 0;
 
     /* Reuse the KIN embed's scoped top-bleed technique so this page alone
        reaches behind Webador's page-header space without changing the site. */
@@ -339,35 +339,47 @@
       return phoneQuery.matches ? MOBILE_VIDEO : DESKTOP_VIDEO;
     }
 
-    function applyPlaybackPreference() {
-      if (reducedMotion.matches) {
-        if (video.readyState >= 2) {
-          video.pause();
-        } else {
-          video.addEventListener("loadeddata", function pauseOnFrame() {
-            video.removeEventListener("loadeddata", pauseOnFrame);
-            video.pause();
-          });
-        }
+    function enforcePlaybackProperties() {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.autoplay = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+    }
+
+    function playNow() {
+      enforcePlaybackProperties();
+      if (!video.getAttribute("src") || document.hidden) return;
+
+      var playAttempt;
+      try {
+        playAttempt = video.play();
+      } catch (error) {
         return;
       }
 
-      var playAttempt = video.play();
       if (playAttempt && typeof playAttempt.catch === "function") {
         playAttempt.catch(function () {
-          /* The loaded first frame and black fallback keep the page readable. */
+          /* Muted autoplay is retried as soon as media/browser state permits. */
         });
       }
     }
 
     function setVideoSource() {
       var required = requiredVideo();
+      enforcePlaybackProperties();
+
       if (video.getAttribute("src") !== required) {
-        video.pause();
         video.setAttribute("src", required);
         video.load();
       }
-      applyPlaybackPreference();
+
+      playNow();
     }
 
     function scheduleSourceCheck() {
@@ -375,16 +387,43 @@
       resizeTimer = window.setTimeout(setVideoSource, 120);
     }
 
+    function resumePlayback() {
+      if (!document.hidden) playNow();
+    }
+
+    video.addEventListener("loadedmetadata", playNow);
+    video.addEventListener("loadeddata", playNow);
+    video.addEventListener("canplay", playNow);
+    video.addEventListener("pause", function () {
+      if (document.hidden || !video.getAttribute("src")) return;
+      window.clearTimeout(retryTimer);
+      retryTimer = window.setTimeout(playNow, 80);
+    });
+    video.addEventListener("ended", function () {
+      video.currentTime = 0;
+      playNow();
+    });
+
     setVideoSource();
 
     if (typeof phoneQuery.addEventListener === "function") {
       phoneQuery.addEventListener("change", setVideoSource);
-      reducedMotion.addEventListener("change", setVideoSource);
     } else {
       phoneQuery.addListener(setVideoSource);
-      reducedMotion.addListener(setVideoSource);
     }
+
+    document.addEventListener("visibilitychange", resumePlayback);
+    window.addEventListener("pageshow", resumePlayback);
     window.addEventListener("orientationchange", setVideoSource, { passive: true });
     window.addEventListener("resize", scheduleSourceCheck, { passive: true });
+
+    /* Fallback for browsers that defer autoplay until the first user gesture. */
+    ["pointerdown", "touchstart", "keydown"].forEach(function (eventName) {
+      document.addEventListener(eventName, playNow, { passive: true, once: true });
+    });
+
+    window.setInterval(function () {
+      if (!document.hidden && video.paused) playNow();
+    }, 1500);
   })();
 </script>
