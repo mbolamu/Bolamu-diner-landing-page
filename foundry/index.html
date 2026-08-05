@@ -425,45 +425,18 @@
     text-shadow: none;
   }
 
-  .foundry-page .foundry-ending {
-    position: relative;
+  .foundry-page .foundry-coming-soon-footer {
     width: min(760px, calc(100% - 14px));
-    margin: clamp(28px, 4vw, 48px) auto 0;
-    padding: clamp(22px, 4vw, 38px);
-    border: 3px solid var(--foundry-sky-dark);
-    border-radius: 24px;
-    color: var(--foundry-ink);
-    text-align: center;
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.92),
-        rgba(255, 245, 223, 0.98)
-      );
-    box-shadow:
-      0 0 0 4px rgba(217, 45, 37, 0.78),
-      0 0 0 7px rgba(246, 201, 69, 0.62),
-      var(--foundry-shadow);
+    margin: clamp(20px, 3vw, 34px) auto 0;
   }
 
-  .foundry-page .foundry-ending-line {
-    margin: 0;
-    color: var(--foundry-red);
-    font-size: clamp(1rem, 2vw, 1.45rem);
-    font-weight: 900;
-    line-height: 1.45;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    text-shadow:
-      1px 1px 0 rgba(255, 255, 255, 0.8),
-      0 0 8px rgba(66, 189, 234, 0.18);
-  }
-
-  .foundry-page .foundry-ending-line + .foundry-ending-line {
-    margin-top: 8px;
-    color: var(--foundry-sky-dark);
-    font-size: clamp(0.78rem, 1.4vw, 1rem);
-    letter-spacing: 0.26em;
+  .foundry-page .foundry-coming-soon-footer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 0;
+    object-fit: contain;
+    object-position: center;
   }
 
   @media (max-width: 720px) {
@@ -593,9 +566,9 @@
       font-size: 0.5rem;
     }
 
-    .foundry-page .foundry-ending {
+    .foundry-page .foundry-coming-soon-footer {
       width: calc(100% - 12px);
-      margin-top: 30px;
+      margin-top: 24px;
     }
   }
 
@@ -792,10 +765,14 @@
         </article>
       </section>
 
-      <footer class="foundry-ending" aria-label="Foundry coming soon">
-        <p class="foundry-ending-line">The forge is still hot.</p>
-        <p class="foundry-ending-line">Coming soon.</p>
-      </footer>
+      <div class="foundry-coming-soon-footer">
+        <img
+          src="https://ik.imagekit.io/vxel66ikf/877e0f44-4ca0-4c40-b120-fbbfe2926bed.png"
+          alt="The Forge is still hot. Coming soon."
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
     </div>
   </div>
 </main>
