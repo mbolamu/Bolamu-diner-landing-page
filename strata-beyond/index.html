@@ -57,6 +57,14 @@
     pointer-events: none;
   }
 
+  .strata-page .strata-video::-webkit-media-controls,
+  .strata-page .strata-video::-webkit-media-controls-panel,
+  .strata-page .strata-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0;
+  }
+
   .strata-page .strata-treatment {
     z-index: 1;
     background:
@@ -282,6 +290,7 @@
   <div class="strata-media" aria-hidden="true">
     <video
       class="strata-video"
+      src="https://ik.imagekit.io/vxel66ikf/Strata%20beyond%20slower%20mobile%20video%20loop/ik-video.mp4?updatedAt=1785742311299"
       muted
       loop
       autoplay
@@ -290,6 +299,8 @@
       preload="auto"
       tabindex="-1"
       disablepictureinpicture
+      disableremoteplayback
+      controlslist="nodownload noplaybackrate noremoteplayback"
     ></video>
     <div class="strata-treatment"></div>
   </div>
@@ -342,9 +353,11 @@
     function enforcePlaybackProperties() {
       video.muted = true;
       video.defaultMuted = true;
+      video.controls = false;
       video.autoplay = true;
       video.loop = true;
       video.playsInline = true;
+      video.removeAttribute("controls");
       video.setAttribute("muted", "");
       video.setAttribute("autoplay", "");
       video.setAttribute("loop", "");
