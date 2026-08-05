@@ -48,8 +48,24 @@
     user-select: none;
   }
 
-  .bolamu-enter-page .bolamu-enter-hotspots {
+  .bolamu-enter-page .bolamu-enter-cue {
+    position: absolute;
+    top: clamp(28px, 7vh, 80px);
+    left: 35%;
     z-index: 1;
+    display: block;
+    width: clamp(260px, 20vw, 340px);
+    height: auto;
+    border: 0;
+    transform: translateX(-50%) rotate(10deg);
+    transform-origin: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .bolamu-enter-page .bolamu-enter-hotspots {
+    z-index: 2;
     overflow: visible;
   }
 
@@ -91,6 +107,14 @@
   }
 
   @media (max-width: 767px) {
+    .bolamu-enter-page .bolamu-enter-cue {
+      top: max(18px, calc(env(safe-area-inset-top) + 12px));
+      right: max(18px, env(safe-area-inset-right));
+      left: auto;
+      width: clamp(82px, 25vw, 118px);
+      transform: rotate(10deg);
+    }
+
     .bolamu-enter-page .bolamu-enter-hotspots--desktop {
       display: none;
     }
@@ -125,6 +149,16 @@
       >
     </picture>
   </div>
+
+  <img
+    class="bolamu-enter-cue"
+    src="https://ik.imagekit.io/vxel66ikf/Neon%20enter%20sign.png"
+    alt=""
+    aria-hidden="true"
+    loading="eager"
+    decoding="async"
+    draggable="false"
+  >
 
   <svg
     class="bolamu-enter-hotspots bolamu-enter-hotspots--desktop"
