@@ -50,14 +50,15 @@
 
   .bolamu-enter-page .bolamu-enter-cue {
     position: absolute;
-    top: clamp(28px, 7vh, 80px);
-    left: 35%;
+    right: auto;
+    bottom: 2.5%;
+    left: 50%;
     z-index: 1;
     display: block;
-    width: clamp(260px, 20vw, 340px);
+    width: clamp(260px, 25vw, 340px);
     height: auto;
     border: 0;
-    transform: translateX(-50%) rotate(10deg);
+    transform: translateX(-50%) rotate(0deg);
     transform-origin: center;
     pointer-events: none;
     user-select: none;
@@ -108,11 +109,12 @@
 
   @media (max-width: 767px) {
     .bolamu-enter-page .bolamu-enter-cue {
-      top: max(18px, calc(env(safe-area-inset-top) + 12px));
-      right: max(18px, env(safe-area-inset-right));
+      top: max(6.3svh, calc(env(safe-area-inset-top) + 12px));
+      right: max(3.5vw, env(safe-area-inset-right));
+      bottom: auto;
       left: auto;
-      width: clamp(82px, 25vw, 118px);
-      transform: rotate(10deg);
+      width: clamp(120px, 35vw, 220px);
+      transform: rotate(-10deg);
     }
 
     .bolamu-enter-page .bolamu-enter-hotspots--desktop {
